@@ -1,0 +1,91 @@
+@import url('./normalize.css');
+@import url('./fonts.css');
+@import url('./variables/index.css');
+@import url('./global-classes.css');
+@import url('./animations.css');
+
+html {
+  font-size: 62.5%; /* 10px */
+
+  @media screen and (max-width: 1584px) {
+    /* 1% smaller */
+    font-size: 56.25%; /* 9px */
+  }
+  @media screen and (max-width: 1263px) {
+    /* 2% smaller */
+    font-size: 50%; /* 8px */
+    /* 1.5% smaller */
+    font-size: 53.1%; /* 8.5px */
+  }
+  @media screen and (max-width: 740px) {
+    /* 3% smaller */
+    font-size: 43.75%; /* 7px ?*/
+    /* 2% smaller */
+    font-size: 50%; /* 8px */
+  }
+
+  font-family: var(--font-text);
+  font-weight: 400;
+  color: var(--color-on-background);
+
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100svh;
+  background-color: var(--color-background);
+}
+
+#root {
+  height: 100%;
+}
+
+h2 {
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: var(--title-font-size);
+  color: var(--color-on-background);
+}
+
+h3 {
+  font-family: var(--font-title);
+  font-weight: 600;
+  font-size: var(--small-title-font-size);
+  color: var(--color-on-background);
+}
+
+h4 {
+  font-family: var(--font-text);
+  font-weight: 800;
+  font-size: var(--subtitle-font-size);
+  color: var(--color-on-background);
+}
+
+h5 {
+  font-family: var(--font-text);
+  font-weight: 700;
+  font-size: var(--font-size-text-large);
+  color: var(--color-on-background);
+}
+
+p,
+a,
+label,
+input {
+  font-family: var(--font-text);
+  font-weight: 400;
+  font-size: var(--font-size);
+  color: var(--color-on-background);
+}
+
+li {
+  font-family: var(--font-text);
+  font-weight: 400;
+  font-size: var(--font-size);
+  color: var(--color-on-background);
+}
+
+ul {
+  list-style-type: none;
+}

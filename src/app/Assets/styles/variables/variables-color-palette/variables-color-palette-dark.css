@@ -1,0 +1,87 @@
+:root {
+  @media (prefers-color-scheme: dark) {
+    /* Primary & secondary */
+    --color-primary: #c0c1ff;
+    --color-on-primary: #282a60;
+    --color-primary-container: #3f4178;
+    --color-on-primary-container: #bbbdff;
+    --color-primary-variant: color-mix(in srgb, var(--color-primary), var(--color-white) 5%);
+    --color-on-primary-variant: color-mix(in srgb, var(--color-on-primary), var(--color-black) 5%);
+    --color-primary-container-variant: color-mix(
+      in srgb,
+      var(--color-primary-container),
+      var(--color-black) 5%
+    );
+    --color-primary-container-variant: color-mix(
+      in srgb,
+      var(--color-primary-container),
+      var(--color-white) 5%
+    );
+    --color-on-primary-container-variant: color-mix(
+      in srgb,
+      var(--color-black) 5%,
+      var(--color-on-primary-container)
+    );
+    --color-secondary: #ffb2bc;
+    --color-on-secondary: #660123;
+    --color-secondary-container: #c24c63;
+    --color-on-secondary-container: #ffffff;
+
+    /* Disabled */
+    --color-disabled: #35343a;
+    --color-on-disabled: #918f9a;
+
+    /* Errors */
+    --color-error: #ce4c64;
+    --color-on-error: #370004;
+    --color-error-container: #ff5357;
+    --color-on-error-container: #000000;
+
+    /* Background */
+    --color-background: #131318;
+    --color-on-background: #e4e1e9;
+
+    /* Surface */
+    --color-surface: #131318;
+    --color-on-surface: #e4e1e9;
+    --color-surface-variant: #46464f;
+    --color-on-surface-variant: #c7c5d0;
+    --color-surface-dim: #131318;
+    --color-surface-bright: #39383f;
+    --color-surface-container: #1f1f25;
+    --color-surface-container-high: #2a292f;
+    --color-surface-container-highest: #35343a;
+    --color-surface-container-low: #1b1b21;
+    --color-surface-container-lowest: #0e0e13;
+
+    --color-surface-1: color-mix(in srgb, var(--color-primary) 5%, var(--color-surface));
+    --color-surface-2: color-mix(in srgb, var(--color-primary) 8%, var(--color-surface));
+    --color-surface-3: color-mix(in srgb, var(--color-primary) 11%, var(--color-surface));
+    --color-surface-4: color-mix(in srgb, var(--color-primary) 12%, var(--color-surface));
+    --color-surface-5: color-mix(in srgb, var(--color-primary) 14%, var(--color-surface));
+
+    /* Outline */
+    --color-outline: #918f9a;
+    --color-outline-variant: #46464f;
+
+    /* Decorators */
+    --color-shadow: #000000;
+    --color-scrim: #000000;
+
+    /* Inverse colors */
+    --color-inverse-surface: #e4e1e9;
+    --color-on-inverse-surface: #303036;
+    --color-primary-inverse: #575992;
+
+    /* Fixed colors */
+    --color-primary-fixed: #e1e0ff;
+    --color-on-primary-fixed: #12144b;
+    --color-primary-fixed-dim: #c0c1ff;
+    --color-on-primary-fixed-variant: #3f4178;
+
+    --color-secondary-fixed: #ffd9dd;
+    --color-on-secondary-fixed: #3b0714;
+    --color-on-secondary-fixed-dim: #ffb2bc;
+    --color-on-secondary-fixed-variant: #72333e;
+  }
+}
