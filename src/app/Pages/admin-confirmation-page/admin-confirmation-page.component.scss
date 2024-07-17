@@ -20,27 +20,27 @@
   font-weight: 400;
   font-style: normal;
   color: #ed6d84;
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 .mat-mdc-button:not(:disabled) {
   font-family: "Comfortaa";
   font-weight: 800;
   font-style: normal;
-  font-size: 14px;
+  font-size: 0.88rem;
   background-color: #ed6d84;
   color: #ffffff;
   font-weight: bold;
-  border-radius: 8px;
-  padding: 10px 20px;
+  border-radius: 0.5rem;
+  padding: 0.63rem 1.25rem;
   &:hover {
     font-family: "Comfortaa";
     font-weight: 800;
     font-style: normal;
-    font-size: 14px;
+    font-size: 0.88rem;
     background-color: #ffffff;
     color: #ed6d84;
-    border: #ed6d84 2px solid;
+    border: #ed6d84 0.13rem solid;
   }
 }
 
@@ -48,27 +48,27 @@
   .textMessage {
     color: #ed6d84;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 1.13rem;
   }
 
   .mat-mdc-button:not(:disabled) {
     font-family: "Comfortaa";
     font-weight: 800;
     font-style: normal;
-    font-size: 16px;
+    font-size: 1rem;
     background-color: #ed6d84;
     color: #ffffff;
     font-weight: bold;
-    border-radius: 8px;
-    padding: 10px 20px;
+    border-radius: 0.5rem;
+    padding: 0.63rem 1.25rem;
     &:hover {
       font-family: "Comfortaa";
       font-weight: 800;
       font-style: normal;
-      font-size: 16px;
+      font-size: 1rem;
       background-color: #ffffff;
       color: #ed6d84;
-      border: #ed6d84 2px solid;
+      border: #ed6d84 0.13rem solid;
     }
   }
 }
@@ -77,27 +77,27 @@
   .textMessage {
     color: #ed6d84;
     font-weight: 400;
-    font-size: 22px;
+    font-size: 1.38rem;
   }
 
   .mat-mdc-button:not(:disabled) {
     font-family: "Comfortaa";
     font-weight: 800;
     font-style: normal;
-    font-size: 20px;
+    font-size: 1.25rem;
     background-color: #ed6d84;
     color: #ffffff;
     font-weight: bold;
-    border-radius: 8px;
-    padding: 10px 20px;
+    border-radius: 0.5rem;
+    padding: 0.63rem 1.25rem;
     &:hover {
       font-family: "Comfortaa";
       font-weight: 800;
       font-style: normal;
-      font-size: 20px;
+      font-size: 1.25rem;
       background-color: #ffffff;
       color: #ed6d84;
-      border: #ed6d84 2px solid;
+      border: #ed6d84 0.13rem solid;
     }
   }
 }
