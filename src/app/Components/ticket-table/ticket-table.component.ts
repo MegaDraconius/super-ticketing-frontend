@@ -6,6 +6,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { Ticket } from '../../Shared/ticket';
+import { ReportButtonComponent } from '../report-button/report-button.component';
 
 const ELEMENT_DATA: Ticket[] = [
   { ticketTitle: 'Ordenador roto', startDate: '15/07/2024', status: 'abierto' },
@@ -41,6 +42,7 @@ const ELEMENT_DATA: Ticket[] = [
   selector: 'app-ticket-table',
   standalone: true,
   imports: [
+    ReportButtonComponent,
     MatFormFieldModule,
     MatInputModule,
     MatTableModule,

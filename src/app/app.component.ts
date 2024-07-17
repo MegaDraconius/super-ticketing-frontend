@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { EmptyTicketComponent } from './Components/emptyTicket/empty-ticket.component';
+import { EmptyTicketComponent } from './Components/empty-ticket/empty-ticket.component';
 import { HeaderComponent } from './Components/layout/header/header.component';
 
 @Component({

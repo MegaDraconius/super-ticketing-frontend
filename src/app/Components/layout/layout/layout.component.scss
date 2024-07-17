@@ -1,10 +1,17 @@
+:host{
+    display: grid;
+    grid-template-columns: 10vw 80vw 10vw;
+    grid-template-rows: 10vh 90vh;
+    grid-template-areas: "header header header" ". layout .";
+}
+
 app-header{
-    height: 7%;
+    // height: 7%;
+    grid-area: header;
 }
 
 .main-content{
-    height: 92%;
+    // height: 92%;
     width: 100%;
-    justify-content: center;
-    align-items: center;
+    grid-area: layout;
 }
