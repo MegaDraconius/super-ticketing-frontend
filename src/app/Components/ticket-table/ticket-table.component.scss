@@ -8,12 +8,12 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
 }
 
 #ticketSearchbar{
-  padding: 2% 0;
-  width: 80%;
+  padding-bottom: 2%;
+  width: 30%;
 }
 
 
@@ -32,6 +32,10 @@ table {
 
   td, th {
     width: 25%;
+  }
+
+  th{
+    color: #ED6D84;
   }
 
   #detailButton {

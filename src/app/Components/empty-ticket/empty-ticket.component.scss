@@ -19,7 +19,7 @@
 
 .container{
     width: 100%;
-    height: 100%;
+    height: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -43,11 +43,12 @@
 }
 
 @media screen and (min-width: 1024px) {
+
     .square {
         height: 10rem;
         width: 60rem;
         margin-left: 10rem;
-    margin-right: 10rem;
+        margin-right: 10rem;
     }
 
     .text {
@@ -56,8 +57,8 @@
     }
 
     .container {
-        width: 100%;
-    height: 100%;
+    width: 100%;
+    height: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
