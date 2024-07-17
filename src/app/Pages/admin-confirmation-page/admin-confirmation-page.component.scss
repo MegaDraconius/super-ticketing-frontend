@@ -1,0 +1,103 @@
+.container {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.containerAdminPage {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  padding: 0 10%;
+}
+
+.textMessage {
+  font-family: "Poppins";
+  font-weight: 400;
+  font-style: normal;
+  color: #ed6d84;
+  font-size: 16px;
+}
+
+.mat-mdc-button:not(:disabled) {
+  font-family: "Comfortaa";
+  font-weight: 800;
+  font-style: normal;
+  font-size: 14px;
+  background-color: #ed6d84;
+  color: #ffffff;
+  font-weight: bold;
+  border-radius: 8px;
+  padding: 10px 20px;
+  &:hover {
+    font-family: "Comfortaa";
+    font-weight: 800;
+    font-style: normal;
+    font-size: 14px;
+    background-color: #ffffff;
+    color: #ed6d84;
+    border: #ed6d84 2px solid;
+  }
+}
+
+@media (min-width: 768px) {
+  .textMessage {
+    color: #ed6d84;
+    font-weight: 400;
+    font-size: 18px;
+  }
+
+  .mat-mdc-button:not(:disabled) {
+    font-family: "Comfortaa";
+    font-weight: 800;
+    font-style: normal;
+    font-size: 16px;
+    background-color: #ed6d84;
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 10px 20px;
+    &:hover {
+      font-family: "Comfortaa";
+      font-weight: 800;
+      font-style: normal;
+      font-size: 16px;
+      background-color: #ffffff;
+      color: #ed6d84;
+      border: #ed6d84 2px solid;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .textMessage {
+    color: #ed6d84;
+    font-weight: 400;
+    font-size: 22px;
+  }
+
+  .mat-mdc-button:not(:disabled) {
+    font-family: "Comfortaa";
+    font-weight: 800;
+    font-style: normal;
+    font-size: 20px;
+    background-color: #ed6d84;
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 10px 20px;
+    &:hover {
+      font-family: "Comfortaa";
+      font-weight: 800;
+      font-style: normal;
+      font-size: 20px;
+      background-color: #ffffff;
+      color: #ed6d84;
+      border: #ed6d84 2px solid;
+    }
+  }
+}
