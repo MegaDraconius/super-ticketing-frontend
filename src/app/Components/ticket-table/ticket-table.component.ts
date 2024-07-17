@@ -4,6 +4,7 @@ import { MatSort, MatSortModule } from '@angular/material/sort';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
 import { Ticket } from '../../Shared/ticket';
 
 const ELEMENT_DATA: Ticket[] = [
@@ -45,12 +46,18 @@ const ELEMENT_DATA: Ticket[] = [
     MatTableModule,
     MatSortModule,
     MatPaginatorModule,
+    MatButtonModule,
   ],
   templateUrl: './ticket-table.component.html',
   styleUrl: './ticket-table.component.scss',
 })
 export class TicketTableComponent implements AfterViewInit {
-  displayedColumns: string[] = ['ticketTitle', 'startDate', 'status'];
+  displayedColumns: string[] = [
+    'ticketTitle',
+    'startDate',
+    'status',
+    'actions',
+  ];
   dataSource = new MatTableDataSource<Ticket>(ELEMENT_DATA);
 
   @ViewChild(MatPaginator, { static: false }) paginator!: MatPaginator;
