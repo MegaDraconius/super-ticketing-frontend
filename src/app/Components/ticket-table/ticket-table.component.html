@@ -1,6 +1,8 @@
+<app-report-button></app-report-button>
+
 <div class="ticketTableContainer custom-font">
 
-    <mat-form-field class="ticketSearchbar">
+    <mat-form-field id="ticketSearchbar">
         <mat-label>Buscar incidencia</mat-label>
         <input matInput (keyup)="applyFilter($event)" placeholder="" #input class="searchInput">
     </mat-form-field>
