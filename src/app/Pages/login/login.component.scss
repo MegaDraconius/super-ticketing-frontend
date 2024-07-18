@@ -1,0 +1,96 @@
+#landingContainer{
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+#landingImage{
+    display: none;
+}
+
+#landingForm{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+#logoImg{
+    width: 95%;
+}
+h2{
+    font-family: "Comfortaa";
+    font-weight: 800;
+    font-size: 1.50rem;
+    color: #31347C;
+}
+
+#landingForm{
+    width: 100vw;
+    background-color: #CACBDD; 
+}
+
+#landingFormContent{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: fit-content;
+}
+
+.loginList a{
+    text-decoration: underline;
+
+}
+
+.loginList {
+    list-style: none;
+    margin-top: 5%;
+    font-family: "Poppins";
+    font-weight: 400;
+    font-size: 0.88rem;
+}
+.loginButton{
+    width: 100%;
+    font-family: "Comfortaa";
+    font-weight: 300;
+    font-size: 0.94rem;
+    border-radius: 1rem;
+    height: 3.5rem; 
+}
+mat-label{
+    font-family: "Comfortaa";
+    font-weight: 300;
+    font-size: 0.88rem;
+    color: #9D9D9D;
+}
+.mat-mdc-unelevated-button:not(:disabled) {
+    background-color: #ED6D84;
+}
+.mat-mdc-form-field{
+    width: 100%;
+}
+
+#landingForm[_ngcontent-ng-c3030439664] {
+    border-radius: 9%;
+}
+#passwordLink{
+    color: #ED6D84;
+    font-weight: 700;
+}
+
+@media screen and (min-width: 1024px){
+    #landingImage{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 50vw;
+    }
+    #landingImage img{
+        width: 35vw;
+    }
+    #landingForm{
+        width: 50vw;
+        margin: 2%;
+        border-radius: 2%;  
+    }
+
+}
