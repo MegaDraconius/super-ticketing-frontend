@@ -19,5 +19,4 @@ export const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'adminConfirmation', component: AdminConfirmationPageComponent },
   { path: 'userConfirmation', component: UserConfirmationPageComponent },
-
 ];

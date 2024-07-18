@@ -1,4 +1,9 @@
 {
-  "hello": "Ciao",
-  "tableTitle": "Ticketini"
+  "tableTitle": "I miei tickets",
+  "reportIncidence": "Segnalare un problema",
+  "searchIncidenceInput": "Cercare un problema",
+  "columnTitle1": "Titolo",
+  "columnTitle2": "Data di inizio",
+  "columnTitle3": "Stato",
+  "detailsButton": "Dettagli"
 }

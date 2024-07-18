@@ -1,4 +1,9 @@
 {
-  "hello": "Hola",
-  "tableTitle": "Mis tickets"
+  "tableTitle": "Mis tickets",
+  "reportIncidence": "Reportar incidencia",
+  "searchIncidenceInput": "Buscar incidencias",
+  "columnTitle1": "Título",
+  "columnTitle2": "Inicio",
+  "columnTitle3": "Estado",
+  "detailsButton": "Detalles"
 }
