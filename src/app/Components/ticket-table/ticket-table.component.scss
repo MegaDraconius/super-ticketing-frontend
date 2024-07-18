@@ -46,3 +46,10 @@ table {
       background-color: #8b8ffa;
     }
   }
+
+  .languageButtonContainer{
+    z-index: 1;
+    position: fixed;
+    top: 95%;
+    left: 5%;
+  }
