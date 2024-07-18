@@ -55,6 +55,9 @@ devDependencies:
   '@angular/compiler-cli':
     specifier: ^18.0.0
     version: 18.1.0(@angular/compiler@18.1.0)(typescript@5.4.5)
+  '@types/jest':
+    specifier: ^29.5.12
+    version: 29.5.12
   jest:
     specifier: ^29.7.0
     version: 29.7.0
@@ -3888,6 +3891,13 @@ packages:
     resolution: {integrity: sha512-pk2B1NWalF9toCRu6gjBzR69syFjP4Od8WRAX+0mmf9lAjCRicLOWc+ZrxZHx/0XRjotgkF9t6iaMJ+aXcOdZQ==}
     dependencies:
       '@types/istanbul-lib-report': 3.0.3
+    dev: true
+
+  /@types/jest@29.5.12:
+    resolution: {integrity: sha512-eDC8bTvT/QhYdxJAulQikueigY5AsdBRH2yDKW3yveW7svY3+DzN84/2NUgkw10RTiJbWqZrTtoGVdYlvFJdLw==}
+    dependencies:
+      expect: 29.7.0
+      pretty-format: 29.7.0
     dev: true
 
   /@types/json-schema@7.0.15:

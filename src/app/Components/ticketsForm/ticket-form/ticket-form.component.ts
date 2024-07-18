@@ -30,7 +30,6 @@ export class TicketFormComponent {
       this.technicalProblem = true;
       console.log(this.technicalProblem)
       
-      
     } else {
       console.log("FALSE")
       this.technicalProblem = false;
