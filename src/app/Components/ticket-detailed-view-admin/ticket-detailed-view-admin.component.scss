@@ -1,0 +1,31 @@
+:host{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+section {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input {
+    display: flex;
+    justify-content: center;
+}
+
+#canWorkContainer{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 3rem;
+}
+
+#noWorkInput{
+    background-color: blue;
+}
+
+#workInput{
+    background-color: green;
+}
