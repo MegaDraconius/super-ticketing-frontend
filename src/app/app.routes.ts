@@ -4,14 +4,4 @@ import { TicketTableComponent } from './Components/ticket-table/ticket-table.com
 import { LayoutComponent } from './Components/layout/layout/layout.component';
 import { EmptyTicketComponent } from './Components/empty-ticket/empty-ticket.component';
 
-export const routes: Routes = [
-  {
-    path: '',
-    component: LayoutComponent,
-    children: [
-      { path: '', component: EmptyTicketComponent },
-      { path: 'table', component: TicketTableComponent },
-    ],
-  },
-  { path: 'layout', redirectTo: '' },
-];
+export const routes: Routes = [];
