@@ -6,7 +6,7 @@
       <div id="landingFormContent">
         <img src="Lunacare_logo.png" alt="Lunacare logo" id="logoImg">
           <h2>¡Hola de nuevo!</h2>
-          <form [formGroup]="loginForm" > <!--(ngSubmit)="submit()"-->
+          <form [formGroup]="loginForm" (ngSubmit)="submit()"> <!--(ngSubmit)="submit()"-->
             <section>
               <mat-form-field appearance="fill">
                 <mat-label>Correo electrónico</mat-label>
