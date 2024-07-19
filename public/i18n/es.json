@@ -5,5 +5,12 @@
   "columnTitle1": "Título",
   "columnTitle2": "Inicio",
   "columnTitle3": "Estado",
-  "detailsButton": "Detalles"
+  "detailsButton": "Detalles",
+  "emptyMessage1": "No tienes ninguna incidencia actualmente.\n Pulsa en el botón de ",
+  "emptyMessage2": " para añadir uno.",
+  "ticketSent": "Ticket enviado correctamente.",
+  "backButton": "Volver al inicio",
+  "confirmationMessage1": "Su solicitud quedará en “Pendiente” hasta que el equipo técnico reciba y comience a atender la incidencia.",
+  "confirmationMessage2": "Una vez iniciada la resolución, su solicitud aparecerá como 'En curso' hasta su finalización.",
+  "confirmationMessage3": "Gracias por su reporte y por contribuir a la mejora de nuestro servicio."
 }

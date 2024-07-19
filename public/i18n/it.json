@@ -5,5 +5,12 @@
   "columnTitle1": "Titolo",
   "columnTitle2": "Data di inizio",
   "columnTitle3": "Stato",
-  "detailsButton": "Dettagli"
+  "detailsButton": "Dettagli",
+  "emptyMessage1": "Attualmente non hai alcuna incidenza. \n Premi il pulsante",
+  "emptyMessage2": " per aggiungerne uno.",
+  "ticketSent": "Ticket inviato correttamente.",
+  "backButton": "Tornare all'inizio",
+  "confirmationMessage1": "La tua richiesta rimarrà 'In sospeso' fino a quando il team tecnico non riceverà e inizierà a gestire l'incidente.",
+  "confirmationMessage2": "Una volta avviata la risoluzione, la tua richiesta apparirà come 'In corso' fino al completamento.",
+  "confirmationMessage3": "Grazie per la tua segnalazione e per contribuire al miglioramento del nostro servizio."
 }

@@ -13,7 +13,20 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 export class AppComponent {
   title = 'super-ticketing';
   translate = inject(TranslateService);
+  ngOnInit(): void {
+    // Recupera el idioma del localStorage al iniciar la aplicación
+    const savedLanguage = localStorage.getItem('selectedLanguage');
+    if (savedLanguage) {
+      this.translate.use(savedLanguage);
+    } else {
+      // Establece un idioma por defecto si no hay ninguno guardado
+      this.translate.setDefaultLang('es');
+    }
+  }
+
+  // Cambia el idioma y guarda la selección en localStorage
   translateText(lang: string) {
     this.translate.use(lang);
+    localStorage.setItem('selectedLanguage', lang);
   }
 }

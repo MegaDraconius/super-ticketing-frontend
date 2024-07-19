@@ -12,5 +12,6 @@ export class LanguageButtonComponent {
   translate = inject(TranslateService);
   translateText(lang: string) {
     this.translate.use(lang);
+    localStorage.setItem('selectedLanguage', lang);
   }
 }
