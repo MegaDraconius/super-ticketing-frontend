@@ -1,0 +1,19 @@
+:host{
+    display: grid;
+    grid-template-columns: 10vw 80vw 10vw;
+    grid-template-rows: 10vh 85vh 5vh;
+    grid-template-areas: "header header header" ". layout ." "language language language";
+}
+
+app-header{
+    grid-area: header;
+}
+
+.main-content{
+    width: 100%;
+    grid-area: layout;
+}
+
+app-language-button{
+    grid-area: language;
+}

@@ -1,0 +1,63 @@
+<section class="pageContent">
+<div class="FormContainer">
+  <h2 class="subtitle">Reportar incidencia</h2>
+
+  <form class="TicketForm" [formGroup]="ticketsForm" (ngSubmit)="submit()">
+
+    <div class="titleContainer">
+      <div ngIf="incidenciaForm.get('title').invalid && incidenciaForm.get('title').touched"></div>
+      <label for="title"></label>
+      <input class="containerForm" id="title" type="text" formControlName="title" placeholder="Título">
+    </div>
+
+    <div class="detailContainer">
+      <label for="details"></label>
+      <div ngIf="incidenciaForm.get('details').invalid && incidenciaForm.get('details').touched">
+      </div>
+      <textarea id="details" class="containerForm" formControlName="details" placeholder="Detalles de la incidencia."></textarea>
+    </div>
+
+    <p class="imgBox">Incluye capturas de pantalla o vídeo si es posible.</p>
+
+    <div class="imgBox">
+      <label for="img"></label>
+      <input id="img" formControlName="img" type="file" >
+      <br>
+    </div>
+    
+    <div class="workContainer">
+      <p>Motivo:</p>
+      <mat-radio-group formControlName="motive" aria-label="Motivo">
+        <mat-radio-button value="1" (click)="onMotiveClick('1')">Mejora</mat-radio-button>
+        <mat-radio-button value="2" (click)="onMotiveClick('2')">Problema técnico</mat-radio-button>
+        <mat-radio-button value="3" (click)="onMotiveClick('3')">Otros</mat-radio-button>
+      </mat-radio-group>
+    </div>
+
+    @if (technicalProblem == true){
+      <div class="workContainer">
+        <p>¿Puede trabajar?</p>
+        <mat-radio-group aria-label="¿Puede trabajar?">
+          <mat-radio-button value="1">Si</mat-radio-button>
+          <mat-radio-button value="2">No</mat-radio-button>
+        </mat-radio-group>
+
+        <p>¿Es un problema recurrente?</p>
+        <mat-radio-group aria-label="¿Es un problema recurrente?">
+          <mat-radio-button value="1">Si</mat-radio-button>
+          <mat-radio-button value="2">No</mat-radio-button>
+        </mat-radio-group>
+
+        <p>¿Ha intentado solucionarlo?</p>
+        <mat-radio-group aria-label="¿Ha intentado solucionarlo?">
+          <mat-radio-button value="1">Si</mat-radio-button>
+          <mat-radio-button value="2">No</mat-radio-button>
+        </mat-radio-group>
+      </div>
+    } 
+    <div class="btnContainer">
+      <button type="submit" class="btn">ENVIAR</button>
+    </div>
+  </form>
+</div>
+</section>

@@ -1,0 +1,141 @@
+.container {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.containerUserPage {
+  width: 90%;
+  display: flex;
+  text-align: justify;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+p {
+  font-family: "Comfortaa", sans-serif;
+  color: #31347c;
+  font-weight: 700;
+  font-size: 0.88rem;
+}
+
+.confirmationMessage {
+  display: flex;
+}
+
+.textMessage {
+  color: #ed6d84;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.textBoldMessage {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.mat-icon {
+  justify-content: center;
+  font-size: 1.75rem;
+  margin-right: 0.63rem;
+}
+
+.mat-mdc-button:not(:disabled) {
+  font-family: "Comfortaa", sans-serif;
+  font-weight: 700;
+  font-size: 0.88rem;
+  background-color: #ed6d84;
+  color: #ffffff;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  padding: 0.63rem 1.25rem;
+  &:hover {
+    font-family: "Comfortaa", sans-serif;
+    font-weight: 700;
+    font-size: 0.88rem;
+    background-color: #ffffff;
+    color: #ed6d84;
+    border: #ed6d84 0.13rem solid;
+  }
+}
+
+@media (min-width: 768px) {
+  p {
+    font-family: "Comfortaa", sans-serif;
+    color: #31347c;
+    font-weight: 700;
+    font-size: 1rem;
+  }
+
+  .textMessage {
+    color: #ed6d84;
+    font-weight: 700;
+    font-size: 1.13rem;
+  }
+
+  .textBoldMessage {
+    font-size: 1.13rem;
+    font-weight: 700;
+  }
+
+  .mat-mdc-button:not(:disabled) {
+    font-family: "Comfortaa", sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    background-color: #ed6d84;
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 0.5rem;
+    padding: 0.63rem 1.25rem;
+    &:hover {
+      font-family: "Comfortaa", sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      background-color: #ffffff;
+      color: #ed6d84;
+      border: #ed6d84 0.13rem solid;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  p {
+    font-family: "Comfortaa", sans-serif;
+    color: #31347c;
+    font-weight: 700;
+    font-size: 1.25rem;
+  }
+
+  .textMessage {
+    color: #ed6d84;
+    font-weight: 700;
+    font-size: 1.38rem;
+  }
+
+  .textBoldMessage {
+    font-size: 1.38rem;
+    font-weight: 700;
+  }
+
+  .mat-mdc-button:not(:disabled) {
+    font-family: "Comfortaa", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    background-color: #ed6d84;
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 0.5rem;
+    padding: 0.63rem 1.25rem;
+    &:hover {
+      font-family: "Comfortaa", sans-serif;
+      font-weight: 700;
+      font-size: 1.25rem;
+      background-color: #ffffff;
+      color: #ed6d84;
+      border: #ed6d84 0.13rem solid;
+    }
+  }
+}

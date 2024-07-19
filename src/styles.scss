@@ -13,7 +13,7 @@ $super-ticketing-theme: mat.define-theme(
   (
     color: (
       theme-type: light,
-      primary: mat.$azure-palette,
+      primary: mat.$blue-palette,
       tertiary: mat.$blue-palette,
     ),
     density: (
@@ -36,15 +36,6 @@ $super-ticketing-theme: mat.define-theme(
 // Comment out the line below if you want to use the deprecated `color` inputs.
 // @include mat.color-variants-backwards-compatibility($super-ticketing-theme);
 /* You can add global styles to this file, and also import other style files */
-
-html,
-body {
-  height: 100%;
-}
-body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-}
 
 html,
 body,
