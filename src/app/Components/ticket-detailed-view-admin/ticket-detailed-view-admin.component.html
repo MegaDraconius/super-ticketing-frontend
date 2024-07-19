@@ -1,0 +1,60 @@
+<section>
+  <form class="detailedView" action="">
+    <h2>Gestión de tickets</h2>
+    <h3>Incidencia nº es-023030</h3>
+    <div class="inputsAdmin">
+      <mat-form-field class="labelAdmin">
+        <mat-label>Título</mat-label>
+        <input
+          class="form-input"
+          matInput
+          placeholder="Ej. Ordenador no funciona"
+        />
+      </mat-form-field>
+
+      <mat-form-field class="labelAdmin">
+        <mat-label>Correo del usuario</mat-label>
+        <input
+          class="form-input"
+          type="email"
+          matInput
+          placeholder="Ej. user@gmail.com"
+        />
+      </mat-form-field>
+    </div>
+
+    <mat-form-field class="labelAdmin incidentMessage">
+      <mat-label>Explique su incidencia</mat-label>
+      <textarea
+        class="form-input"
+        matInput
+        placeholder="Ej. Cuando enciendo el ordenador me parpadea la pantalla..."
+      ></textarea>
+    </mat-form-field>
+
+    <div class="buttonsAdmin">
+      <button id="workingStatusMobile" mat-flat-button disabled>Hola</button>
+      <button id="workingStatusNegative" mat-flat-button disabled>
+        No puede trabajar
+      </button>
+      <button id="workingStatusPositive" mat-flat-button disabled>
+        Puede trabajar
+      </button>
+    </div>
+    <figure>
+      <img
+        mat-card-image
+        src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+        alt="Photo of a Shiba Inu"
+      />
+      <img
+        class="img-incident"
+        mat-card-image
+        src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+        alt="Photo of a Shiba Inu"
+      />
+    </figure>
+
+    <button id="workInput" mat-flat-button>RESPONDER</button>
+  </form>
+</section>
