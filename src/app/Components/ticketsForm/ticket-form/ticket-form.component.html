@@ -1,28 +1,30 @@
+<section class="pageContent">
 <div class="FormContainer">
   <h2 class="subtitle">Reportar incidencia</h2>
-  <form class="TicketForm" [formGroup]="ticketsForm" (ngSubmit)="submit()">
-    <div class="titleContainer">
-      <div ngIf="incidenciaForm.get('title').invalid && incidenciaForm.get('title').touched">
-        El título es requerido.
-      </div>
-      <label for="title"></label>
-      <input class="titleBox" id="title" type="text" formControlName="title" placeholder="Título">
 
+  <form class="TicketForm" [formGroup]="ticketsForm" (ngSubmit)="submit()">
+
+    <div class="titleContainer">
+      <div ngIf="incidenciaForm.get('title').invalid && incidenciaForm.get('title').touched"></div>
+      <label for="title"></label>
+      <input class="containerForm" id="title" type="text" formControlName="title" placeholder="Título">
     </div>
-    <br>
+
     <div class="detailContainer">
       <label for="details"></label>
       <div ngIf="incidenciaForm.get('details').invalid && incidenciaForm.get('details').touched">
-        Los detalles son requeridos.
       </div>
-      <textarea id="details" class="titleBox" formControlName="details" placeholder="Detalles"></textarea>
-
+      <textarea id="details" class="containerForm" formControlName="details" placeholder="Detalles de la incidencia."></textarea>
     </div>
+
+    <p class="imgBox">Incluye capturas de pantalla o vídeo si es posible.</p>
+
     <div class="imgBox">
       <label for="img"></label>
-      <p>Incluye capturas de pantalla o vídeo si es posible:</p>
-      <input id="img" formControlName="img" type="file" class="form-control">
+      <input id="img" formControlName="img" type="file" >
+      <br>
     </div>
+    
     <div class="workContainer">
       <p>Motivo:</p>
       <mat-radio-group formControlName="motive" aria-label="Motivo">
@@ -52,12 +54,10 @@
           <mat-radio-button value="2">No</mat-radio-button>
         </mat-radio-group>
       </div>
-    }
-    
-        <button type="submit" class="btn">ENVIAR</button>
-     
-    
+    } 
+    <div class="btnContainer">
+      <button type="submit" class="btn">ENVIAR</button>
+    </div>
   </form>
-
-
 </div>
+</section>
