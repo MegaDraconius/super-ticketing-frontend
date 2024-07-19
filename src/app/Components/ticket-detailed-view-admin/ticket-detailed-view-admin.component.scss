@@ -108,10 +108,20 @@ input {
 img {
   width: 280px;
   height: 200px;
+  border-radius: 15px;
+}
+
+.img-incident {
+  display: none;
 }
 
 figure {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #d9d9d9;
+  width: 335px;
+  height: 240px;
 }
 
 #workInput {
@@ -128,6 +138,18 @@ figure {
 }
 
 @media (min-width: 768px) {
+  h2 {
+    font-size: 28px;
+  }
+
+  h3 {
+    font-size: 24px;
+  }
+
+  input {
+    font-size: 24px;
+  }
+
   .incidentMessage {
     width: 710px;
     height: 200px;
@@ -154,7 +176,7 @@ figure {
     font-family: "Comfortaa";
     font-weight: 800;
     font-style: normal;
-    font-size: 0.88rem;
+    font-size: 20px;
     font-weight: bold;
     border-radius: 0.5rem;
     background-color: #f24f4f;
@@ -169,60 +191,30 @@ figure {
     font-family: "Comfortaa";
     font-weight: 800;
     font-style: normal;
-    font-size: 0.88rem;
+    font-size: 20px;
     font-weight: bold;
     border-radius: 0.5rem;
     background-color: #99fe75;
     color: #464646;
   }
-}
 
-@media (min-width: 1024px) {
-  .incidentMessage {
-    width: 710px;
+  img {
+    width: 280px;
     height: 200px;
-  }
-  .inputsAdmin {
-    display: flex;
-    flex-direction: row;
-    gap: 40px;
+    border-radius: 15px;
   }
 
-  .buttonsAdmin {
-    display: flex;
-    flex-direction: row;
-    gap: 40px;
-  }
-  #workingStatusMobile {
-    display: none;
-  }
-  #workingStatusNegative {
+  .img-incident {
     display: inline-block;
-    margin-bottom: 20px;
-    width: 335px;
-    height: 56px;
-    font-family: "Comfortaa";
-    font-weight: 800;
-    font-style: normal;
-    font-size: 0.88rem;
-    font-weight: bold;
-    border-radius: 0.5rem;
-    background-color: #f24f4f;
-    color: #ffffff;
   }
 
-  #workingStatusPositive {
-    display: inline-block;
-    margin-bottom: 20px;
-    width: 335px;
-    height: 56px;
-    font-family: "Comfortaa";
-    font-weight: 800;
-    font-style: normal;
-    font-size: 0.88rem;
-    font-weight: bold;
-    border-radius: 0.5rem;
-    background-color: #99fe75;
-    color: #464646;
+  figure {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #d9d9d9;
+    width: 710px;
+    height: 240px;
   }
 }
