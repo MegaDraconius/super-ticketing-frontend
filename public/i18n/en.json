@@ -1,0 +1,16 @@
+{
+  "tableTitle": "My tickets",
+  "reportIncidence": "Report incidence",
+  "searchIncidenceInput": "Search for incidence",
+  "columnTitle1": "Title",
+  "columnTitle2": "Start Date",
+  "columnTitle3": "Status",
+  "detailsButton": "Details",
+  "emptyMessage1": "You have no tickets at the moment.\n Press the button ",
+  "emptyMessage2": " to add a new one.",
+  "ticketSent": "Ticket sent successfully.",
+  "backButton": "Go back to dashboard",
+  "confirmationMessage1": "Your request will remain 'Pending' until the technical team receives and starts addressing the issue.",
+  "confirmationMessage2": "Once the resolution has started, your request will appear as 'In progress' until completion.",
+  "confirmationMessage3": "Thank you for your report and for contributing to the improvement of our service."
+}

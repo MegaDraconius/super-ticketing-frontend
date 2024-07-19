@@ -2,21 +2,18 @@
   <section class="containerUserPage">
     <div class="confirmationMessage">
       <p class="textMessage">
-        <mat-icon>check</mat-icon>Ticket enviado exitosamente.
+        <mat-icon>check</mat-icon>{{'ticketSent' | translate}}
       </p>
     </div>
     <p>
-      Su solicitud quedará en “Pendiente” hasta que el equipo técnico reciba y
-      comience a atender la incidencia.
+      {{'confirmationMessage1' | translate }}
     </p>
     <p>
-      Una vez iniciada la resolución, su solicitud aparecerá como "En curso"
-      hasta su finalización.
+      {{'confirmationMessage2' | translate }}
     </p>
     <p class="textBoldMessage">
-      Gracias por su reporte y por contribuir a la mejora de nuestro servicio.
+      {{'confirmationMessage3' | translate }}
     </p>
-
-    <button mat-button type="button" (click)="comeBack()">Volver al inicio</button>
+    <button mat-button type="button" (click)="comeBack()">{{'backButton' | translate }}</button>
   </section>
 </div>
