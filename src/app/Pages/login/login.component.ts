@@ -8,6 +8,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { AuthService } from '../../Core/auth.service';
 import { User } from '../../Shared/Interfaces/user';
 import { LocalStorageService } from '../../Shared/Services/local-storage.service';
+import { CommonModule } from '@angular/common';
 // import { User } from '../shared/interfaces/user';
 // import { AuthService } from '../core/auth.service';
 //import { Router } from '@angular/router';
@@ -21,7 +22,8 @@ import { LocalStorageService } from '../../Shared/Services/local-storage.service
     MatInputModule,
     MatIconModule,
     MatButtonModule,
-    MatTabsModule,],
+    MatTabsModule,
+    CommonModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
@@ -35,11 +37,12 @@ export class LoginComponent {
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
-      email: ['', Validators.required],
-      password: ['', Validators.required],
+      email: ['', [Validators.required, Validators.pattern('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$')]],
+      password: ['',[Validators.required, Validators.minLength(8)]],
     });
   }
-  
+
+
   submit() {
     const user: User = {
       email: this.loginForm.controls['email'].value,
