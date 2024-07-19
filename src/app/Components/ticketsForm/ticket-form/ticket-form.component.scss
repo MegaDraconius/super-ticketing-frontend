@@ -1,16 +1,26 @@
+.pageContent{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .FormContainer{
   font-family: Comfortaa;
-  width:90%;
-  margin-top: 1rem;
-  height: 38.813rem;
+  width: 60%;
+  height: 90%;
   background-color:#E6E6E6;
   border-radius: 2%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items:center;
   justify-content: space-evenly;
 }
 .subtitle{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   font-size: 20px;
   color:#31347C;
 }
@@ -23,15 +33,16 @@
   height: 7rem;
   width: 100%;
 }
-.titleBox{
+.containerForm{
+  font-family: Comfortaa;
   background-color: #FFFFFF;
   width: 80%;
-  height: 17rem;
+  height: 50%;
   border: none;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 2rem;
+  margin: 0.5rem;
   border-radius: 5px;
 }
 .detailContainer{
@@ -42,20 +53,17 @@
   align-items:center;
   justify-content: center;
   height: 7rem;
-  width: 100%;
-}
-.inpuBox{
-  background-color: #FFFFFF;
 }
 .imgBox{
   display: flex;
   flex-direction: column;
   padding: 1rem;
+  font-family: Comfortaa;
+  font-size: 14px;
 }
 .workContainer{
   display:flex;
   flex-direction:column;
-  justify-content:flex-start;
   margin: 1rem;
 }
 .mat-radio-group{
@@ -63,11 +71,131 @@
     margin-top: 3rem;
     margin-left: 1rem;
   }
- 
-  .btn{
-    background-color:#31347C;
-    font-size: 18px;
-    color: #FFFFFF;
-    border-radius: 4px;
-    border: none;
+  .btnContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
   }
+ .btn {
+      background-color: #31347C;
+      width: 6rem;
+      height: 1.5rem;
+      padding: 1rem;
+      font-size: 16px;
+      color: #FFFFFF;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      border: none;
+    }
+  
+  @media screen and (min-width: 768px) and (max-width: 1023px){
+
+    .FormContainer{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 21.313rem;
+      height: 43.688rem;
+    }
+    .subtitle{
+      font-size: 16px;
+    }
+    .titleBox{
+      background-color: #FFFFFF;
+      width: 18.26rem;
+      height: 3.125rem;
+      border: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 2rem;
+      border-radius: 5px;
+    }
+    .detailContainer{
+      font-size: 14px;
+      display: flex;
+      flex-direction: column;
+      border: none;
+      align-items:center;
+      justify-content: center;
+      height: 7rem;
+      width: 100%;
+    }
+    .imgBox{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      color:#31347C;
+      margin: 1rem;
+    }
+    .workContainer{
+      display:flex;
+      flex-direction:column;
+      align-items: center;
+      justify-content:flex-start;
+      margin: 1rem;
+    }
+    .btn{
+      background-color:#31347C;
+      display: flex;
+      width: 5rem;
+      height: 1.5rem;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      color: #FFFFFF;
+      border-radius: 4px;
+    }
+  }
+    @media screen and (min-width: 393px) and (max-width: 852px) {
+      .FormContainer {
+        width: 90%;
+        height: 95%;
+      }
+  
+      .subtitle {
+        font-size: 12px;
+      }
+  
+      .titleBox {
+        width: 1rem;
+        height: 1rem;
+      }
+  
+      .detailContainer {
+        font-size: 10px;
+      }
+  
+      .imgBox {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 10px;
+      }
+      #img{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 20%;
+        font-size: 12px;
+      }
+      .form-control{
+        display: flex;
+        flex-direction: column;
+      }
+  
+      .btn {
+        width: 40%;
+        height: 20%;
+        font-size: 12px;
+      }
+    }
+  
