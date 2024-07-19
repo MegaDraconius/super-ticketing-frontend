@@ -1,16 +1,21 @@
 import { Component } from '@angular/core';
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {FormsModule} from '@angular/forms';
-import {MatButtonModule} from '@angular/material/button';
+import { FormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 @Component({
   selector: 'app-ticket-detailed-view-admin',
   standalone: true,
-  imports: [FormsModule, MatFormFieldModule, MatInputModule, MatButtonModule],
+  imports: [
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatCardModule,
+  ],
   templateUrl: './ticket-detailed-view-admin.component.html',
-  styleUrl: './ticket-detailed-view-admin.component.scss'
+  styleUrl: './ticket-detailed-view-admin.component.scss',
 })
-export class TicketDetailedViewAdminComponent {
-
-}
+export class TicketDetailedViewAdminComponent {}
