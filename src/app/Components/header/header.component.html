@@ -1,0 +1,22 @@
+<header>
+    <nav>
+      <div  class="left-nav">         
+            @if (isAdmin) {
+            <a href="#menu" (click)="toggleDropdown($event)">
+              <img id="menu" src="Menu.svg" alt="Menu del logo con dropdown">
+            </a>
+         }        
+        <div id="dropdownContent" class="dropdownContent" [class.show]="isDropdownVisible">
+          <a href="#campo1">Enlace 1</a>
+          <a href="#campo2">Enlace 2</a>
+        </div>
+        <a href="#home">
+          <img id="logo" src="Group 7.svg" alt="Luracare's logo">
+        </a>
+      </div>
+      <div class="right-nav">        
+          <img id="userProfile" src="User_Circle.svg" alt="userProfile">        
+      </div>
+    </nav>
+  </header>
+  
