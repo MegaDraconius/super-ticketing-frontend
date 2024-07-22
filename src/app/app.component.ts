@@ -1,12 +1,16 @@
 import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { FormPageComponent } from "./Pages/form-page/form-page.component";
+import { MatRadioModule } from '@angular/material/radio';
+import { MatButtonModule } from '@angular/material/button';
+import { EmptyTicketComponent } from './Components/empty-ticket/empty-ticket.component';
 import { HeaderComponent } from './Components/layout/header/header.component';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, TranslateModule],
+  imports: [RouterOutlet, FormPageComponent, MatRadioModule,MatButtonModule,HeaderComponent,EmptyTicketComponent, TranslateModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
