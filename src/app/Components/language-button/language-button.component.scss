@@ -1,0 +1,46 @@
+.languageContainer {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .mainButton {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 0;
+
+    .mat-icon {
+        width: 1.1rem;
+        color: #1D154A;
+      }
+  }
+
+  #languageIcon {
+    color: #1D154A;
+    font-size: 20px;
+  }
+
+  .dropdownIcon {
+    margin-left: 2px; /* Espacio entre el texto y la flecha */
+    color: #1D154A;
+  }
+  
+  #languageButton {
+    display: flex;
+    align-items: center;
+    color: #1D154A;
+    min-width: 0;
+    font-size: 14px;
+  }
+  
+  #menuOptions {
+    margin-left: 5rem;
+  }
+  
+  .menu-item {
+    padding: 0 8px;
+    min-width: 0;
+    font-size: 14px;
+  }
+  
