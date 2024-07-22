@@ -9,10 +9,8 @@ import { AuthService } from '../../Core/auth.service';
 import { User } from '../../Shared/Interfaces/user';
 import { LocalStorageService } from '../../Shared/Services/local-storage.service';
 import { CommonModule } from '@angular/common';
-// import { User } from '../shared/interfaces/user';
-// import { AuthService } from '../core/auth.service';
-//import { Router } from '@angular/router';
-//import { LocalStorageService } from '../shared/local-storage.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-login',
@@ -31,7 +29,7 @@ export class LoginComponent {
   private localStorageService = inject(LocalStorageService);
   private loginService = inject(AuthService);
   private formBuilder = inject(FormBuilder);
-  //private router = inject(Router) // para navegar entre rutas
+  private router = inject(Router) // para navegar entre rutas
   loginForm!: FormGroup;
   registerForm!: FormGroup;
 
@@ -55,6 +53,7 @@ export class LoginComponent {
       this.loginService.login(user).then(result => {
         this.localStorageService.setItem('token', result.accessToken)
         this.localStorageService.setItem('isAdmin', result.user.isAdmin.toString())
+        this.router.navigate(['table']) //faltaria decidir en qué ruta redirige
       })
     };
   }
