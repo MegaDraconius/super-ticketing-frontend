@@ -1,0 +1,33 @@
+<section>
+  <h2>Gestión de tickets</h2>
+  <h3>Incidencia nº es-023030</h3>
+
+  <div>
+    <mat-form-field class="example-full-width">
+      <mat-label>Título</mat-label>
+      <input matInput placeholder="Ej. Ordenador no funciona" />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Correo del usuario</mat-label>
+      <input type="email" matInput placeholder="Ej. user@gmail.com" />
+    </mat-form-field>
+  </div>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Explique su incidencia</mat-label>
+    <textarea
+      matInput
+      placeholder="Ej. Cuando enciendo el ordenador me parpadea la pantalla..."
+    ></textarea>
+  </mat-form-field>
+
+  <div id="canWorkContainer">
+    <button id="noWorkInput" mat-flat-button disabled>No puede trabajar</button>
+    <button id="workInput" mat-flat-button disabled>Puede trabajar</button>
+  </div>
+
+  <div>
+    <img src="../../Assets/smileyDoggo.jpg" alt="icon" />
+  </div>
+</section>
