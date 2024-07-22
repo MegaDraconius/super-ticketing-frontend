@@ -1,5 +1,12 @@
 export interface Ticket {
-  ticketTitle: string;
-  startDate: string;
-  status: string;
-}
+    Id: string,
+    TrackingId: string,
+    Title: string,
+    Description: string,
+    ReportDate: string,
+    Status: string,
+    Country: string,
+    Priority: string,
+    UserId: string,
+    ITEmployees: string
+  }
