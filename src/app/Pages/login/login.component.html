@@ -6,17 +6,21 @@
       <div id="landingFormContent">
         <img src="Lunacare_logo.png" alt="Lunacare logo" id="logoImg">
           <h2>¡Hola de nuevo!</h2>
-          <form [formGroup]="loginForm" > <!--(ngSubmit)="submit()"-->
+          <form [formGroup]="loginForm" (ngSubmit)="submit()"> <!--(ngSubmit)="submit()"-->
             <section>
               <mat-form-field appearance="fill">
                 <mat-label>Correo electrónico</mat-label>
                 <input matInput type="text" formControlName="email">
+                <mat-error *ngIf="loginForm.get('email')?.hasError('required')">El email es obligatorio</mat-error>
+                <mat-error *ngIf="loginForm.get('email')?.hasError('pattern')">El email no es válido</mat-error>
               </mat-form-field>
             </section>
             <section class="formField">
               <mat-form-field appearance="fill" >
                 <mat-label >Contraseña</mat-label>
                 <input matInput type="password" formControlName="password" >
+                <mat-error *ngIf="loginForm.get('password')?.hasError('required')">La contraseña es obligatoria</mat-error>
+                <mat-error *ngIf="loginForm.get('password')?.hasError('minlength')">La contraseña debe tener al menos 8 carácteres</mat-error>
               </mat-form-field>
             </section>
             <button mat-flat-button class="loginButton" color="primary" type="submit">Iniciar sesión</button>
