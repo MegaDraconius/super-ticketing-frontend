@@ -1,0 +1,126 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+section {
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+}
+
+h2 {
+  font-family: "Comfortaa", sans-serif;
+  color: #31347c;
+  font-weight: 700;
+  font-size: 0.88rem;
+  font-size: 1.63rem;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+h3 {
+  font-family: "Comfortaa", sans-serif;
+  color: #31347c;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputsDesign {
+  font-family: "Comfortaa", sans-serif;
+  font-weight: 700;
+  font-size: 1.13rem;
+  width: 100%;
+}
+
+.inputMessage {
+  height: 15vh;
+}
+
+#canWork {
+  display: flex;
+  width: 100%;
+  margin-bottom: 1rem;
+  align-self: center;
+}
+figure {
+  background-color: #d4d1db;
+  border-radius: 0.3rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.imageContainer {
+  height: 12.5rem;
+  width: 15rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  display: none;
+  height: 90%;
+  width: 90%;
+}
+
+.mat-mdc-unelevated-button:not(:disabled) {
+  background-color: #ed6d84;
+  font-family: "Comfortaa", sans-serif;
+  font-weight: 700;
+  font-size: 1.13rem;
+  width: 60%;
+  align-self: center;
+}
+
+#noWorkInput {
+  display: none;
+}
+
+#workInput {
+  display: none;
+}
+
+.mat-icon {
+  width: 3.13rem;
+  height: 3.13rem;
+  font-size: 2.5rem;
+  color: #31347c;
+}
+
+@media (min-width: 768px) {
+  .inputContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 3.75rem;
+  }
+
+  #canWorkContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.25rem;
+  }
+  #canWork {
+    display: none;
+  }
+
+  #noWorkInput {
+    display: inline-flex;
+    width: 17.31rem;
+    border-radius: 0.63rem;
+  }
+
+  #workInput {
+    display: inline-flex;
+    width: 17.31rem;
+    border-radius: 0.63rem;
+  }
+}
