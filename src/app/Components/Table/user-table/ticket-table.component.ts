@@ -15,8 +15,8 @@ import { ReportButtonComponent } from '../../report-button/report-button.compone
 import { Ticket } from '../../../Shared/ticket';
 import { LanguageButtonComponent } from '../../language-button/language-button.component';
 import { TranslateModule } from '@ngx-translate/core';
-import { TicketServiceService } from '../../Services/ticket-service.service';
 import { map, Observable, tap } from 'rxjs';
+import { TicketServiceService } from '../../../Services/ticket-service.service';
 
 
 @Component({
