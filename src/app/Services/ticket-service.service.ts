@@ -1,15 +1,18 @@
 import { Injectable, signal } from '@angular/core';
 import { TicketForm } from '../Shared/Interfaces/ticket-form';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { tap } from 'rxjs';
+import { Ticket } from '../Shared/ticket';
+import { environment } from '../../environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TicketServiceService {
+  backUrl = environment.API_URL;
   constructor(private http: HttpClient) { }
 
-  enviarIncidencia(): Observable<any> {
-    return this.http.get("http://localhost:5275/api/Ticket");
+  getTickets() {
+    return this.http.get<Ticket[]>(this.backUrl.concat("/api/Ticket")).pipe(tap(x => {return x}));
   }
 }
