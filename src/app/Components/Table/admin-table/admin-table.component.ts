@@ -1,49 +1,65 @@
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
+import { AfterViewInit, ViewChild } from '@angular/core';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatSort, MatSortModule } from '@angular/material/sort';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
-import { Ticket } from '../../Shared/ticket';
-import { ReportButtonComponent } from '../report-button/report-button.component';
-import { LanguageButtonComponent } from '../language-button/language-button.component';
+import { AdminTicket } from '../../../Shared/Interfaces/admin-ticket';
+import { ReportButtonComponent } from '../../report-button/report-button.component';
 import { TranslateModule } from '@ngx-translate/core';
+import { LanguageButtonComponent } from '../../language-button/language-button.component';
 
-const ELEMENT_DATA: Ticket[] = [
-  { ticketTitle: 'Ordenador roto', startDate: '15/07/2024', status: 'abierto' },
+const AdminELEMENT_DATA: AdminTicket[] = [
+  { Id: 'es-0000', ticketTitle: 'Ordenador roto', user:'example@example.com', startDate: '15/07/2024', priority:'No urgente', status: 'pendiente' },
   {
+    Id: 'es-0001',
     ticketTitle: 'Cargador estropeado',
+    user:'example@example.com',
     startDate: '12/07/2024',
+    priority:'No urgente',
     status: 'abierto',
   },
   {
+    Id: 'es-0002',
     ticketTitle: 'Formulario no funciona',
+    user:'example@example.com',
     startDate: '12/07/2024',
+    priority:'No urgente',
     status: 'pendiente',
   },
   {
+    Id:'es-0003',
     ticketTitle: 'Toy triste :(',
+    user:'example@example.com',
     startDate: '10/07/2024',
+    priority:'No urgente',
     status: 'en proceso',
   },
   {
+    Id: 'es-0004',
     ticketTitle: 'Pantalla negra',
+    user:'example@example.com',
     startDate: '04/07/2024',
+    priority:'No urgente',
     status: 'en proceso',
   },
   {
+    Id: 'es-0005',
     ticketTitle: 'Teclado no responde',
+    user:'example@example.com',
     startDate: '04/07/2024',
+    priority:'No urgente',
     status: 'resuelto',
   },
-  { ticketTitle: 'Web caída', startDate: '15/07/2024', status: 'resuelto' },
+  { Id:'es-0006', ticketTitle: 'Web caída',user:'example@example.com' ,startDate: '15/07/2024',priority:'urgente', status: 'resuelto' },
 ];
 
 @Component({
-  selector: 'app-ticket-table',
+  selector: 'app-admin-table',
   standalone: true,
-  imports: [
+  imports: [ 
     ReportButtonComponent,
     LanguageButtonComponent,
     MatFormFieldModule,
@@ -53,18 +69,22 @@ const ELEMENT_DATA: Ticket[] = [
     MatPaginatorModule,
     MatButtonModule,
     TranslateModule,
-  ],
-  templateUrl: './ticket-table.component.html',
-  styleUrl: './ticket-table.component.scss',
+    ],
+  templateUrl: './admin-table.component.html',
+  styleUrl: './admin-table.component.scss'
 })
-export class TicketTableComponent implements AfterViewInit {
+export class AdminTableComponent implements AfterViewInit {
   displayedColumns: string[] = [
+    'Id',
     'ticketTitle',
+    'user',
     'startDate',
+    'priority',
     'status',
     'actions',
+    'actions2',
   ];
-  dataSource = new MatTableDataSource<Ticket>(ELEMENT_DATA);
+  dataSource = new MatTableDataSource<AdminTicket>(AdminELEMENT_DATA);
 
   @ViewChild(MatPaginator, { static: false }) paginator!: MatPaginator;
   @ViewChild(MatSort, { static: false }) sort!: MatSort;

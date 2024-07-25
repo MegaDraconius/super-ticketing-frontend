@@ -6,6 +6,11 @@ import { TicketFormComponent } from './Components/ticketsForm/ticket-form/ticket
 import { AdminConfirmationPageComponent } from './Pages/admin-confirmation-page/admin-confirmation-page.component';
 import { LoginComponent } from './Pages/login/login.component';
 import { UserConfirmationPageComponent } from './Pages/user-confirmation-page/user-confirmation-page.component';
+import { TicketFormComponent } from './Components/ticketsForm/ticket-form/ticket-form.component';
+import { AdminTableComponent } from './Components/Table/admin-table/admin-table.component';
+import { PersonalAssignmentComponent } from './Pages/personal-assignment/personal-assignment.component';
+';
+
 
 export const routes: Routes = [
   {
@@ -14,14 +19,17 @@ export const routes: Routes = [
     children: [
       { path: '', component: EmptyTicketComponent },
       { path: 'table', component: TicketTableComponent },
-      {path:'form', component:TicketFormComponent},
+      { path: 'form', component: TicketFormComponent },
       { path: 'adminConfirmation', component: AdminConfirmationPageComponent },
-      { path: 'userConfirmation', component: UserConfirmationPageComponent },
-      { path: 'detailedView', component: },
+      { path: 'userConfirmation', component: UserConfirmationPageComponent }, 
+      {path: 'adminTable', component: AdminTableComponent},
+      { path: 'detailedView', component:PersonalAssignmentComponent },
+
     ],
   },
   { path: 'layout', redirectTo: '' },
   { path: 'login', component: LoginComponent },
   { path: 'adminConfirmation', component: AdminConfirmationPageComponent },
   { path: 'userConfirmation', component: UserConfirmationPageComponent },
+  
 ];
