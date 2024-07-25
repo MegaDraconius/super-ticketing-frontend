@@ -1,0 +1,134 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+section {
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+}
+
+h2 {
+  font-family: "Comfortaa", sans-serif;
+  color: #31347c;
+  font-weight: 700;
+  font-size: 0.88rem;
+  font-size: 1.63rem;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+h3 {
+  font-family: "Comfortaa", sans-serif;
+  color: #31347c;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.inputMessage {
+  height: 15vh;
+}
+
+#canWork {
+  display: flex;
+  width: 100%;
+  margin-bottom: 1rem;
+  align-self: center;
+}
+figure {
+  background-color: #d4d1db;
+  border-radius: 0.3rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.imageContainer {
+  height: 12.5rem;
+  width: 15rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  display: none;
+  height: 90%;
+  width: 90%;
+}
+
+.mat-mdc-unelevated-button:not(:disabled) {
+  background-color: #ed6d84;
+  font-family: "Comfortaa", sans-serif;
+  font-weight: 700;
+  font-size: 1.13rem;
+  align-self: center;
+}
+
+#noWorkInput {
+  display: none;
+}
+
+#workInput {
+  display: none;
+}
+
+.mat-icon {
+  width: 3.13rem;
+  height: 3.13rem;
+  font-size: 2.5rem;
+  color: #31347c;
+}
+
+@media (min-width: 768px) {
+  .inputContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 3.75rem;
+  }
+
+  :host ::ng-deep .mat-mdc-form-field {
+    color: #e2de00;
+  }
+  .inputsDesign {
+    width: 80%;
+  }
+
+  #canWorkContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.25rem;
+  }
+  #canWork {
+    display: none;
+  }
+
+  #noWorkInput {
+    display: inline-flex;
+    font-family: "Comfortaa", sans-serif;
+    font-size: 1.1rem;
+    width: 47%;
+    border-radius: 0.63rem;
+    background-color: #f24f4f;
+    border: #49454f 2px solid;
+  }
+
+  #workInput {
+    display: inline-flex;
+    font-family: "Comfortaa", sans-serif;
+    font-size: 1.1rem;
+    width: 47%;
+    background-color: #99fe75;
+    border-radius: 0.63rem;
+    border: #49454f 2px solid;
+  }
+}

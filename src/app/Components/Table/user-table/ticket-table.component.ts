@@ -11,12 +11,12 @@ import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
-import { Ticket } from '../../Shared/ticket';
-import { ReportButtonComponent } from '../report-button/report-button.component';
-import { LanguageButtonComponent } from '../language-button/language-button.component';
+import { ReportButtonComponent } from '../../report-button/report-button.component';
+import { Ticket } from '../../../Shared/ticket';
+import { LanguageButtonComponent } from '../../language-button/language-button.component';
 import { TranslateModule } from '@ngx-translate/core';
-import { TicketServiceService } from '../../Services/ticket-service.service';
 import { map, Observable, tap } from 'rxjs';
+import { TicketServiceService } from '../../../Services/ticket-service.service';
 
 
 @Component({
