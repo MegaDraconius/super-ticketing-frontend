@@ -1,0 +1,54 @@
+<section>
+  <h2>Gestión de tickets</h2>
+  <h3>Incidencia nº es-023030</h3>
+
+  <div class="inputContainer">
+    <mat-form-field class="inputsDesign">
+      <mat-label>Título</mat-label>
+      <input
+        class="textInput"
+        matInput
+        placeholder="Ej. Ordenador no funciona"
+      />
+    </mat-form-field>
+
+    <mat-form-field class="inputsDesign">
+      <mat-label>Correo del usuario</mat-label>
+      <input
+        class="textInput"
+        type="email"
+        matInput
+        placeholder="Ej. user@gmail.com"
+      />
+    </mat-form-field>
+  </div>
+
+  <mat-form-field class="inputMessage">
+    <mat-label>Explique su incidencia</mat-label>
+    <textarea
+      matInput
+      placeholder="Ej. Cuando enciendo el ordenador me parpadea la pantalla..."
+    ></textarea>
+  </mat-form-field>
+
+  <div id="canWorkContainer">
+    <button id="canWork" mat-flat-button disabled>No puede trabajar</button>
+    <button id="noWorkInput" mat-flat-button disabled>No puede trabajar</button>
+    <button id="workInput" mat-flat-button disabled>Puede trabajar</button>
+  </div>
+
+  <figure>
+    <div class="imageContainer">
+      <mat-icon
+        aria-hidden="false"
+        aria-label="Example home icon"
+        fontIcon="no_photography"
+      ></mat-icon>
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1200px-No_image_available.svg.png"
+        alt="No image to show"
+      />
+    </div>
+  </figure>
+  <button class="sendButton" mat-flat-button>ENVIAR</button>
+</section>

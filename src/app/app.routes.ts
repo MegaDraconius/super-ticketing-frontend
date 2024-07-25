@@ -1,12 +1,16 @@
 import { Routes } from '@angular/router';
-import { TicketTableComponent } from './Components/Table/user-table/ticket-table.component';
-import { LayoutComponent } from './Components/layout/layout/layout.component';
 import { EmptyTicketComponent } from './Components/empty-ticket/empty-ticket.component';
+import { LayoutComponent } from './Components/layout/layout/layout.component';
+import { TicketTableComponent } from './Components/ticket-table/ticket-table.component';
+import { TicketFormComponent } from './Components/ticketsForm/ticket-form/ticket-form.component';
 import { AdminConfirmationPageComponent } from './Pages/admin-confirmation-page/admin-confirmation-page.component';
-import { UserConfirmationPageComponent } from './Pages/user-confirmation-page/user-confirmation-page.component';
 import { LoginComponent } from './Pages/login/login.component';
+import { UserConfirmationPageComponent } from './Pages/user-confirmation-page/user-confirmation-page.component';
 import { TicketFormComponent } from './Components/ticketsForm/ticket-form/ticket-form.component';
 import { AdminTableComponent } from './Components/Table/admin-table/admin-table.component';
+import { PersonalAssignmentComponent } from './Pages/personal-assignment/personal-assignment.component';
+';
+
 
 export const routes: Routes = [
   {
@@ -19,6 +23,8 @@ export const routes: Routes = [
       { path: 'adminConfirmation', component: AdminConfirmationPageComponent },
       { path: 'userConfirmation', component: UserConfirmationPageComponent }, 
       {path: 'adminTable', component: AdminTableComponent},
+      { path: 'detailedView', component:PersonalAssignmentComponent },
+
     ],
   },
   { path: 'layout', redirectTo: '' },
