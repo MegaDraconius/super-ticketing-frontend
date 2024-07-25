@@ -1,3 +1,14 @@
-<button (click)="translateText('es')">ES</button>
-<button (click)="translateText('en')">EN</button>
-<button (click)="translateText('it')">IT</button>
+<div class="languageContainer" [matMenuTriggerFor]="menu">
+    <div class="mainButton">
+        <mat-icon id="languageIcon" aria-hidden="false" aria-label="Example home icon" fontIcon="language"></mat-icon>
+        <button id="languageButton" mat-button>
+            {{ selectedLanguage.toUpperCase() }}
+        </button>
+        <mat-icon class="dropdownIcon">arrow_drop_up</mat-icon>
+    </div>
+    <mat-menu id="menuOptions" #menu="matMenu">
+        <button class="menu-item" mat-menu-item (click)="translateText('es')">ES</button>
+        <button class="menu-item" mat-menu-item (click)="translateText('en')">EN</button>
+        <button class="menu-item" mat-menu-item (click)="translateText('it')">IT</button>
+    </mat-menu>
+</div>

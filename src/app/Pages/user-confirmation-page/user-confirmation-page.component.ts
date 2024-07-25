@@ -7,7 +7,7 @@ import { Router, RouterLink, RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-user-confirmation-page',
   standalone: true,
-  imports: [MatIconModule, MatButtonModule,RouterLink,RouterOutlet, TranslateModule],
+  imports: [MatIconModule, MatButtonModule, RouterLink, RouterOutlet, TranslateModule],
   templateUrl: './user-confirmation-page.component.html',
   styleUrl: './user-confirmation-page.component.scss',
 })
