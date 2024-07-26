@@ -18,7 +18,6 @@ import { TranslateModule } from '@ngx-translate/core';
 import { map, Observable, tap } from 'rxjs';
 import { TicketServiceService } from '../../../Services/ticket-service.service';
 
-
 @Component({
   selector: 'app-ticket-table',
   standalone: true,
