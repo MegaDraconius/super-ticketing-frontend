@@ -78,8 +78,8 @@ export class TicketFormComponent {
         Status: 'Pending',
         Country: '669a13bee4cd3cf42f7728db',
         Priority: '8',
-        // Image: this.ticketsForm.controls['img'].value,
-        Photo: 'photo test',
+        
+        Photo:this.ticketsForm.controls['img'].value,
         UserId: '66a20b4c2b51e2b2d11e22d1',
       };
 
