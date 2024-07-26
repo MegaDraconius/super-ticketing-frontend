@@ -12,7 +12,7 @@ import { UserConfirmationPageComponent } from './Pages/user-confirmation-page/us
 export const routes: Routes = [
   {
     path: '',
-    component: AdminTableComponent,
+    component: LayoutComponent,
     children: [
       { path: '', component: EmptyTicketComponent },
       { path: 'form', component: TicketFormComponent },
