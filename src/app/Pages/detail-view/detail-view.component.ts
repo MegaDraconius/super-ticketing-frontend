@@ -26,7 +26,7 @@ export class DetailViewComponent implements OnInit {
 
   ngOnInit() {
     this.ticketDetails.ticketShooter.subscribe((ticket: any) => {
-      // this.rowData = data;
+      this.rowData = ticket;
       console.log('Datos: ', ticket);
     });
   }

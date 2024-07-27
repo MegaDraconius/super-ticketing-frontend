@@ -5,7 +5,7 @@ import { AdminTableComponent } from './Components/Table/admin-table/admin-table.
 import { TicketTableComponent } from './Components/Table/user-table/ticket-table.component';
 import { TicketFormComponent } from './Components/ticketsForm/ticket-form/ticket-form.component';
 import { AdminConfirmationPageComponent } from './Pages/admin-confirmation-page/admin-confirmation-page.component';
-import { DetailViewComponent } from './Pages/detaill-view/detail-view.component';
+import { DetailViewComponent } from './Pages/detail-view/detail-view.component';
 import { LoginComponent } from './Pages/login/login.component';
 import { UserConfirmationPageComponent } from './Pages/user-confirmation-page/user-confirmation-page.component';
 

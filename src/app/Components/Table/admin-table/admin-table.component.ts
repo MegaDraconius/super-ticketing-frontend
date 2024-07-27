@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { AfterViewInit, ViewChild } from '@angular/core';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatSort, MatSortModule } from '@angular/material/sort';
@@ -12,6 +12,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { LanguageButtonComponent } from '../../language-button/language-button.component';
 import { Ticket } from '../../../Shared/ticket';
 import { TicketDetailsService } from '../../../Services/ticket-details.service';
+import { Router } from '@angular/router';
 
 const AdminELEMENT_DATA: AdminTicket[] = [
   {
@@ -105,6 +106,8 @@ export class AdminTableComponent implements AfterViewInit {
   @ViewChild(MatPaginator, { static: false }) paginator!: MatPaginator;
   @ViewChild(MatSort, { static: false }) sort!: MatSort;
 
+  router = inject(Router);
+
   constructor(private ticketDetails: TicketDetailsService) {}
 
   ngAfterViewInit() {
@@ -126,5 +129,6 @@ export class AdminTableComponent implements AfterViewInit {
   getTicketDetails(rowData: AdminTicket) {
     console.log('ticket details: ', rowData);
     this.ticketDetails.emitTicketDetails(rowData);
+    this.router.navigate(['/detailedView']);
   }
 }
