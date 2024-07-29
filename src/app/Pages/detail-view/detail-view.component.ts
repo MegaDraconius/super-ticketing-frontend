@@ -23,17 +23,27 @@ import { AdminTicket } from '../../Shared/Interfaces/admin-ticket';
 })
 export class DetailViewComponent implements OnInit {
   rawRowData!: Observable<AdminTicket>;
-  rowData!: AdminTicket;
+  rowData: AdminTicket = {
+    Id: '',
+    TrackingId: '',
+    Description: '',
+    ReportDate: '',
+    SolvedDate: '',
+    Status: '',
+    Country: '',
+    Priority: '',
+    Photo: '',
+    UserId: '',
+    UserEmail: '',
+    ItGuyId: '',
+    ItGuyEmail: '',
+    Title: '',
+  };
 
   ticketDetails = inject(TicketDetailsService);
 
   ngOnInit() {
-    this.rawRowData = this.ticketDetails.ticketShooter;
-    console.log('rawRowData: ', this.rawRowData);
-
-    this.rawRowData.subscribe((ticket: AdminTicket) => {
-      this.rowData = ticket;
-      console.log('rowData: ', this.rowData);
-    });
+    this.rowData = this.ticketDetails.ticketSignal();
+    console.log('rawRowData: ', this.rowData);
   }
 }
