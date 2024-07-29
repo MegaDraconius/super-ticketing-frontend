@@ -12,8 +12,8 @@
     </mat-form-field>
 
     <div id="canWorkContainer">
-      <button *ngIf="priority >= 8" id="cannotWorkInput" mat-flat-button disabled>No puede trabajar</button>
-      <button *ngIf="priority < 8" id="canWorkInput" mat-flat-button disabled>Puede trabajar</button>
+      <button *ngIf="priority >= 8" id="cannotWorkButton" mat-flat-button disabled>No puede trabajar</button>
+      <button *ngIf="priority < 8" id="canWorkButton" mat-flat-button disabled>Puede trabajar</button>
     </div>
 
   </div>
@@ -27,8 +27,8 @@
       <mat-form-field>
         <mat-label>Asignar técnico</mat-label>
         <mat-select [(ngModel)]="selectedValue" name="itGuy">
-          @for (itGuy of itGuy; track itGuy) {
-          <mat-option [value]="itGuy.value">{{itGuy.viewValue}}</mat-option>
+          @for (itGuy of itTeam; track $index) {
+          <mat-option [value]="itGuy.ItGuyName">{{itGuy.ItGuyName}}</mat-option>
           }
         </mat-select>
       </mat-form-field>

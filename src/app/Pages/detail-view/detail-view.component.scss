@@ -43,23 +43,7 @@ h3 {
 #canWork {
   display: flex;
   width: 100%;
-  margin-bottom: 1rem;
   align-self: center;
-}
-figure {
-  background-color: #d4d1db;
-  border-radius: 0.3rem;
-  margin-bottom: 1rem;
-  display: flex;
-  justify-content: center;
-}
-
-.imageContainer {
-  height: 12.5rem;
-  width: 15rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 img {
@@ -76,11 +60,11 @@ img {
   align-self: center;
 }
 
-#cannotWorkInput {
+#cannotWorkButton {
   display: none;
 }
 
-#canWorkInput {
+#canWorkButton {
   display: none;
 }
 
@@ -114,28 +98,33 @@ img {
     display: flex;
     justify-content: space-between;
     margin-bottom: 1.25rem;
+    width: 50%;
   }
   #canWork {
     display: none;
   }
 
-  #cannotWorkInput {
+  #cannotWorkButton {
     display: inline-flex;
     font-family: "Comfortaa", sans-serif;
-    font-size: 1.1rem;
-    width: 47%;
-    border-radius: 0.63rem;
+    font-size: 1rem;
+    color: #000000;
+    width: 90%;
+    height: 90%;
+    border-radius: 0.6rem;
     background-color: #FD6363;
-    border: #49454f 2px solid;
+    border: #49454f 1px solid;
   }
 
-  #canWorkInput {
+  #canWorkButton {
     display: inline-flex;
     font-family: "Comfortaa", sans-serif;
-    font-size: 1.1rem;
-    width: 47%;
+    font-size: 1rem;
+    color: #000000;
+    width: 90%;
+    height: 90%;
+    border-radius: 0.6rem;
     background-color: #97FB95;
-    border-radius: 0.63rem;
-    border: #49454f 2px solid;
+    border: #49454f 1px solid;
   }
 }

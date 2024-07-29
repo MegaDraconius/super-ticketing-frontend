@@ -10,11 +10,8 @@ import { AdminTicket } from '../../Shared/Interfaces/admin-ticket';
 import { MatOption, MatSelect } from '@angular/material/select';
 import { TicketFormComponent } from '../../Components/ticketsForm/ticket-form/ticket-form.component';
 import { CommonModule } from '@angular/common';
-
-interface itGuy {
-  value: string;
-  viewValue: string;
-}
+import { itGuy } from '../../Shared/Interfaces/itGuy';
+import { ItTeamService } from '../../Shared/Services/it-team.service';
 
 interface status {
   value: string;
@@ -58,25 +55,27 @@ export class DetailViewComponent implements OnInit {
   };
   priority: number = 0;
   selectedValue!: string;
-
-  itGuy: itGuy[] = [
-    { value: 'laura-0', viewValue: 'Laura' },
-    { value: 'alex-1', viewValue: 'Alex' },
-    { value: 'sara-2', viewValue: 'Sara' },
-  ];
+  itTeam: itGuy[] = [];
 
   status: status[] = [
-    { value: 'laura-0', viewValue: 'Pendiente' },
-    { value: 'alex-1', viewValue: 'En curso' },
-    { value: 'sara-2', viewValue: 'Finalizado' },
+    { value: 'pendiente', viewValue: 'Pendiente' },
+    { value: 'enCurso', viewValue: 'En curso' },
+    { value: 'finalizado', viewValue: 'Finalizado' },
   ];
 
   ticketDetails = inject(TicketDetailsService);
+  itTeamService = inject(ItTeamService);
 
   ngOnInit() {
     this.rowData = this.ticketDetails.ticketSignal();
 
-    this.priority = parseInt(this.rowData.Priority)
+    this.priority = parseInt(this.rowData.Priority);
     console.log('rawRowData: ', this.rowData);
+
+    this.itTeamService.getItTeam().subscribe((result) => {
+      this.itTeam = result.map((itGuy) => {
+        return itGuy;
+      });
+    });
   }
 }
