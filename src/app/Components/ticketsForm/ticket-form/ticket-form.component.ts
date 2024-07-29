@@ -40,6 +40,9 @@ export class TicketFormComponent {
       details: ['', Validators.minLength(3)],
       img: [null],
       motive: ['', Validators.required],
+      canWork: [null],
+      recurrent: [null],
+      attemptedFix: [null]
     });
   }
 
@@ -61,6 +64,52 @@ export class TicketFormComponent {
       });
     }
   }
+  onMotiveChange(event: any) {
+    this.technicalProblem = event.value == '2';
+    if (!this.technicalProblem) {
+      this.ticketsForm.patchValue({
+        canWork: null,
+        recurrent: null,
+        attemptedFix: null
+      });
+    }
+  }
+
+  calculatePriority() {
+    let priority = 0;
+    const motive = this.ticketsForm.controls['motive'].value;
+    const canWork = this.ticketsForm.controls['canWork'].value;
+    const recurrent = this.ticketsForm.controls['recurrent'].value;
+
+    switch (motive) {
+      case '1': 
+        priority = 3;
+        break;
+      case '2': 
+        priority = 8;
+        break;
+      case '3': 
+        priority = 5;
+        break;
+    }
+
+    if (this.technicalProblem) {
+      if (recurrent === '1') {
+        priority += 1;
+      } else if (recurrent === '2') {
+        priority -= 1;
+      }
+
+      if (canWork === '1') {
+        priority -= 1;
+      } else if (canWork === '2') {
+        priority += 1;
+      }
+    }
+
+    return priority;
+  }
+
   submit() {
     if (this.ticketsForm.valid) {
       // const ticket:TicketForm={
@@ -68,6 +117,7 @@ export class TicketFormComponent {
       //   details:this.ticketsForm.controls["details"].value,
       //   img:this.ticketsForm.controls["img"].value,
       // }
+      const priority = this.calculatePriority();
 
       const ticket: Ticket = {
         TrackingId: 'ES-00000000003',
@@ -77,7 +127,7 @@ export class TicketFormComponent {
         // SolvedDate: '2024-07-24T07:33:18.165Z',
         Status: 'Pending',
         Country: '669a13bee4cd3cf42f7728db',
-        Priority: '8',
+        Priority:priority.toString(),
         
         Photo:this.ticketsForm.controls['img'].value,
         UserId: '66a20b4c2b51e2b2d11e22d1',
