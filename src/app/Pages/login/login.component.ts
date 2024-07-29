@@ -53,7 +53,12 @@ export class LoginComponent {
       this.loginService.login(user).then(result => {
         this.localStorageService.setItem('token', result.accessToken)
         this.localStorageService.setItem('isAdmin', result.user.isAdmin.toString())
-        this.router.navigate(['table']) //faltaria decidir en qué ruta redirige
+
+        if(result.user.isAdmin.toString() === "true"){
+          this.router.navigate(['admin']) //faltaria decidir en qué ruta redirige
+        } else {
+          this.router.navigate(['user']) //faltaria decidir en qué ruta redirige
+        }
       })
     };
   }
