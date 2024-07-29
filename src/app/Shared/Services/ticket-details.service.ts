@@ -1,10 +1,11 @@
 import { EventEmitter, Injectable, Output } from '@angular/core';
+import { AdminTicket } from '../Interfaces/admin-ticket';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TicketDetailsService {
-  @Output() ticketShooter: EventEmitter<any> = new EventEmitter();
+  @Output() ticketShooter: EventEmitter<AdminTicket> = new EventEmitter();
 
   constructor() {}
 

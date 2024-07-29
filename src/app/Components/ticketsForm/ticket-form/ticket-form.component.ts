@@ -9,7 +9,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { TicketForm } from '../../../Shared/Interfaces/ticket-form';
 import { MatButtonModule } from '@angular/material/button';
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
-import { TicketServiceService } from '../../../Services/ticket-service.service';
+import { TicketServiceService } from '../../../Shared/Services/ticket-service.service';
 import { Ticket } from '../../../Shared/ticket';
 
 @Component({

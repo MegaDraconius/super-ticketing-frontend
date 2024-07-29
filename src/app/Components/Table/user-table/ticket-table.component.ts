@@ -16,7 +16,8 @@ import { Ticket } from '../../../Shared/ticket';
 import { LanguageButtonComponent } from '../../language-button/language-button.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { map, Observable, tap } from 'rxjs';
-import { TicketServiceService } from '../../../Services/ticket-service.service';
+import { TicketServiceService } from '../../../Shared/Services/ticket-service.service';
+import { DateHandlingService } from '../../../Shared/Services/date-handling.service';
 
 @Component({
   selector: 'app-ticket-table',
@@ -52,11 +53,20 @@ export class TicketTableComponent implements AfterViewInit, OnInit {
   @ViewChild(MatSort, { static: false }) sort!: MatSort;
 
   ticketService = inject(TicketServiceService);
+  dateHandlingService = inject(DateHandlingService);
 
   ngOnInit(): void {
     this.ticketRawData = this.ticketService.getTickets();
     this.ticketRawData.subscribe((result) => {
-      this.ticketData = [...result];
+      this.ticketData = result.map((ticket) => {
+        const parsedDate = this.dateHandlingService.parseDate(
+          ticket.ReportDate,
+          '-'
+        );
+        ticket.ReportDate = parsedDate;
+        return ticket;
+      });
+
       this.dataSource = new MatTableDataSource<Ticket>(this.ticketData);
     });
   }

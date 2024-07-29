@@ -1,16 +1,16 @@
 <section>
   <h2>Gestión de tickets</h2>
-  <h3>Incidencia nº {{ rowData?.Id }}</h3>
+  <h3>Incidencia nº {{ rowData.TrackingId }}</h3>
 
   <div class="inputContainer">
     <mat-form-field class="inputsDesign">
       <!-- <mat-label>Título</mat-label> -->
-      <input class="textInput" matInput [value]="rowData?.Title" disabled />
+      <input class="textInput" matInput [value]="rowData.Title" disabled />
     </mat-form-field>
 
     <mat-form-field class="inputsDesign">
       <!-- <mat-label>Correo del usuario</mat-label> -->
-      <input class="textInput" type="email" matInput [value]="rowData?.user" disabled />
+      <input class="textInput" type="email" matInput [value]="rowData.UserEmail" disabled />
     </mat-form-field>
   </div>
 

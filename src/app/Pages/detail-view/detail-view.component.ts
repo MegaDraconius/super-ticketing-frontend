@@ -1,10 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
-import { TicketDetailsService } from '../../Services/ticket-details.service';
+import { TicketDetailsService } from '../../Shared/Services/ticket-details.service';
+import { Observable } from 'rxjs';
+import { AdminTicket } from '../../Shared/Interfaces/admin-ticket';
 
 @Component({
   selector: 'app-ticket-detailed-view-admin',
@@ -20,14 +22,18 @@ import { TicketDetailsService } from '../../Services/ticket-details.service';
   styleUrl: './detail-view.component.scss',
 })
 export class DetailViewComponent implements OnInit {
-  rowData: any;
+  rawRowData!: Observable<AdminTicket>;
+  rowData!: AdminTicket;
 
-  constructor(private ticketDetails: TicketDetailsService) {}
+  ticketDetails = inject(TicketDetailsService);
 
   ngOnInit() {
-    this.ticketDetails.ticketShooter.subscribe((ticket: any) => {
+    this.rawRowData = this.ticketDetails.ticketShooter;
+    console.log('rawRowData: ', this.rawRowData);
+
+    this.rawRowData.subscribe((ticket: AdminTicket) => {
       this.rowData = ticket;
-      console.log('Datos: ', ticket);
+      console.log('rowData: ', this.rowData);
     });
   }
 }

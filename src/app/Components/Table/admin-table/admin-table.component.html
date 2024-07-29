@@ -17,37 +17,37 @@
             <!-- ID Column -->
             <ng-container matColumnDef="Id">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ 'ID' | translate}} </th>
-                <td mat-cell *matCellDef="let element"> {{element.Id}} </td>
+                <td mat-cell *matCellDef="let element"> {{element.TrackingId}} </td>
             </ng-container>
 
             <!-- TicketTitle Column -->
             <ng-container matColumnDef="ticketTitle">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ 'columnTitle1'| translate}} </th>
-                <td mat-cell *matCellDef="let element"> {{element.ticketTitle}} </td>
+                <td mat-cell *matCellDef="let element"> {{element.Title}} </td>
             </ng-container>
 
             <!-- StartDate Column -->
             <ng-container matColumnDef="user">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ 'Usuario'| translate }} </th>
-                <td mat-cell *matCellDef="let element"> {{element.user}} </td>
+                <td mat-cell *matCellDef="let element"> {{element.UserEmail}} </td>
             </ng-container>
 
             <!-- Status Column -->
             <ng-container matColumnDef="startDate">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ 'Fecha'| translate }} </th>
-                <td mat-cell *matCellDef="let element"> {{element.startDate}} </td>
+                <td mat-cell *matCellDef="let element"> {{element.ReportDate}} </td>
             </ng-container>
 
             <!-- Priority Column -->
             <ng-container matColumnDef="priority">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ 'Prioridad'| translate}} </th>
-                <td mat-cell *matCellDef="let element"> {{element.priority}} </td>
+                <td mat-cell *matCellDef="let element"> {{element.Priority}} </td>
             </ng-container>
 
             <!-- Status Column -->
             <ng-container matColumnDef="status">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ 'Estado' | translate}} </th>
-                <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+                <td mat-cell *matCellDef="let element"> {{element.Status}} </td>
             </ng-container>
 
 
