@@ -13,7 +13,7 @@ import { MatSort, MatSortModule } from '@angular/material/sort';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { TranslateModule } from '@ngx-translate/core';
 import { map, Observable, tap } from 'rxjs';
-import { TicketServiceService } from '../../../Services/ticket-service.service';
+import { TicketServiceService } from '../../../Shared/Services/ticket-service.service';
 import { DateHandlingService } from '../../../Shared/Services/date-handling.service';
 import { Ticket } from '../../../Shared/ticket';
 import { LanguageButtonComponent } from '../../language-button/language-button.component';
