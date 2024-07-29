@@ -5,7 +5,6 @@ import { AdminTicket } from '../Interfaces/admin-ticket';
   providedIn: 'root',
 })
 export class TicketDetailsService {
-  // @Output() ticketShooter: EventEmitter<AdminTicket> = new EventEmitter();
   ticketSignal = signal<AdminTicket>({
     Id: '',
     TrackingId: '',
