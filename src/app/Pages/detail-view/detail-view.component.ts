@@ -75,6 +75,8 @@ export class DetailViewComponent implements OnInit {
 
   ngOnInit() {
     this.rowData = this.ticketDetails.ticketSignal();
+
+    this.priority = parseInt(this.rowData.Priority)
     console.log('rawRowData: ', this.rowData);
   }
 }
