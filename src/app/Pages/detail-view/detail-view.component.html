@@ -5,7 +5,7 @@
   <div class="inputContainer">
     <mat-form-field class="inputsDesign">
       <!-- <mat-label>Título</mat-label> -->
-      <input class="textInput" matInput [value]="rowData.Title" disabled />
+      <input [ngModel]="rowData.Title" class="textInput" matInput disabled />
     </mat-form-field>
 
     <mat-form-field class="inputsDesign">
