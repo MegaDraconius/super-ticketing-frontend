@@ -7,6 +7,17 @@ import { MatInputModule } from '@angular/material/input';
 import { TicketDetailsService } from '../../Shared/Services/ticket-details.service';
 import { Observable } from 'rxjs';
 import { AdminTicket } from '../../Shared/Interfaces/admin-ticket';
+import { MatOption, MatSelect } from '@angular/material/select';
+
+interface itGuy {
+  value: string;
+  viewValue: string;
+}
+
+interface status {
+  value: string;
+  viewValue: string;
+}
 
 @Component({
   selector: 'app-ticket-detailed-view-admin',
@@ -17,6 +28,8 @@ import { AdminTicket } from '../../Shared/Interfaces/admin-ticket';
     MatInputModule,
     MatButtonModule,
     MatIconModule,
+    MatSelect,
+    MatOption,
   ],
   templateUrl: './detail-view.component.html',
   styleUrl: './detail-view.component.scss',
@@ -39,6 +52,20 @@ export class DetailViewComponent implements OnInit {
     ItGuyEmail: '',
     Title: '',
   };
+
+  selectedValue!: string;
+
+  itGuy: itGuy[] = [
+    { value: 'laura-0', viewValue: 'Laura' },
+    { value: 'alex-1', viewValue: 'Alex' },
+    { value: 'sara-2', viewValue: 'Sara' },
+  ];
+
+  status: status[] = [
+    { value: 'laura-0', viewValue: 'Pendiente' },
+    { value: 'alex-1', viewValue: 'En curso' },
+    { value: 'sara-2', viewValue: 'Finalizado' },
+  ];
 
   ticketDetails = inject(TicketDetailsService);
 

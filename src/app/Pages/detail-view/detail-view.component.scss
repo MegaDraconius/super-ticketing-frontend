@@ -74,11 +74,11 @@ img {
   align-self: center;
 }
 
-#noWorkInput {
+#cannotWorkInput {
   display: none;
 }
 
-#workInput {
+#canWorkInput {
   display: none;
 }
 
@@ -87,6 +87,11 @@ img {
   height: 3.13rem;
   font-size: 2.5rem;
   color: #31347c;
+}
+
+.dropDownOptions {
+  display: flex;
+  gap: 4rem;
 }
 
 @media (min-width: 768px) {
@@ -112,7 +117,7 @@ img {
     display: none;
   }
 
-  #noWorkInput {
+  #cannotWorkInput {
     display: inline-flex;
     font-family: "Comfortaa", sans-serif;
     font-size: 1.1rem;
@@ -122,7 +127,7 @@ img {
     border: #49454f 2px solid;
   }
 
-  #workInput {
+  #canWorkInput {
     display: inline-flex;
     font-family: "Comfortaa", sans-serif;
     font-size: 1.1rem;

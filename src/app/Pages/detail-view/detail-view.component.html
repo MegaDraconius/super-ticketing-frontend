@@ -4,34 +4,58 @@
 
   <div class="inputContainer">
     <mat-form-field class="inputsDesign">
-      <!-- <mat-label>Título</mat-label> -->
       <input [ngModel]="rowData.Title" class="textInput" matInput disabled />
     </mat-form-field>
 
     <mat-form-field class="inputsDesign">
-      <!-- <mat-label>Correo del usuario</mat-label> -->
       <input class="textInput" type="email" matInput [value]="rowData.UserEmail" disabled />
     </mat-form-field>
+
+    <div id="canWorkContainer">
+      <button id="canWorkInput" mat-flat-button disabled>No puede trabajar</button>
+      <button id="cannotWorkInput" mat-flat-button disabled>Puede trabajar</button>
+    </div>
   </div>
 
   <mat-form-field class="inputMessage">
-    <mat-label>Explique su incidencia</mat-label>
-    <textarea matInput></textarea>
+    <textarea matInput [value]="rowData.Description" disabled></textarea>
   </mat-form-field>
 
-  <div id="canWorkContainer">
-    <button id="canWork" mat-flat-button disabled>No puede trabajar</button>
-    <button id="noWorkInput" mat-flat-button disabled>No puede trabajar</button>
-    <button id="workInput" mat-flat-button disabled>Puede trabajar</button>
+  <div class="dropDownOptions">
+    <form class="itGuySelection">
+      <mat-form-field>
+        <mat-label>Asignar técnico</mat-label>
+        <mat-select [(ngModel)]="selectedValue" name="itGuy">
+          @for (itGuy of itGuy; track itGuy) {
+          <mat-option [value]="itGuy.value">{{itGuy.viewValue}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+    </form>
+
+    <form class="statusSelection">
+      <mat-form-field>
+        <mat-label>Cambiar estado</mat-label>
+        <mat-select [(ngModel)]="selectedValue" name="status">
+          @for (status of status; track status) {
+          <mat-option [value]="status.value">{{status.viewValue}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+    </form>
   </div>
 
-  <figure>
+  <!-- <figure>
     <div class="imageContainer">
       <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="no_photography"></mat-icon>
       <img
         src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1200px-No_image_available.svg.png"
         alt="No image to show" />
     </div>
-  </figure>
+  </figure> -->
+
+  <mat-form-field class="inputMessage">
+    <textarea matInput></textarea>
+  </mat-form-field>
   <button class="sendButton" mat-flat-button>ENVIAR</button>
 </section>
