@@ -5,6 +5,7 @@ import { catchError, firstValueFrom, of, tap } from 'rxjs';
 import { Ticket } from '../ticket';
 import { environment } from '../../../environments/environment.development';
 import { AdminTicket } from '../Interfaces/admin-ticket';
+import { UpdatedTicket } from '../Interfaces/updated-ticket';
 
 @Injectable({
   providedIn: 'root',
@@ -47,5 +48,12 @@ export class TicketServiceService {
     } catch (e) {
       console.error(e);
     }
+  }
+
+  async updateTicket(updateTicket: UpdatedTicket) {
+    const result = await this.http
+      .put(this.backUrl.concat('/api/Ticket'), updateTicket)
+      .pipe(catchError((e) => of(e)));
+    return result;
   }
 }

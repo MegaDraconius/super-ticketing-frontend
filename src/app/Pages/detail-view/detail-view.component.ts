@@ -12,11 +12,11 @@ import { TicketFormComponent } from '../../Components/ticketsForm/ticket-form/ti
 import { CommonModule } from '@angular/common';
 import { itGuy } from '../../Shared/Interfaces/itGuy';
 import { ItTeamService } from '../../Shared/Services/it-team.service';
-
-interface status {
-  value: string;
-  viewValue: string;
-}
+import { status } from '../../Shared/Interfaces/status';
+import { StatusService } from '../../Shared/Services/status.service';
+import { Router } from '@angular/router';
+import { UpdatedTicket } from '../../Shared/Interfaces/updated-ticket';
+import { TicketServiceService } from '../../Shared/Services/ticket-service.service';
 
 @Component({
   selector: 'app-ticket-detailed-view-admin',
@@ -56,15 +56,14 @@ export class DetailViewComponent implements OnInit {
   priority: number = 0;
   selectedValue!: string;
   itTeam: itGuy[] = [];
+  status: status[] = [];
 
-  status: status[] = [
-    { value: 'pendiente', viewValue: 'Pendiente' },
-    { value: 'enCurso', viewValue: 'En curso' },
-    { value: 'finalizado', viewValue: 'Finalizado' },
-  ];
+  router = inject(Router);
 
   ticketDetails = inject(TicketDetailsService);
   itTeamService = inject(ItTeamService);
+  statusService = inject(StatusService);
+  ticketService = inject(TicketServiceService);
 
   ngOnInit() {
     this.rowData = this.ticketDetails.ticketSignal();
@@ -77,5 +76,24 @@ export class DetailViewComponent implements OnInit {
         return itGuy;
       });
     });
+
+    this.statusService.getStatus().subscribe((result) => {
+      this.status = result.map((status) => {
+        console.log(status);
+        return status;
+      });
+    });
+  }
+
+  submit() {
+    const updatedTicket: UpdatedTicket = {
+      Description: 'cosorro',
+      Status: 'Resuelto',
+      Priority: '7',
+      Photo: 'string',
+      ItGuyEmail: '',
+    };
+    this.ticketService.updateTicket(updatedTicket);
+    this.router.navigate(['/adminConfirmation']);
   }
 }

@@ -38,8 +38,8 @@
       <mat-form-field>
         <mat-label>Cambiar estado</mat-label>
         <mat-select [(ngModel)]="selectedValue" name="status">
-          @for (status of status; track status) {
-          <mat-option [value]="status.value">{{status.viewValue}}</mat-option>
+          @for (statusInfo of status; track $index) {
+          <mat-option [value]="statusInfo.StatusValue">{{statusInfo.StatusValue}}</mat-option>
           }
         </mat-select>
       </mat-form-field>
@@ -51,5 +51,5 @@
     <mat-label>Respuesta al usuario</mat-label>
     <textarea matInput></textarea>
   </mat-form-field>
-  <button class="sendButton" mat-flat-button>ENVIAR</button>
+  <button class="sendButton" type="submit" mat-flat-button>ENVIAR</button>
 </section>
