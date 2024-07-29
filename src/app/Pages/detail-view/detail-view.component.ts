@@ -8,6 +8,8 @@ import { TicketDetailsService } from '../../Shared/Services/ticket-details.servi
 import { Observable } from 'rxjs';
 import { AdminTicket } from '../../Shared/Interfaces/admin-ticket';
 import { MatOption, MatSelect } from '@angular/material/select';
+import { TicketFormComponent } from '../../Components/ticketsForm/ticket-form/ticket-form.component';
+import { CommonModule } from '@angular/common';
 
 interface itGuy {
   value: string;
@@ -30,6 +32,8 @@ interface status {
     MatIconModule,
     MatSelect,
     MatOption,
+    TicketFormComponent,
+    CommonModule,
   ],
   templateUrl: './detail-view.component.html',
   styleUrl: './detail-view.component.scss',
@@ -52,7 +56,7 @@ export class DetailViewComponent implements OnInit {
     ItGuyEmail: '',
     Title: '',
   };
-
+  priority: number = 0;
   selectedValue!: string;
 
   itGuy: itGuy[] = [
