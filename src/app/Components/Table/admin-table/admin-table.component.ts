@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { AfterViewInit, ViewChild } from '@angular/core';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatSort, MatSortModule } from '@angular/material/sort';
@@ -10,56 +10,17 @@ import { AdminTicket } from '../../../Shared/Interfaces/admin-ticket';
 import { ReportButtonComponent } from '../../report-button/report-button.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { LanguageButtonComponent } from '../../language-button/language-button.component';
-
-const AdminELEMENT_DATA: AdminTicket[] = [
-  { Id: 'es-0000', ticketTitle: 'Ordenador roto', user:'example@example.com', startDate: '15/07/2024', priority:'No urgente', status: 'pendiente' },
-  {
-    Id: 'es-0001',
-    ticketTitle: 'Cargador estropeado',
-    user:'example@example.com',
-    startDate: '12/07/2024',
-    priority:'No urgente',
-    status: 'abierto',
-  },
-  {
-    Id: 'es-0002',
-    ticketTitle: 'Formulario no funciona',
-    user:'example@example.com',
-    startDate: '12/07/2024',
-    priority:'No urgente',
-    status: 'pendiente',
-  },
-  {
-    Id:'es-0003',
-    ticketTitle: 'Toy triste :(',
-    user:'example@example.com',
-    startDate: '10/07/2024',
-    priority:'No urgente',
-    status: 'en proceso',
-  },
-  {
-    Id: 'es-0004',
-    ticketTitle: 'Pantalla negra',
-    user:'example@example.com',
-    startDate: '04/07/2024',
-    priority:'No urgente',
-    status: 'en proceso',
-  },
-  {
-    Id: 'es-0005',
-    ticketTitle: 'Teclado no responde',
-    user:'example@example.com',
-    startDate: '04/07/2024',
-    priority:'No urgente',
-    status: 'resuelto',
-  },
-  { Id:'es-0006', ticketTitle: 'Web caída',user:'example@example.com' ,startDate: '15/07/2024',priority:'urgente', status: 'resuelto' },
-];
+import { Ticket } from '../../../Shared/ticket';
+import { TicketDetailsService } from '../../../Shared/Services/ticket-details.service';
+import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { TicketServiceService } from '../../../Shared/Services/ticket-service.service';
+import { DateHandlingService } from '../../../Shared/Services/date-handling.service';
 
 @Component({
   selector: 'app-admin-table',
   standalone: true,
-  imports: [ 
+  imports: [
     ReportButtonComponent,
     LanguageButtonComponent,
     MatFormFieldModule,
@@ -69,11 +30,11 @@ const AdminELEMENT_DATA: AdminTicket[] = [
     MatPaginatorModule,
     MatButtonModule,
     TranslateModule,
-    ],
+  ],
   templateUrl: './admin-table.component.html',
-  styleUrl: './admin-table.component.scss'
+  styleUrl: './admin-table.component.scss',
 })
-export class AdminTableComponent implements AfterViewInit {
+export class AdminTableComponent implements AfterViewInit, OnInit {
   displayedColumns: string[] = [
     'Id',
     'ticketTitle',
@@ -84,12 +45,33 @@ export class AdminTableComponent implements AfterViewInit {
     'actions',
     'actions2',
   ];
-  dataSource = new MatTableDataSource<AdminTicket>(AdminELEMENT_DATA);
+
+  ticketRawData!: Observable<AdminTicket[]>;
+  ticketData: AdminTicket[] = [];
+  dataSource!: MatTableDataSource<AdminTicket>;
 
   @ViewChild(MatPaginator, { static: false }) paginator!: MatPaginator;
   @ViewChild(MatSort, { static: false }) sort!: MatSort;
 
-  constructor() {}
+  router = inject(Router);
+  ticketService = inject(TicketServiceService);
+  ticketDetails = inject(TicketDetailsService);
+  dateHandlingService = inject(DateHandlingService);
+
+  ngOnInit(): void {
+    this.ticketRawData = this.ticketService.getAdminTickets();
+    this.ticketRawData.subscribe((result) => {
+      this.ticketData = result.map((ticket) => {
+        const parsedDate = this.dateHandlingService.parseDate(
+          ticket.ReportDate,
+          '-'
+        );
+        ticket.ReportDate = parsedDate;
+        return ticket;
+      });
+      this.dataSource = new MatTableDataSource<AdminTicket>(this.ticketData);
+    });
+  }
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
@@ -103,5 +85,11 @@ export class AdminTableComponent implements AfterViewInit {
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
+  }
+
+  getTicketDetails(rowData: AdminTicket) {
+    console.log('ticket details: ', rowData);
+    this.ticketDetails.emitTicketDetails(rowData);
+    this.router.navigate(['/detailedView']);
   }
 }

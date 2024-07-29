@@ -1,9 +1,10 @@
 import { Injectable, signal } from '@angular/core';
-import { TicketForm } from '../Shared/Interfaces/ticket-form';
+import { TicketForm } from '../Interfaces/ticket-form';
 import { HttpClient } from '@angular/common/http';
 import { catchError, firstValueFrom, of, tap } from 'rxjs';
-import { Ticket } from '../Shared/ticket';
-import { environment } from '../../environments/environment.development';
+import { Ticket } from '../ticket';
+import { environment } from '../../../environments/environment.development';
+import { AdminTicket } from '../Interfaces/admin-ticket';
 
 @Injectable({
   providedIn: 'root',
@@ -18,6 +19,16 @@ export class TicketServiceService {
         return x;
       })
     );
+  }
+
+  getAdminTickets() {
+    return this.http
+      .get<AdminTicket[]>(this.backUrl.concat('/api/Ticket'))
+      .pipe(
+        tap((x) => {
+          return x;
+        })
+      );
   }
 
   async createTicket(ticket: Ticket) {
