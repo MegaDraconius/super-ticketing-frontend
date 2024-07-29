@@ -14,6 +14,10 @@ import { TicketServiceService } from '../../Shared/Services/ticket-service.servi
 export class EmptyTicketComponent implements OnInit {
   ticketService = inject(TicketServiceService);
   ngOnInit(): void {
+
+    //const result = this.ticketService.enviarIncidencia().subscribe(x => console.log(x))
+
     const result = this.ticketService.getTickets();
+
   }
 }
