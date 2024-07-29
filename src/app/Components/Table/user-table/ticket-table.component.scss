@@ -8,7 +8,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
+  margin: 1rem;
 }
 
 #ticketSearchbar{
@@ -41,6 +42,7 @@ table {
   #detailButton {
     background-color: #7075F4;
     color: white;
+    margin-top:5px;
     
     &:hover {
       background-color: #8b8ffa;
@@ -52,4 +54,51 @@ table {
     position: fixed;
     top: 95%;
     left: 5%;
+  }
+  @media screen and (min-width: 852px) and (max-width: 1023px) {
+    .ticketTableContainer {
+      overflow: scroll;
+      width: 90%;
+      height: 90%;
+    }
+    .aboveTable{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap:1rem;
+    }
+  #ticketSearchbar{
+    width:100%;
+    height: 10%;
+  }
+  .mat-mdc-form-field {
+    font-size: 10px;
+    width: 100%;
+  }
+  }
+  
+  @media screen and (min-width: 393px) and (max-width: 852px) {
+    .ticketTableContainer {
+      overflow: scroll;
+    }
+    .aboveTable{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap:1rem;
+      font-size: 20px;
+    }
+    .mat-elevation-z8{
+      width: 90%;
+    }
+    #ticketSearchbar{
+      width:100%;
+      height: 20%;
+      position: absolute;
+    }
+    .mat-mdc-form-field {
+      font-size: 10px;
+      width: 100%;
+      height: 20%;
+    }
   }
