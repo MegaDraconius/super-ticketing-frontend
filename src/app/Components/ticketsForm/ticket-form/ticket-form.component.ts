@@ -42,7 +42,7 @@ export class TicketFormComponent {
       motive: ['', Validators.required],
       canWork: [null],
       recurrent: [null],
-      attemptedFix: [null]
+      attemptedFix: [null],
     });
   }
 
@@ -70,7 +70,7 @@ export class TicketFormComponent {
       this.ticketsForm.patchValue({
         canWork: null,
         recurrent: null,
-        attemptedFix: null
+        attemptedFix: null,
       });
     }
   }
@@ -82,13 +82,13 @@ export class TicketFormComponent {
     const recurrent = this.ticketsForm.controls['recurrent'].value;
 
     switch (motive) {
-      case '1': 
+      case '1':
         priority = 3;
         break;
-      case '2': 
+      case '2':
         priority = 8;
         break;
-      case '3': 
+      case '3':
         priority = 5;
         break;
     }
@@ -127,9 +127,10 @@ export class TicketFormComponent {
         // SolvedDate: '2024-07-24T07:33:18.165Z',
         Status: 'Pending',
         Country: '669a13bee4cd3cf42f7728db',
-        Priority:priority.toString(),
-        
-        Photo:this.ticketsForm.controls['img'].value,
+        Priority: priority.toString(),
+
+        // Photo:this.ticketsForm.controls['img'].value,
+        Photo: 'Future photo',
         UserId: '66a20b4c2b51e2b2d11e22d1',
       };
 
