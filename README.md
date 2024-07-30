@@ -3,15 +3,17 @@
 ## Índice 📝
 
 - [Descripción](#descripción-)
+- [Developers](#developers-)
+- [Tecnologías empleadas](#tecnologías-empleadas-en-el-front-)
 - [Instalación](#instalación-)
   - [Requisitos previos](#requisitos-previos)
   - [Instalación del proyecto](#instalación-del-proyecto)
 - [Como ejecutar en local](#como-ejecutar-en-local️)
 - [Estructura del proyecto](#estructura-del-proyecto-)
-- [Tecnologías](#tecnologías-empleadas-en-el-front-)
+
 - [Contribuición](#contribuición-)
   - [Convenciones del proyecto](#convención-de-codificaciónen-ticketing)
-- [Developers](#developers-)
+
 - [Distribución y seguimiento de tareas con metodologías ágiles](#distribución-y-seguimiento-de-tareas-con-metodologías-ágiles-)
 - [Mockup y capturas del proyecto](#mockup-y-capturas-de-pantalla-)
 - [Despliegue del Proyecto](#Despliegue-del-Proyect-)
@@ -34,6 +36,42 @@ Tests Unitarios: Implementación de tests para asegurar la calidad y correcto fu
 <b>Objetivo del Proyecto</b>:
 <br>
 A través de este proyecto, buscamos contribuir a la conservación del medio ambiente y al bienestar social, proporcionando una herramienta útil y accesible para la gestión de recursos hídricos en Cataluña. La aplicación está diseñada para ser utilizada por autoridades locales, investigadores y ciudadanos interesados en el seguimiento de las condiciones de sequía, ayudando a tomar decisiones informadas y a promover la sostenibilidad.consumo de APIs.
+
+
+## Developers 👩‍💻
+
+
+[<img src="https://avatars.githubusercontent.com/u/47445852?v=4" width=115><br><sub>Alex Morell</sub>](https://github.com/alexmrtc) |  [<img src="https://avatars.githubusercontent.com/u/162144774?v=4" width=115><br><sub>Laura Benavides</sub>](https://github.com/LauraBenavides33) |  [<img src="https://avatars.githubusercontent.com/u/171134273?v=4" width=115><br><sub>Roger Esteve</sub>](https://github.com/alejandria1899) |
+| :---: | :---: | :---: |
+[<img src="https://avatars.githubusercontent.com/u/146776685?v=4" width=115><br><sub>Michely Paredes</sub>](https://github.com/Michely05) |  [<img src="https://avatars.githubusercontent.com/u/162126428?v=4" width=115><br><sub>Iván Vallejos</sub>](https://github.com/MegaDraconius) |  [<img src="https://avatars.githubusercontent.com/u/162146662?v=4" width=115><br><sub>Sara Jorja</sub>](https://github.com/SaraJoLo) |
+
+
+## Tecnologías empleadas en el Frontend 🔬
+
+- IDE para el proyecto:
+
+  - [![VSC - VSC](https://img.shields.io/static/v1?label=Visual+Studio+Code&message=Visual+Studio+Code&color=%2324adf3&logo=visual+studio)](https://code.visualstudio.com/)
+
+- Gestor de paquetes:
+  - [![Node JS - Node JS](https://img.shields.io/static/v1?label=Node+JS&message=Node+JS&color=%233f8a3e&logo=node)](https://nodejs.org/en)
+
+- Tecnologías empleadas para el desarrollo del programa:
+
+  - [![html 5 - html 5](https://img.shields.io/static/v1?label=html+5&message=html+5&color=%23e4552e&logo=html5)](https://developer.mozilla.org/es/docs/Glossary/HTML5)
+  - [![Sass - Sass](https://img.shields.io/static/v1?label=Sass&message=Sass&color=%23bf4080&logo=sass)](https://sass-lang.com/)
+  - [![TypeScript - TypeScript](https://img.shields.io/static/v1?label=TypeScript&message=TypeScript&color=%233178c6&logo=typescript)](https://www.typescriptlang.org/)
+  - [![Angular - Angular](https://img.shields.io/badge/Angular-Angular-red?logo=angular)](https://angular.dev/)
+
+- Tecnologías para realizar testing:
+
+  - [![jest - jest](https://img.shields.io/static/v1?label=jest&message=jest&color=%23c7431e&logo=jest)](https://jestjs.io/es-ES/)
+ 
+
+- Otras tecnologías utilizadas:
+
+  - [![Angular Material - Angular Material](https://img.shields.io/static/v1?label=Angular+Material&message=Angular+Material&color=%23fdb14b&logo=angular+material)](https://material.angular.io/)
+
+
 
 ## Enlaces a los repositorios 📦
 
@@ -139,22 +177,6 @@ Para visualizar el proyecto en Local:
   - **_routes:_** Dentro del que se encuentra index.jsx, que contiene la lógica de rutas de la aplicación.
   - **_services:_** Dentro del que se encuentra useApi.jsx con la llamada a la API reutilizada en todos los apartados de la aplicación.
 
-## Tecnologías empleadas en el Front 🔬
-
-- [![HTML](https://img.shields.io/badge/HTML-orange?style=flat-square&logo=html&logoWidth=100&link=https://developer.mozilla.org/es/docs/Web/Guide/HTML/HTML5)](https://developer.mozilla.org/es/docs/Web/Guide/HTML/HTML5)
-- [![Sass](https://img.shields.io/badge/Sass-pink?style=flat-square&logo=Sass&link=https://sass-lang.com/)](https://sass-lang.com/)
-- [![TypeScript](https://img.shields.io/badge/TypeScript-8bd0fa?style=flat-square&logo=TypeScript&link=https://www.typescriptlang.org/)](https://www.typescriptlang.org/)
-- [![Angular](https://img.shields.io/badge/Angular-red?style=flat-square&logo=angular&link=https://angular.dev/)](https://angular.dev/)
-- [![Jest](https://img.shields.io/badge/Jest-white?style=flat-square&logoColor=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEZWil3CMPi_oxEgTaf16tBnG9ZobYXWk06w&s&link=https://jestjs.io/es-ES/)](https://jestjs.io/es-ES/)
-- [![Javascript](https://img.shields.io/badge/Javascript-yellow?style=flat-square&logo=javascript&link=https://developer.mozilla.org/es/docs/Web/JavaScript)](https://developer.mozilla.org/es/docs/Web/JavaScript)
-
-Librerias utilizadas
-
-- [![Angular Material](https://img.shields.io/badge/Angular%20Material-ffa726?style=flat-square&logo=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUnDVEqEe78HvQ9g-GMREzL1xFXgDRtcVuFUJL9qCq2XCCiAdy4oBSJXFNtdp9npGNrUM&usqp=CAU&link=https://material.angular.io/)](https://material.angular.io/)
-
-
-
-
 ## Contribuición 💻
 
 
@@ -200,14 +222,6 @@ export class MenuComponent implements OnInit {
 - Evitar palabras como *‘Manager’, ‘Processor’, ‘Data’* o *‘Info’* en el nombre de la clase. Un nombre de clase no debería ser un verbo.
 
 
-
-## Developers 👩‍💻
-
-
-[<img src="https://avatars.githubusercontent.com/u/47445852?v=4" width=115><br><sub>Alex Morell</sub>](https://github.com/alexmrtc) |  [<img src="https://avatars.githubusercontent.com/u/162144774?v=4" width=115><br><sub>Laura Benavides</sub>](https://github.com/LauraBenavides33) |  [<img src="https://avatars.githubusercontent.com/u/171134273?v=4" width=115><br><sub>Roger Esteve</sub>](https://github.com/alejandria1899) |
-| :---: | :---: | :---: |
-[<img src="https://avatars.githubusercontent.com/u/146776685?v=4" width=115><br><sub>Michely Paredes</sub>](https://github.com/Michely05) |  [<img src="https://avatars.githubusercontent.com/u/162126428?v=4" width=115><br><sub>Iván Vallejos</sub>](https://github.com/MegaDraconius) |  [<img src="https://avatars.githubusercontent.com/u/162146662?v=4" width=115><br><sub>Sara Jorja</sub>](https://github.com/SaraJoLo) |
-
 ## Distribución y seguimiento de tareas con metodologías ágiles 👩‍💻
 
 Para la gestión de nuestro proyecto, hemos utilizado Trello como nuestra herramienta principal, siguiendo la metodología Kanban para la distribución eficiente de tareas. Este enfoque nos ha permitido visualizar el flujo de trabajo, limitar la cantidad de trabajo en progreso y maximizar la eficiencia. Además, hemos seguido una serie de convenciones y mejores prácticas para garantizar la coherencia y la calidad en todo nuestro trabajo. Creemos que este enfoque estructurado y disciplinado ha sido fundamental para nuestro éxito hasta ahora y continuará guiándonos en nuestras futuras iniciativas
@@ -232,9 +246,9 @@ El diseño se realizó utilizando Figma, una potente herramienta para diseñar p
 - Version Mobile
 
 
-![Vista del programa sin tickets emitidos](/public/demoMobile1.png)
-![Vista para reportar una incidencia mediante formulario](/public/demoMobile2.png)
-![Vista del programa desde la vista Administrador para gestionar los tickets](/public/demoMobile3.png)
+![Vista del programa sin tickets emitidos](/public/mobile1.png)
+![Vista para reportar una incidencia mediante formulario](/public/mobile2.png)
+![Vista del programa desde la vista Administrador para gestionar los tickets](/public/mobile3.png)
 
 
 ## Despliegue del Proyecto 📽️
