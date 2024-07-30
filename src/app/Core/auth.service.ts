@@ -1,7 +1,6 @@
 // import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { User } from '../Shared/Interfaces/user';
-import { UserResponse } from '../Shared/Interfaces/user-response';
 import { catchError, firstValueFrom, of } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';

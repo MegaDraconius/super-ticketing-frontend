@@ -51,7 +51,7 @@ export class LoginComponent {
     if (this.loginForm.valid) {
       this.loginService.login(user).then(result => {
         this.localStorageService.setItem('token', result.AccessToken)
-        this.localStorageService.setItem('isAdmin', result.Role)
+        this.localStorageService.setItem('role', result.Role)
 
         if(result.Role === "Admin"){
           this.router.navigate(['admin']) //faltaria decidir en qué ruta redirige

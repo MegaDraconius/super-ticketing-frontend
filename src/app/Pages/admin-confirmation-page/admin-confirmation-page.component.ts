@@ -3,6 +3,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { Router } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
+import { TicketServiceService } from '../../Shared/Services/ticket-service.service';
 
 @Component({
   selector: 'app-admin-confirmation-page',
@@ -14,7 +15,17 @@ import { TranslateModule } from '@ngx-translate/core';
 export class AdminConfirmationPageComponent {
   router = inject(Router);
 
+  ticketService = inject(TicketServiceService)
+
   comeBack() {
-    this.router.navigate(['']);
+    this.ticketService.getTickets().subscribe((result) => {
+      if (result.length > 0) {
+        if (localStorage.getItem('role') === "Admin") {
+          this.router.navigate(['/admin/table']);
+        }else {
+          this.router.navigate(['/user/table']);
+        }
+      }
+    });
   }
 }
