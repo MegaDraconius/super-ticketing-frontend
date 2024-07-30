@@ -3,17 +3,22 @@
 ## Índice 📝
 
 - [Descripción](#descripción-)
+- [Developers](#developers-)
+- [Tecnologías empleadas](#tecnologías-empleadas-en-el-front-)
 - [Instalación](#instalación-)
   - [Requisitos previos](#requisitos-previos)
   - [Instalación del proyecto](#instalación-del-proyecto)
-- [Uso](#uso-)
-- [Estructura del proyecto](#estructura-del-proyecto)
-- [Tecnologías](#tecnologías-)
+- [Como ejecutar en local](#como-ejecutar-en-local️)
+- [Estructura del proyecto](#estructura-del-proyecto-)
+
 - [Contribuición](#contribuición-)
-  - [Convenciones del proyecto](#convenciones-del-proyecto)
-- [Developers](#developers-)
-- [Capturas de pantalla](#capturas-de-pantalla)
-- [Despliegue del Proyecto](#Despliegue-del-Proyecto)
+  - [Convenciones del proyecto](#convención-de-codificaciónen-ticketing)
+
+- [Distribución y seguimiento de tareas con metodologías ágiles](#distribución-y-seguimiento-de-tareas-con-metodologías-ágiles-)
+- [Mockup y capturas del proyecto](#mockup-y-capturas-de-pantalla-)
+- [Despliegue del Proyecto](#Despliegue-del-Proyect-)
+- [Pendientes para futuros sprints](#Pendientes-para-futuros-Sprints-)
+- [Special Thanks](#special-thanks-)
 
 ## Descripción 💡
 
@@ -31,6 +36,42 @@ Tests Unitarios: Implementación de tests para asegurar la calidad y correcto fu
 <b>Objetivo del Proyecto</b>:
 <br>
 A través de este proyecto, buscamos contribuir a la conservación del medio ambiente y al bienestar social, proporcionando una herramienta útil y accesible para la gestión de recursos hídricos en Cataluña. La aplicación está diseñada para ser utilizada por autoridades locales, investigadores y ciudadanos interesados en el seguimiento de las condiciones de sequía, ayudando a tomar decisiones informadas y a promover la sostenibilidad.consumo de APIs.
+
+
+## Developers 👩‍💻
+
+
+[<img src="https://avatars.githubusercontent.com/u/47445852?v=4" width=115><br><sub>Alex Morell</sub>](https://github.com/alexmrtc) |  [<img src="https://avatars.githubusercontent.com/u/162144774?v=4" width=115><br><sub>Laura Benavides</sub>](https://github.com/LauraBenavides33) |  [<img src="https://avatars.githubusercontent.com/u/171134273?v=4" width=115><br><sub>Roger Esteve</sub>](https://github.com/alejandria1899) |
+| :---: | :---: | :---: |
+[<img src="https://avatars.githubusercontent.com/u/146776685?v=4" width=115><br><sub>Michely Paredes</sub>](https://github.com/Michely05) |  [<img src="https://avatars.githubusercontent.com/u/162126428?v=4" width=115><br><sub>Iván Vallejos</sub>](https://github.com/MegaDraconius) |  [<img src="https://avatars.githubusercontent.com/u/162146662?v=4" width=115><br><sub>Sara Jorja</sub>](https://github.com/SaraJoLo) |
+
+
+## Tecnologías empleadas en el Frontend 🔬
+
+- IDE para el proyecto:
+
+  - [![VSC - VSC](https://img.shields.io/static/v1?label=Visual+Studio+Code&message=Visual+Studio+Code&color=%2324adf3&logo=visual+studio)](https://code.visualstudio.com/)
+
+- Gestor de paquetes:
+  - [![Node JS - Node JS](https://img.shields.io/static/v1?label=Node+JS&message=Node+JS&color=%233f8a3e&logo=node)](https://nodejs.org/en)
+
+- Tecnologías empleadas para el desarrollo del programa:
+
+  - [![html 5 - html 5](https://img.shields.io/static/v1?label=html+5&message=html+5&color=%23e4552e&logo=html5)](https://developer.mozilla.org/es/docs/Glossary/HTML5)
+  - [![Sass - Sass](https://img.shields.io/static/v1?label=Sass&message=Sass&color=%23bf4080&logo=sass)](https://sass-lang.com/)
+  - [![TypeScript - TypeScript](https://img.shields.io/static/v1?label=TypeScript&message=TypeScript&color=%233178c6&logo=typescript)](https://www.typescriptlang.org/)
+  - [![Angular - Angular](https://img.shields.io/badge/Angular-Angular-red?logo=angular)](https://angular.dev/)
+
+- Tecnologías para realizar testing:
+
+  - [![jest - jest](https://img.shields.io/static/v1?label=jest&message=jest&color=%23c7431e&logo=jest)](https://jestjs.io/es-ES/)
+ 
+
+- Otras tecnologías utilizadas:
+
+  - [![Angular Material - Angular Material](https://img.shields.io/static/v1?label=Angular+Material&message=Angular+Material&color=%23fdb14b&logo=angular+material)](https://material.angular.io/)
+
+
 
 ## Enlaces a los repositorios 📦
 
@@ -61,15 +102,15 @@ Instalar Node.js:
 ```bash
  pnpm install
 ```
-## Uso ⌨️
+## Como ejecutar en local⌨️
 
 Para visualizar el proyecto en Local:
 
 1. Ejecuta el servidor de desarrollo:
 
-   ```bash
+```bash
    ng serve 
-   ```
+```
 ```bash
    pnpm start
 ```
@@ -79,31 +120,51 @@ Para visualizar el proyecto en Local:
 ```plaintext
 /
 ├── public
+|   ├── images.jpg
+|   └── images2.jpg
 ├── src
-|   ├── assets
-│   ├── components/
-│   │   ├── common
-│   │   └── layout 
-│   ├── config
-│   ├── pages
-│   ├── routes
-│   ├── services
-│   ├── App.css
-│   ├── App.jsx
-│   ├── home.jsx
-│   ├── index.css
-│   └── main.jsx
-├── eslintrc.cjs
+|   ├── app
+|   |    ├── Components
+|   |    |     ├── empty-ticket
+|   |    |     ├── language-button
+|   |    |     ├── layout
+|   |    |     |     ├── header
+|   |    |     |     └── layout
+|   |    |     ├── report-button
+|   |    |     ├── Table
+|   |    |     |     ├── admin-table
+|   |    |     |     └── user-table
+|   |    |     └── ticketsForm
+|   |    |           └── ticket-form
+|   |    ├── Core
+|   |    ├── Pages
+|   |    |     ├── empty-ticket
+|   |    |     ├── language-button
+|   |    |     ├── layout
+|   |    |     ├── empty-ticket
+|   |    |     ├── language-button
+|   |    |     ├── layout
+|   |    |     └── ticketsForm
+|   |    ├── Services
+|   |    └── Shared
+|   |        ├── Interfaces
+|   |        └── Services
+|   ├── environments
+|   |    ├── environment.development.ts
+|   |    └── environment.ts
+│   ├── index.html
+|   ├── style.scss
+│   └── main.ts
+├── .editorconfig
 ├── .gitignore
-├── index.html
+├── angular.json
 ├── package-lock.json
 ├── package.json
 ├── pnpm-lock.yaml
-├── postcss.config.js
 ├── README.md
-├── jsconfig.json
-├── tailwind.config.js
-└── vite.config.js
+├── tsconfig.app.json
+├── tsconfig.app.json
+└── tsconfig.spec.json
 
 ```
 
@@ -115,21 +176,6 @@ Para visualizar el proyecto en Local:
   - **_pages:_** Carpeta que contiene las rutas a las páginas dinámicas de la aplicación.
   - **_routes:_** Dentro del que se encuentra index.jsx, que contiene la lógica de rutas de la aplicación.
   - **_services:_** Dentro del que se encuentra useApi.jsx con la llamada a la API reutilizada en todos los apartados de la aplicación.
-
-## Tecnologías empleadas en Front 🔬
-
-- [HTML5](https://developer.mozilla.org/es/docs/Web/Guide/HTML/HTML5)
-- [Sass](https://sass-lang.com/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Angular](https://angular.dev/)
-- [Jest](https://jestjs.io/es-ES/)
-
-Librerias utilizadas
-
-- [Angular Material](https://material.angular.io/)
-
-
-
 
 ## Contribuición 💻
 
@@ -176,16 +222,6 @@ export class MenuComponent implements OnInit {
 - Evitar palabras como *‘Manager’, ‘Processor’, ‘Data’* o *‘Info’* en el nombre de la clase. Un nombre de clase no debería ser un verbo.
 
 
-
-## Developers 👩‍💻
-
-- [Alex Morell](https://github.com/alexmrtc)
-- [Iván Vallejos](https://github.com/MegaDraconius)
-- [Laura Benavides](https://github.com/LauraBenavides33)
-- [Michely Paredes](https://github.com/Michely05)
-- [Roger Esteve](https://github.com/alejandria1899)
-- [Sara Jorja](https://github.com/MegaDraconius)
-
 ## Distribución y seguimiento de tareas con metodologías ágiles 👩‍💻
 
 Para la gestión de nuestro proyecto, hemos utilizado Trello como nuestra herramienta principal, siguiendo la metodología Kanban para la distribución eficiente de tareas. Este enfoque nos ha permitido visualizar el flujo de trabajo, limitar la cantidad de trabajo en progreso y maximizar la eficiencia. Además, hemos seguido una serie de convenciones y mejores prácticas para garantizar la coherencia y la calidad en todo nuestro trabajo. Creemos que este enfoque estructurado y disciplinado ha sido fundamental para nuestro éxito hasta ahora y continuará guiándonos en nuestras futuras iniciativas
@@ -203,9 +239,16 @@ El diseño se realizó utilizando Figma, una potente herramienta para diseñar p
 
 - Version Desktop 
 
+![Vista del programa sin tickets emitidos](/public/demo1.png)
+![Vista para reportar una incidencia mediante formulario](/public/demo2.png)
+![Vista del programa desde la vista Administrador para gestionar los tickets](/public/demo3.png)
 
 - Version Mobile
 
+
+![Vista del programa sin tickets emitidos](/public/mobile1.png)
+![Vista para reportar una incidencia mediante formulario](/public/mobile2.png)
+![Vista del programa desde la vista Administrador para gestionar los tickets](/public/mobile3.png)
 
 
 ## Despliegue del Proyecto 📽️
@@ -222,9 +265,20 @@ Además de las ventajas técnicas que ofrece Netlify, también lo seleccionamos 
 
 Reconocemos que nuestro proyecto actual tiene un gran potencial para crecer y evolucionar. Aunque hemos logrado mucho, sabemos que hay características adicionales que podríamos implementar para mejorar aún más nuestro producto. Estas mejoras no se han realizado hasta ahora debido a limitaciones de tiempo y conocimientos técnicos. Sin embargo, estamos comprometidos con la mejora continua y planeamos adquirir las habilidades necesarias para implementar estas características en el futuro.
 
-- [x] 
-- [ ] 
-- [ ] 
-- [ ] 
-- [ ] 
-- [ ] 
+- [ ] Realizar testing con más cobertura en los componentes, tanto unitarios como de integración. 
+- [ ] Añadir las funcionalidades 
+- [ ] Corregir el diseño en cuanto a ser un componentes responsivos.
+- [ ] Añadir las funcionalidades de GitHub Actions para controlar el flujo de trabajo de forma óptima y siguiendo un patron de trabajo estandarizado.
+- [ ] Implementación de histórico en la vista detalle para la consulta de problemas pasados a la hora de responder al usuario.
+- [ ] Añadir un generador de plantillas para errores.
+- [ ] Añadir las funcionalidades y la vista para poder generar informes y análisis de las incidencias obtenidas.
+- [ ] Poder generar nuevos formularios acorde a las necesidades.
+- [ ] Refactorización del codigo y la arquitectura para una vista más sencilla para los desarrolladores tanto para su mantenibilidad como para su funcionamiento.
+
+## Special thanks 👥
+
+- Queremos expresar nuestro más sincero agradecimiento a nuestros compañeros y profesores por su invaluable apoyo y colaboración durante el desarrollo de este proyecto. Sus contribuciones, tanto en conocimientos como en esfuerzo, fueron fundamentales para alcanzar nuestros objetivos.
+
+- A nuestros compañeros, gracias por los momentos compartidos, por su dedicación y por el espíritu de equipo que nos llevó a superar cada desafío.
+
+- A nuestros profesores, gracias por su guía, paciencia y sabiduría. Sin su apoyo, este proyecto no habría sido posible.
