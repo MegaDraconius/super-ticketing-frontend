@@ -5,7 +5,7 @@
   <form [formGroup]="adminForm" (ngSubmit)="submit()">
     <div class="inputContainer">
       <mat-form-field class="inputsDesign">
-        <input class="textInput" matInput disabled />
+        <input class="textInput" [value]="rowData.Title" matInput disabled />
       </mat-form-field>
 
       <mat-form-field class="inputsDesign">
