@@ -41,7 +41,7 @@
 
 #ticketSearchbar {
   padding-bottom: 2%;
-  width: 40%;
+  width: 30%;
   height: 10%;
 }
 table {
@@ -55,7 +55,9 @@ table {
 .mdc-text-field--filled:not(.mdc-text-field--disabled) {
   background-color: #525252;
 }
-
+.mat-mdc-text-field-wrapper {
+  border-radius: 20px;
+}
 // td, th {
 //   width: 25%;
 // }

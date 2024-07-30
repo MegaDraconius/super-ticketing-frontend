@@ -28,89 +28,76 @@
   </div>
 </div>
 <div class="ticketTableContainer custom-font">
-  <div class="mat-elevation-z8">
-    <table mat-table [dataSource]="dataSource" matSort>
-      <!-- ID Column -->
-      <ng-container matColumnDef="Id">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>
-          {{ "ID" | translate }}
-        </th>
-        <td mat-cell *matCellDef="let element">{{ element.Id }}</td>
-      </ng-container>
 
-      <!-- TicketTitle Column -->
-      <ng-container matColumnDef="ticketTitle">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>
-          {{ "columnTitle1" | translate }}
-        </th>
-        <td mat-cell *matCellDef="let element">{{ element.ticketTitle }}</td>
-      </ng-container>
 
-      <!-- StartDate Column -->
-      <ng-container matColumnDef="user">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>
-          {{ "Usuario" | translate }}
-        </th>
-        <td mat-cell *matCellDef="let element">{{ element.user }}</td>
-      </ng-container>
+    <div class="mat-elevation-z8">
 
-      <!-- Status Column -->
-      <ng-container matColumnDef="startDate">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>
-          {{ "Fecha" | translate }}
-        </th>
-        <td mat-cell *matCellDef="let element">{{ element.startDate }}</td>
-      </ng-container>
+        <table mat-table [dataSource]="dataSource" matSort>
 
-      <!-- Priority Column -->
-      <ng-container matColumnDef="priority">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>
-          {{ "Prioridad" | translate }}
-        </th>
-        <td mat-cell *matCellDef="let element">{{ element.priority }}</td>
-      </ng-container>
+            <!-- ID Column -->
+            <ng-container matColumnDef="Id">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ 'ID' | translate}} </th>
+                <td mat-cell *matCellDef="let element"> {{element.TrackingId}} </td>
+            </ng-container>
 
-      <!-- Status Column -->
-      <ng-container matColumnDef="status">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>
-          {{ "Estado" | translate }}
-        </th>
-        <td mat-cell *matCellDef="let element">{{ element.status }}</td>
-      </ng-container>
+            <!-- TicketTitle Column -->
+            <ng-container matColumnDef="ticketTitle">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ 'columnTitle1'| translate}} </th>
+                <td mat-cell *matCellDef="let element"> {{element.Title}} </td>
+            </ng-container>
 
-      <!-- Detail Button Column -->
-      <ng-container matColumnDef="actions">
-        <th mat-header-cell *matHeaderCellDef></th>
-        <td mat-cell *matCellDef="let element">
-          <button mat-flat-button id="detailButton">
-            {{ "detailsButton" | translate }}
-          </button>
-        </td>
-      </ng-container>
+            <!-- StartDate Column -->
+            <ng-container matColumnDef="user">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ 'Usuario'| translate }} </th>
+                <td mat-cell *matCellDef="let element"> {{element.UserEmail}} </td>
+            </ng-container>
 
-      <!-- Delete Button Column -->
-      <ng-container matColumnDef="actions2">
-        <th mat-header-cell *matHeaderCellDef></th>
-        <td mat-cell *matCellDef="let element">
-          <button mat-flat-button id="deleteButton" (click)="archived(element)">
-            {{ "Archivar" | translate }}
-          </button>
-        </td>
-      </ng-container>
+            <!-- Status Column -->
+            <ng-container matColumnDef="startDate">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ 'Fecha'| translate }} </th>
+                <td mat-cell *matCellDef="let element"> {{element.ReportDate}} </td>
+            </ng-container>
 
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-      <tr class="mat-row" *matNoDataRow>
-        <td class="mat-cell" colspan="4">
-          No data to show 
-        </td>
-      </tr>
-    </table>
-    <div class="paginator">
-      <mat-paginator
-        [pageSizeOptions]="[5, 10, 25, 100]"
-        aria-label="Select page of users"
-      ></mat-paginator>
+            <!-- Priority Column -->
+            <ng-container matColumnDef="priority">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ 'Prioridad'| translate}} </th>
+                <td mat-cell *matCellDef="let element"> {{element.Priority}} </td>
+            </ng-container>
+
+            <!-- Status Column -->
+            <ng-container matColumnDef="status">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ 'Estado' | translate}} </th>
+                <td mat-cell *matCellDef="let element"> {{element.Status}} </td>
+            </ng-container>
+
+
+            <!-- Detail Button Column -->
+            <ng-container matColumnDef="actions">
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td mat-cell *matCellDef="let element">
+                    <button (click)="getTicketDetails(element)" mat-flat-button id="detailButton"> {{ 'detailsButton'|
+                        translate}}</button>
+                </td>
+            </ng-container>
+
+            <!-- Delete Button Column -->
+            <ng-container matColumnDef="actions2">
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td mat-cell *matCellDef="let element">
+                    <button mat-flat-button id="deleteButton">{{ 'Archivar'| translate}}</button>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;" id="row-{{row.id}}"></tr>
+            <tr class="mat-row" *matNoDataRow>
+                <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+            </tr>
+
+        </table>
+        <div class="paginator">
+            <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+        </div>
     </div>
   </div>
 </div>
