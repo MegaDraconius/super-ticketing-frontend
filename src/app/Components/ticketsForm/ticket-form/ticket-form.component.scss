@@ -7,6 +7,7 @@
 }
 
 .FormContainer{
+  margin-top: 1rem;
   font-family: Comfortaa;
   width: 60%;
   height: 90%;
@@ -18,6 +19,7 @@
   justify-content: space-evenly;
 }
 .subtitle{
+  margin-top: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -49,9 +51,7 @@
   font-size: 14px;
   display: flex;
   flex-direction: column;
-  border: none;
   align-items:center;
-  justify-content: center;
   height: 7rem;
 }
 .imgBox{
@@ -64,7 +64,7 @@
 .workContainer{
   display:flex;
   flex-direction:column;
-  margin: 1rem;
+  gap: 0.5rem;
 }
 .mat-radio-group{
   display: flex;
@@ -93,14 +93,14 @@
       border: none;
     }
   
-  @media screen and (max-width: 768px) and (max-width: 1023px){
+  @media screen and (min-width: 768px) and (max-width: 1023px){
 
     .FormContainer{
       display: flex;
       flex-direction: column;
       align-items: center;
       width: 90%;
-      height:95%;
+      height:100%;
     }
     .subtitle{
       font-size: 16px;
@@ -154,18 +154,19 @@
       border-radius: 4px;
     }
   }
-    @media screen and (max-width: 393px) and (max-width: 852px) {
+    @media screen and (min-width: 320px) and (max-width: 768px) {
       .FormContainer {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: space-evenly;
         width: 90%;
-        height: 95%;
+        height: 110%;
       }
   
       .subtitle {
-        font-size: 12px;
+        font-size: 14px;
+        margin-top: 0.5rem;
       }
   
       .titleBox {

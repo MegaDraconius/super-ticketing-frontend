@@ -13,4 +13,5 @@ export interface AdminTicket {
   ItGuyId: string;
   ItGuyEmail: string;
   Title: string;
+  Stored: boolean;
 }

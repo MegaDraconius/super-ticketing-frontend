@@ -8,23 +8,40 @@ import { AdminConfirmationPageComponent } from './Pages/admin-confirmation-page/
 import { DetailViewComponent } from './Pages/detail-view/detail-view.component';
 import { LoginComponent } from './Pages/login/login.component';
 import { UserConfirmationPageComponent } from './Pages/user-confirmation-page/user-confirmation-page.component';
+import { authGuard } from './Guards/auth.guard';
 
 export const routes: Routes = [
   {
     path: '',
+    component: LoginComponent,
+  },
+  {
+    path: 'admin',
     component: LayoutComponent,
+    canActivate: [authGuard],
+    //data: { roles: ['admin'] },
+    children: [
+      { path: '',  component: EmptyTicketComponent},
+      {path: 'table', component: AdminTableComponent},
+      { path: 'form', component: TicketFormComponent },
+      { path: 'confirmation', component: AdminConfirmationPageComponent },
+      { path: 'detailedView', component: DetailViewComponent },
+    ]
+  },
+  {
+    path: 'user',
+    component: LayoutComponent,
+    canActivate: [authGuard],
+    //data: { roles: ['user'] },
     children: [
       { path: '', component: EmptyTicketComponent },
       { path: 'form', component: TicketFormComponent },
-      { path: 'adminConfirmation', component: AdminConfirmationPageComponent },
-      { path: 'userConfirmation', component: UserConfirmationPageComponent },
-      { path: 'adminTable', component: AdminTableComponent },
-      { path: 'userTable', component: TicketTableComponent },
+      { path: 'confirmation', component: UserConfirmationPageComponent },
+      { path: 'table', component: TicketTableComponent },
       { path: 'detailedView', component: DetailViewComponent },
-    ],
+    ]
+
   },
-  { path: 'layout', redirectTo: '' },
-  { path: 'login', component: LoginComponent },
-  { path: 'adminConfirmation', component: AdminConfirmationPageComponent },
-  { path: 'userConfirmation', component: UserConfirmationPageComponent },
+  { path: 'login', redirectTo: '' },
 ];
+

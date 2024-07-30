@@ -1,11 +1,31 @@
 <div class="aboveTable">
-    <h2 class="gestionTickets">Gestión de tickets</h2>
+  <h2 class="gestionTickets">Gestión de tickets</h2>
 
-    <mat-form-field id="ticketSearchbar">
-        <mat-label>{{ 'Buscar...'}}</mat-label>
-        <input matInput (keyup)="applyFilter($event)" placeholder="" #input class="searchInput">
+  <div class="inputsTable">
+    <mat-form-field id="ticketSearchbar" class="ticketInputs">
+      <mat-label>{{ "Buscar..." }}</mat-label>
+      <input
+        matInput
+        (keyup)="applyFilter($event)"
+        placeholder=""
+        #input
+        class="searchInput"
+      />
     </mat-form-field>
 
+    <mat-form-field class="ticketInputs">
+      <mat-label>{{ "Estado del ticket" | translate }}</mat-label>
+      <mat-select (selectionChange)="onStatusFilterChange($event)">
+        <mat-option value="">{{ "todos" | translate }}</mat-option>
+        <mat-option value="abierto">{{ "abierto" | translate }}</mat-option>
+        <mat-option value="pendiente">{{ "pendiente" | translate }}</mat-option>
+        <mat-option value="en proceso">{{
+          "en proceso" | translate
+        }}</mat-option>
+        <mat-option value="resuelto">{{ "resuelto" | translate }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
 </div>
 <div class="ticketTableContainer custom-font">
 
@@ -64,7 +84,7 @@
             <ng-container matColumnDef="actions2">
                 <th mat-header-cell *matHeaderCellDef></th>
                 <td mat-cell *matCellDef="let element">
-                    <button mat-flat-button id="deleteButton">{{ 'Eliminar'| translate}}</button>
+                    <button mat-flat-button id="deleteButton">{{ 'Archivar'| translate}}</button>
                 </td>
             </ng-container>
 
@@ -79,5 +99,4 @@
             <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
         </div>
     </div>
-
-</div>
+  </div>

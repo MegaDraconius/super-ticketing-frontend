@@ -2,10 +2,12 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  padding: 5% 0;
 }
 
 section {
-  width: 80vw;
+  width: 60vw;
   display: flex;
   flex-direction: column;
 }
@@ -36,28 +38,13 @@ h3 {
 
 .inputMessage {
   height: 15vh;
+  width: 100%;
 }
 
 #canWork {
   display: flex;
   width: 100%;
-  margin-bottom: 1rem;
   align-self: center;
-}
-figure {
-  background-color: #d4d1db;
-  border-radius: 0.3rem;
-  margin-bottom: 1rem;
-  display: flex;
-  justify-content: center;
-}
-
-.imageContainer {
-  height: 12.5rem;
-  width: 15rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 img {
@@ -74,11 +61,11 @@ img {
   align-self: center;
 }
 
-#noWorkInput {
+#cannotWorkButton {
   display: none;
 }
 
-#workInput {
+#canWorkButton {
   display: none;
 }
 
@@ -87,6 +74,17 @@ img {
   height: 3.13rem;
   font-size: 2.5rem;
   color: #31347c;
+}
+
+.dropDownOptions {
+  display: flex;
+  gap: 4rem;
+}
+
+.sendButtonContainer{
+  display: flex;
+  padding: 2rem;
+  justify-content: center;
 }
 
 @media (min-width: 768px) {
@@ -107,28 +105,33 @@ img {
     display: flex;
     justify-content: space-between;
     margin-bottom: 1.25rem;
+    width: 50%;
   }
   #canWork {
     display: none;
   }
 
-  #noWorkInput {
+  #cannotWorkButton {
     display: inline-flex;
     font-family: "Comfortaa", sans-serif;
-    font-size: 1.1rem;
-    width: 47%;
-    border-radius: 0.63rem;
-    background-color: #f24f4f;
-    border: #49454f 2px solid;
+    font-size: 1rem;
+    color: #000000;
+    width: 90%;
+    height: 90%;
+    border-radius: 0.6rem;
+    background-color: #FD6363;
+    border: #49454f 1px solid;
   }
 
-  #workInput {
+  #canWorkButton {
     display: inline-flex;
     font-family: "Comfortaa", sans-serif;
-    font-size: 1.1rem;
-    width: 47%;
-    background-color: #99fe75;
-    border-radius: 0.63rem;
-    border: #49454f 2px solid;
+    font-size: 1rem;
+    color: #000000;
+    width: 90%;
+    height: 90%;
+    border-radius: 0.6rem;
+    background-color: #97FB95;
+    border: #49454f 1px solid;
   }
 }
