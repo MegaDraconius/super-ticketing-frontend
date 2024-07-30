@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+// .gestionTickets{
+//   display: flex;
+//   flex-direction: row;
+//   align-items: start;
+//   margin: 0;
+// }
+
+.aboveTable {
+  width: 100%;
+  font-family: 'Poppins', sans-serif !important;
+  color: #1D154A;
+  font-size: 24px;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-evenly;
+  margin: 1rem;
+
+}
+
+.custom-font,
+.custom-font * {
+  font-family: 'Poppins', sans-serif !important;
+}
+
+.ticketTableContainer {
+  width: 100%;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+#ticketSearchbar {
+  padding-bottom: 2%;
+  width: 30%;
+  height: 10%;
+}
+table {
+  width: 100%;
+}
+.mat-mdc-form-field {
+  font-size: 14px;
+  width: 100%;
+  height: 20%;
+}
+.mdc-text-field--filled:not(.mdc-text-field--disabled){
+  background-color:#525252;
+}
+.mat-mdc-text-field-wrapper {
+  border-radius: 20px;
+}
+// td, th {
+//   width: 25%;
+// }
+
+th {
+  color: #ED6D84;
+}
+
+#detailButton {
+  display: flex;
+  margin-top: 5px;
+  background-color: #7075F4;
+  color: white;
+
+  &:hover {
+    background-color: #8b8ffa;
+  }
+}
+
+#deleteButton {
+  display: flex;
+  margin-top: 5px;
+  background-color: #FF5151;
+}
+
+.languageButtonContainer {
+  z-index: 1;
+  position: fixed;
+  top: 95%;
+  left: 5%;
+}
+
+@media screen and (min-width: 852px) and (max-width: 1023px) {
+  .ticketTableContainer {
+    overflow: scroll;
+    width: 90%;
+  }
+  .aboveTable{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 20px;
+    gap:1rem;
+  }
+#ticketSearchbar{
+  width:60%;
+  height: 20%;
+}
+.mat-mdc-form-field {
+  font-size: 10px;
+  width: 100%;
+}
+}
+
+@media screen and (min-width: 393px) and (max-width: 852px) {
+  .ticketTableContainer {
+    overflow: scroll;
+  }
+  .aboveTable{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:1rem;
+    font-size: 20px;
+  }
+  .mat-elevation-z8{
+    width: 90%;
+  }
+  #ticketSearchbar{
+    width:100%;
+    height: 20%;
+  }
+  .mat-mdc-form-field {
+    font-size: 10px;
+    width: 80%;
+    height: 20%;
+  }
+}

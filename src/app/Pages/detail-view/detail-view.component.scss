@@ -1,0 +1,137 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5% 0;
+}
+
+section {
+  width: 60vw;
+  display: flex;
+  flex-direction: column;
+}
+
+h2 {
+  font-family: "Comfortaa", sans-serif;
+  color: #31347c;
+  font-weight: 700;
+  font-size: 0.88rem;
+  font-size: 1.63rem;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+h3 {
+  font-family: "Comfortaa", sans-serif;
+  color: #31347c;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.inputMessage {
+  height: 15vh;
+  width: 100%;
+}
+
+#canWork {
+  display: flex;
+  width: 100%;
+  align-self: center;
+}
+
+img {
+  display: none;
+  height: 90%;
+  width: 90%;
+}
+
+.mat-mdc-unelevated-button:not(:disabled) {
+  background-color: #ed6d84;
+  font-family: "Comfortaa", sans-serif;
+  font-weight: 700;
+  font-size: 1.13rem;
+  align-self: center;
+}
+
+#cannotWorkButton {
+  display: none;
+}
+
+#canWorkButton {
+  display: none;
+}
+
+.mat-icon {
+  width: 3.13rem;
+  height: 3.13rem;
+  font-size: 2.5rem;
+  color: #31347c;
+}
+
+.dropDownOptions {
+  display: flex;
+  gap: 4rem;
+}
+
+.sendButtonContainer{
+  display: flex;
+  padding: 2rem;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .inputContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 3.75rem;
+  }
+
+  :host ::ng-deep .mat-mdc-form-field {
+    color: #e2de00;
+  }
+  .inputsDesign {
+    width: 80%;
+  }
+
+  #canWorkContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.25rem;
+    width: 50%;
+  }
+  #canWork {
+    display: none;
+  }
+
+  #cannotWorkButton {
+    display: inline-flex;
+    font-family: "Comfortaa", sans-serif;
+    font-size: 1rem;
+    color: #000000;
+    width: 90%;
+    height: 90%;
+    border-radius: 0.6rem;
+    background-color: #FD6363;
+    border: #49454f 1px solid;
+  }
+
+  #canWorkButton {
+    display: inline-flex;
+    font-family: "Comfortaa", sans-serif;
+    font-size: 1rem;
+    color: #000000;
+    width: 90%;
+    height: 90%;
+    border-radius: 0.6rem;
+    background-color: #97FB95;
+    border: #49454f 1px solid;
+  }
+}
