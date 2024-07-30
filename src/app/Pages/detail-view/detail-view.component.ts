@@ -102,7 +102,6 @@ export class DetailViewComponent implements OnInit {
   }
 
   submit() {
-    // const descriptionValue = document.getElementById('descriptionInput')?.value;
     const updatedTicket: UpdatedTicket = {
       Feedback: this.adminForm.controls['feedbackInput'].value,
       Status: this.adminForm.controls['statusInput'].value,
