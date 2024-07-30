@@ -6,14 +6,17 @@
 - [Instalación](#instalación-)
   - [Requisitos previos](#requisitos-previos)
   - [Instalación del proyecto](#instalación-del-proyecto)
-- [Uso](#uso-)
-- [Estructura del proyecto](#estructura-del-proyecto)
-- [Tecnologías](#tecnologías-)
+- [Como ejecutar en local](#como-ejecutar-en-local️)
+- [Estructura del proyecto](#estructura-del-proyecto-)
+- [Tecnologías](#tecnologías-empleadas-en-el-front-)
 - [Contribuición](#contribuición-)
-  - [Convenciones del proyecto](#convenciones-del-proyecto)
+  - [Convenciones del proyecto](#convención-de-codificaciónen-ticketing)
 - [Developers](#developers-)
-- [Capturas de pantalla](#capturas-de-pantalla)
-- [Despliegue del Proyecto](#Despliegue-del-Proyecto)
+- [Distribución y seguimiento de tareas con metodologías ágiles](#distribución-y-seguimiento-de-tareas-con-metodologías-ágiles-)
+- [Mockup y capturas del proyecto](#mockup-y-capturas-de-pantalla-)
+- [Despliegue del Proyecto](#Despliegue-del-Proyect-)
+- [Pendientes para futuros sprints](#Pendientes-para-futuros-Sprints-)
+- [Special Thanks](#special-thanks-)
 
 ## Descripción 💡
 
@@ -61,15 +64,15 @@ Instalar Node.js:
 ```bash
  pnpm install
 ```
-## Uso ⌨️
+## Como ejecutar en local⌨️
 
 Para visualizar el proyecto en Local:
 
 1. Ejecuta el servidor de desarrollo:
 
-   ```bash
+```bash
    ng serve 
-   ```
+```
 ```bash
    pnpm start
 ```
@@ -79,31 +82,51 @@ Para visualizar el proyecto en Local:
 ```plaintext
 /
 ├── public
+|   ├── images.jpg
+|   └── images2.jpg
 ├── src
-|   ├── assets
-│   ├── components/
-│   │   ├── common
-│   │   └── layout 
-│   ├── config
-│   ├── pages
-│   ├── routes
-│   ├── services
-│   ├── App.css
-│   ├── App.jsx
-│   ├── home.jsx
-│   ├── index.css
-│   └── main.jsx
-├── eslintrc.cjs
+|   ├── app
+|   |    ├── Components
+|   |    |     ├── empty-ticket
+|   |    |     ├── language-button
+|   |    |     ├── layout
+|   |    |     |     ├── header
+|   |    |     |     └── layout
+|   |    |     ├── report-button
+|   |    |     ├── Table
+|   |    |     |     ├── admin-table
+|   |    |     |     └── user-table
+|   |    |     └── ticketsForm
+|   |    |           └── ticket-form
+|   |    ├── Core
+|   |    ├── Pages
+|   |    |     ├── empty-ticket
+|   |    |     ├── language-button
+|   |    |     ├── layout
+|   |    |     ├── empty-ticket
+|   |    |     ├── language-button
+|   |    |     ├── layout
+|   |    |     └── ticketsForm
+|   |    ├── Services
+|   |    └── Shared
+|   |        ├── Interfaces
+|   |        └── Services
+|   ├── environments
+|   |    ├── environment.development.ts
+|   |    └── environment.ts
+│   ├── index.html
+|   ├── style.scss
+│   └── main.ts
+├── .editorconfig
 ├── .gitignore
-├── index.html
+├── angular.json
 ├── package-lock.json
 ├── package.json
 ├── pnpm-lock.yaml
-├── postcss.config.js
 ├── README.md
-├── jsconfig.json
-├── tailwind.config.js
-└── vite.config.js
+├── tsconfig.app.json
+├── tsconfig.app.json
+└── tsconfig.spec.json
 
 ```
 
@@ -116,17 +139,18 @@ Para visualizar el proyecto en Local:
   - **_routes:_** Dentro del que se encuentra index.jsx, que contiene la lógica de rutas de la aplicación.
   - **_services:_** Dentro del que se encuentra useApi.jsx con la llamada a la API reutilizada en todos los apartados de la aplicación.
 
-## Tecnologías empleadas en Front 🔬
+## Tecnologías empleadas en el Front 🔬
 
-- [HTML5](https://developer.mozilla.org/es/docs/Web/Guide/HTML/HTML5)
-- [Sass](https://sass-lang.com/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Angular](https://angular.dev/)
-- [Jest](https://jestjs.io/es-ES/)
+- [![HTML](https://img.shields.io/badge/HTML-orange?style=flat-square&logo=html&logoWidth=100&link=https://developer.mozilla.org/es/docs/Web/Guide/HTML/HTML5)](https://developer.mozilla.org/es/docs/Web/Guide/HTML/HTML5)
+- [![Sass](https://img.shields.io/badge/Sass-pink?style=flat-square&logo=Sass&link=https://sass-lang.com/)](https://sass-lang.com/)
+- [![TypeScript](https://img.shields.io/badge/TypeScript-8bd0fa?style=flat-square&logo=TypeScript&link=https://www.typescriptlang.org/)](https://www.typescriptlang.org/)
+- [![Angular](https://img.shields.io/badge/Angular-red?style=flat-square&logo=angular&link=https://angular.dev/)](https://angular.dev/)
+- [![Jest](https://img.shields.io/badge/Jest-white?style=flat-square&logoColor=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEZWil3CMPi_oxEgTaf16tBnG9ZobYXWk06w&s&link=https://jestjs.io/es-ES/)](https://jestjs.io/es-ES/)
+- [![Javascript](https://img.shields.io/badge/Javascript-yellow?style=flat-square&logo=javascript&link=https://developer.mozilla.org/es/docs/Web/JavaScript)](https://developer.mozilla.org/es/docs/Web/JavaScript)
 
 Librerias utilizadas
 
-- [Angular Material](https://material.angular.io/)
+- [![Angular Material](https://img.shields.io/badge/Angular%20Material-ffa726?style=flat-square&logo=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUnDVEqEe78HvQ9g-GMREzL1xFXgDRtcVuFUJL9qCq2XCCiAdy4oBSJXFNtdp9npGNrUM&usqp=CAU&link=https://material.angular.io/)](https://material.angular.io/)
 
 
 
@@ -179,12 +203,10 @@ export class MenuComponent implements OnInit {
 
 ## Developers 👩‍💻
 
-- [Alex Morell](https://github.com/alexmrtc)
-- [Iván Vallejos](https://github.com/MegaDraconius)
-- [Laura Benavides](https://github.com/LauraBenavides33)
-- [Michely Paredes](https://github.com/Michely05)
-- [Roger Esteve](https://github.com/alejandria1899)
-- [Sara Jorja](https://github.com/MegaDraconius)
+
+[<img src="https://avatars.githubusercontent.com/u/47445852?v=4" width=115><br><sub>Alex Morell</sub>](https://github.com/alexmrtc) |  [<img src="https://avatars.githubusercontent.com/u/162144774?v=4" width=115><br><sub>Laura Benavides</sub>](https://github.com/LauraBenavides33) |  [<img src="https://avatars.githubusercontent.com/u/171134273?v=4" width=115><br><sub>Roger Esteve</sub>](https://github.com/alejandria1899) |
+| :---: | :---: | :---: |
+[<img src="https://avatars.githubusercontent.com/u/146776685?v=4" width=115><br><sub>Michely Paredes</sub>](https://github.com/Michely05) |  [<img src="https://avatars.githubusercontent.com/u/162126428?v=4" width=115><br><sub>Iván Vallejos</sub>](https://github.com/MegaDraconius) |  [<img src="https://avatars.githubusercontent.com/u/162146662?v=4" width=115><br><sub>Sara Jorja</sub>](https://github.com/SaraJoLo) |
 
 ## Distribución y seguimiento de tareas con metodologías ágiles 👩‍💻
 
@@ -203,9 +225,16 @@ El diseño se realizó utilizando Figma, una potente herramienta para diseñar p
 
 - Version Desktop 
 
+![Vista del programa sin tickets emitidos](/public/demo1.png)
+![Vista para reportar una incidencia mediante formulario](/public/demo2.png)
+![Vista del programa desde la vista Administrador para gestionar los tickets](/public/demo3.png)
 
 - Version Mobile
 
+
+![Vista del programa sin tickets emitidos](/public/demoMobile1.png)
+![Vista para reportar una incidencia mediante formulario](/public/demoMobile2.png)
+![Vista del programa desde la vista Administrador para gestionar los tickets](/public/demoMobile3.png)
 
 
 ## Despliegue del Proyecto 📽️
@@ -222,9 +251,20 @@ Además de las ventajas técnicas que ofrece Netlify, también lo seleccionamos 
 
 Reconocemos que nuestro proyecto actual tiene un gran potencial para crecer y evolucionar. Aunque hemos logrado mucho, sabemos que hay características adicionales que podríamos implementar para mejorar aún más nuestro producto. Estas mejoras no se han realizado hasta ahora debido a limitaciones de tiempo y conocimientos técnicos. Sin embargo, estamos comprometidos con la mejora continua y planeamos adquirir las habilidades necesarias para implementar estas características en el futuro.
 
-- [x] 
-- [ ] 
-- [ ] 
-- [ ] 
-- [ ] 
-- [ ] 
+- [ ] Realizar testing con más cobertura en los componentes, tanto unitarios como de integración. 
+- [ ] Añadir las funcionalidades 
+- [ ] Corregir el diseño en cuanto a ser un componentes responsivos.
+- [ ] Añadir las funcionalidades de GitHub Actions para controlar el flujo de trabajo de forma óptima y siguiendo un patron de trabajo estandarizado.
+- [ ] Implementación de histórico en la vista detalle para la consulta de problemas pasados a la hora de responder al usuario.
+- [ ] Añadir un generador de plantillas para errores.
+- [ ] Añadir las funcionalidades y la vista para poder generar informes y análisis de las incidencias obtenidas.
+- [ ] Poder generar nuevos formularios acorde a las necesidades.
+- [ ] Refactorización del codigo y la arquitectura para una vista más sencilla para los desarrolladores tanto para su mantenibilidad como para su funcionamiento.
+
+## Special thanks 👥
+
+- Queremos expresar nuestro más sincero agradecimiento a nuestros compañeros y profesores por su invaluable apoyo y colaboración durante el desarrollo de este proyecto. Sus contribuciones, tanto en conocimientos como en esfuerzo, fueron fundamentales para alcanzar nuestros objetivos.
+
+- A nuestros compañeros, gracias por los momentos compartidos, por su dedicación y por el espíritu de equipo que nos llevó a superar cada desafío.
+
+- A nuestros profesores, gracias por su guía, paciencia y sabiduría. Sin su apoyo, este proyecto no habría sido posible.
