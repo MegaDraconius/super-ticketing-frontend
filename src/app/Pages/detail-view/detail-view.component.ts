@@ -64,6 +64,7 @@ export class DetailViewComponent implements OnInit {
     ItGuyId: '',
     ItGuyEmail: '',
     Title: '',
+    Stored: false
   };
   priority: number = 0;
   selectedValue!: string;

@@ -6,6 +6,19 @@
         <input matInput (keyup)="applyFilter($event)" placeholder="" #input class="searchInput">
     </mat-form-field>
 
+    <mat-form-field class="ticketInputs">
+      <mat-label>{{ "Estado del ticket" | translate }}</mat-label>
+      <mat-select (selectionChange)="onStatusFilterChange($event)">
+        <mat-option value="">{{ "todos" | translate }}</mat-option>
+        <mat-option value="abierto">{{ "abierto" | translate }}</mat-option>
+        <mat-option value="pendiente">{{ "pendiente" | translate }}</mat-option>
+        <mat-option value="en proceso">{{
+          "en proceso" | translate
+        }}</mat-option>
+        <mat-option value="resuelto">{{ "resuelto" | translate }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
 </div>
 <div class="ticketTableContainer custom-font">
 
@@ -79,5 +92,4 @@
             <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
         </div>
     </div>
-
-</div>
+  </div>

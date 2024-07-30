@@ -36,25 +36,24 @@ export class LoginComponent {
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.pattern('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$')]],
-      password: ['',[Validators.required, Validators.minLength(8)]],
+      password: ['',[Validators.required, Validators.minLength(4)]],
     });
   }
 
 
-  submit() {
+  async submit() {
+    const hashPwd = await this.loginService.sha256(this.loginForm.controls['password'].value);
     const user: User = {
-      email: this.loginForm.controls['email'].value,
-      password: this.loginForm.controls['password'].value,
+      UserEmail: this.loginForm.controls['email'].value,
+      Pwd: hashPwd,
     };
 
-    
     if (this.loginForm.valid) {
-      console.log('form is valid');
       this.loginService.login(user).then(result => {
-        this.localStorageService.setItem('token', result.accessToken)
-        this.localStorageService.setItem('isAdmin', result.user.isAdmin.toString())
+        this.localStorageService.setItem('token', result.AccessToken)
+        this.localStorageService.setItem('isAdmin', result.Role)
 
-        if(result.user.isAdmin.toString() === "true"){
+        if(result.Role === "Admin"){
           this.router.navigate(['admin']) //faltaria decidir en qué ruta redirige
         } else {
           this.router.navigate(['user']) //faltaria decidir en qué ruta redirige
