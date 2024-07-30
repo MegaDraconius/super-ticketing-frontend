@@ -16,4 +16,9 @@ app-header{
 
 app-language-button{
     grid-area: language;
+    position: fixed;
+  bottom: 0;
+  left: 0;
+  margin: 16px;
+  z-index: 1000;
 }
