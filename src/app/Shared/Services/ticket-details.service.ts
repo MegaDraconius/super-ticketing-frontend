@@ -20,6 +20,7 @@ export class TicketDetailsService {
     ItGuyId: '',
     ItGuyEmail: '',
     Title: '',
+    Stored: false
   });
 
   constructor() {}

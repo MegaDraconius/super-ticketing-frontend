@@ -13,6 +13,11 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { TicketServiceService } from '../../../Shared/Services/ticket-service.service';
 import { DateHandlingService } from '../../../Shared/Services/date-handling.service';
+import { ReportButtonComponent } from '../../report-button/report-button.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { tick } from '@angular/core/testing';
 
 @Component({
   selector: 'app-admin-table',
@@ -66,7 +71,10 @@ export class AdminTableComponent implements AfterViewInit, OnInit {
         );
         ticket.ReportDate = parsedDate;
         return ticket;
+        
       });
+
+      console.log(this.ticketData)
       this.dataSource = new MatTableDataSource<AdminTicket>(this.ticketData);
     });
   }
@@ -78,15 +86,15 @@ export class AdminTableComponent implements AfterViewInit, OnInit {
   }
 
   applyArchivedFilter() {
-    this.dataSource.filterPredicate = (data: AdminTicket, filter: string) => {
-      return !data.archived && (
-        data.Id.toLowerCase().includes(filter) ||
-        data.ticketTitle.toLowerCase().includes(filter) ||
-        data.user.toLowerCase().includes(filter) ||
-        data.priority.toLowerCase().includes(filter) ||
-        data.status.toLowerCase().includes(filter)
-      );
-    };
+    // this.dataSource.filterPredicate = (data: AdminTicket, filter: string) => {
+    //   return !data.archived && (
+    //     data.Id.toLowerCase().includes(filter) ||
+    //     data.ticketTitle.toLowerCase().includes(filter) ||
+    //     data.user.toLowerCase().includes(filter) ||
+    //     data.priority.toLowerCase().includes(filter) ||
+    //     data.status.toLowerCase().includes(filter)
+    //   );
+    // };
     this.dataSource.filter = this.dataSource.filter;
   }
 
@@ -95,15 +103,15 @@ export class AdminTableComponent implements AfterViewInit, OnInit {
       .trim()
       .toLowerCase();
 
-    this.dataSource.filterPredicate = (data: AdminTicket, filter: string) => {
-      return !data.archived && (
-        data.Id.toLowerCase().includes(filter) ||
-        data.ticketTitle.toLowerCase().includes(filter) ||
-        data.user.toLowerCase().includes(filter) ||
-        data.priority.toLowerCase().includes(filter) ||
-        data.status.toLowerCase().includes(filter)
-      );
-    };
+    // this.dataSource.filterPredicate = (data: AdminTicket, filter: string) => {
+    //   return !data.archived && (
+    //     data.Id.toLowerCase().includes(filter) ||
+    //     data.ticketTitle.toLowerCase().includes(filter) ||
+    //     data.user.toLowerCase().includes(filter) ||
+    //     data.priority.toLowerCase().includes(filter) ||
+    //     data.status.toLowerCase().includes(filter)
+    //   );
+    // };
 
     this.dataSource.filter = filterValue;
 
@@ -115,16 +123,16 @@ export class AdminTableComponent implements AfterViewInit, OnInit {
   archived(ticket: AdminTicket) {
     const index = this.dataSource.data.findIndex((t) => t.Id === ticket.Id);
     if (index > -1) {
-      this.dataSource.data[index].archived = true;
+      // this.dataSource.data[index].archived = true;
       this.applyArchivedFilter();
     }
   }
 
   onStatusFilterChange(event: MatSelectChange) {
     const filterValue = event.value.toLowerCase();
-    this.dataSource.filterPredicate = (data: AdminTicket, filter: string) => {
-      return !data.archived && data.status.toLowerCase() === filter;
-    };
+    // this.dataSource.filterPredicate = (data: AdminTicket, filter: string) => {
+    //   return !data.Stored && data.status.toLowerCase() === filter;
+    // };
 
     this.dataSource.filter = filterValue;
 
