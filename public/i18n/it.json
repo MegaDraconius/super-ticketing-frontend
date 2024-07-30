@@ -49,5 +49,6 @@
   "cannotWork": "Non può lavorare",
   "itGuyDropdown": "Assegnare un tecnico",
   "statusDropdown": "Cambiare stato",
-  "feedbackInput": "Risposta all'utente"
+  "feedbackInput": "Risposta all'utente",
+  "ticketStatus": "Stato del ticket"
 }

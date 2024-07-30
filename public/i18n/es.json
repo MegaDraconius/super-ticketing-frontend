@@ -49,5 +49,11 @@
   "cannotWork": "No puede trabajar",
   "itGuyDropdown": "Asignar técnico",
   "statusDropdown": "Cambiar estado",
-  "feedbackInput": "Respuesta al usuario "
+  "feedbackInput": "Respuesta al usuario ",
+  "ticketStatus": "Estado del ticket",
+  "todos": "Todos",
+  "abierto": "Abierto",
+  "pendiente": "Pendiente",
+  "enProceso": "En proceso",
+  "resuelto": "Resuelto"
 }

@@ -49,5 +49,6 @@
   "cannotWork": "Cannot work",
   "itGuyDropdown": "Assign a technician",
   "statusDropdown": "Change status",
-  "feedbackInput": "Feedback to user"
+  "feedbackInput": "Feedback to user",
+  "ticketStatus": "Ticket status"
 }
