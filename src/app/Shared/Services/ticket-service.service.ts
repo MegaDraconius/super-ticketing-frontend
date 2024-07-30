@@ -33,11 +33,6 @@ export class TicketServiceService {
   }
 
   async createTicket(ticket: Ticket) {
-    console.log('Ticket: ', ticket);
-    console.log('URL: ', this.backUrl.concat('/api/Ticket'));
-
-    // return this.http.post<Ticket>(this.backUrl.concat('/api/Ticket'), ticket);
-
     try {
       const result = await firstValueFrom(
         this.http
@@ -50,10 +45,12 @@ export class TicketServiceService {
     }
   }
 
-  async updateTicket(updateTicket: UpdatedTicket) {
-    const result = await this.http
-      .put(this.backUrl.concat('/api/Ticket'), updateTicket)
-      .pipe(catchError((e) => of(e)));
+  async updateTicket(updateTicket: UpdatedTicket, id: string) {
+    const result = await firstValueFrom(
+      this.http
+        .put(this.backUrl.concat(`/api/Ticket/${id}`), updateTicket)
+        .pipe(catchError((e) => of(e)))
+    );
     return result;
   }
 }

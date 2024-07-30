@@ -110,7 +110,10 @@ export class DetailViewComponent implements OnInit {
       ItGuyEmail: this.adminForm.controls['itGuyInput'].value,
     };
     console.log(updatedTicket);
-    const result = this.ticketService.updateTicket(updatedTicket);
+    const result = this.ticketService.updateTicket(
+      updatedTicket,
+      this.rowData.Id
+    );
     console.log(result);
     this.router.navigate(['/adminConfirmation']);
   }
