@@ -1,6 +1,7 @@
 {
   "tableTitle": "I miei tickets",
   "adminTableTitle": "Gestione dei biglietti",
+  "ticketNumber": "Ticket numero",
   "reportIncidence": "Segnalare un problema",
   "searchIncidenceInput": "Cercare un problema",
   "searchInput": "Cercare...",
@@ -33,5 +34,10 @@
   "problem3": "Hai provato a risolverlo?",
   "yes": "Sì",
   "no": "No",
-  "sendButton": "INVIARE"
+  "sendButton": "INVIARE",
+  "canWork": "Può lavorare",
+  "cannotWork": "Non può lavorare",
+  "itGuyDropdown": "Assegnare un tecnico",
+  "statusDropdown": "Cambiare stato",
+  "feedbackInput": "Risposta all'utente"
 }

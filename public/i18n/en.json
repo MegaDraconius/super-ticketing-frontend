@@ -1,6 +1,7 @@
 {
   "tableTitle": "My tickets",
   "adminTableTitle": "Ticket Management",
+  "ticketNumber": "Ticket number",
   "reportIncidence": "Report incidence",
   "searchIncidenceInput": "Search for incidence",
   "searchInput": "Search...",
@@ -33,5 +34,10 @@
   "problem3": "Have you tried to fix it?",
   "yes": "Yes",
   "no": "No",
-  "sendButton": "SEND"
+  "sendButton": "SEND",
+  "canWork": "Can work",
+  "cannotWork": "Cannot work",
+  "itGuyDropdown": "Assign a technician",
+  "statusDropdown": "Change status",
+  "feedbackInput": "Feedback to user"
 }

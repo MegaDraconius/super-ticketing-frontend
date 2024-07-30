@@ -23,6 +23,8 @@ import { StatusService } from '../../Shared/Services/status.service';
 import { Router } from '@angular/router';
 import { UpdatedTicket } from '../../Shared/Interfaces/updated-ticket';
 import { TicketServiceService } from '../../Shared/Services/ticket-service.service';
+import { LanguageButtonComponent } from '../../Components/language-button/language-button.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-ticket-detailed-view-admin',
@@ -37,6 +39,8 @@ import { TicketServiceService } from '../../Shared/Services/ticket-service.servi
     TicketFormComponent,
     CommonModule,
     ReactiveFormsModule,
+    LanguageButtonComponent,
+    TranslateModule,
   ],
   templateUrl: './detail-view.component.html',
   styleUrl: './detail-view.component.scss',
