@@ -1,4 +1,4 @@
-<section>
+<!-- <section>
   <h2>Gestión de tickets</h2>
   <h3>Incidencia nº {{ rowData.TrackingId }}</h3>
 
@@ -19,16 +19,16 @@
   </div>
 
   <mat-form-field class="inputMessage">
-    <textarea matInput [value]="rowData.Description" disabled></textarea>
+    <textarea matInput [value]="rowData.Description" id="descriptionInput" disabled></textarea>
   </mat-form-field>
 
   <div class="dropDownOptions">
     <form class="itGuySelection">
       <mat-form-field>
         <mat-label>Asignar técnico</mat-label>
-        <mat-select [(ngModel)]="selectedValue" name="itGuy">
+        <mat-select [(ngModel)]="selectedValue" id="itGuyInput" name="itGuy">
           @for (itGuy of itTeam; track $index) {
-          <mat-option [value]="itGuy.ItGuyName">{{itGuy.ItGuyName}}</mat-option>
+          <mat-option [value]="itGuy.ItGuyEmail">{{itGuy.ItGuyName}}</mat-option>
           }
         </mat-select>
       </mat-form-field>
@@ -37,7 +37,7 @@
     <form class="statusSelection">
       <mat-form-field>
         <mat-label>Cambiar estado</mat-label>
-        <mat-select [(ngModel)]="selectedValue" name="status">
+        <mat-select [(ngModel)]="selectedValue" id="statusInput" name="status">
           @for (statusInfo of status; track $index) {
           <mat-option [value]="statusInfo.StatusValue">{{statusInfo.StatusValue}}</mat-option>
           }
@@ -52,4 +52,59 @@
     <textarea matInput></textarea>
   </mat-form-field>
   <button class="sendButton" type="submit" mat-flat-button>ENVIAR</button>
+</section> -->
+
+<section>
+  <h2>Gestión de tickets</h2>
+  <h3>Incidencia nº {{ rowData.TrackingId }}</h3>
+
+  <form [formGroup]="adminForm" (ngSubmit)="submit()">
+    <div class="inputContainer">
+      <mat-form-field class="inputsDesign">
+        <input class="textInput" matInput disabled />
+      </mat-form-field>
+
+      <mat-form-field class="inputsDesign">
+        <input class="textInput" type="email" matInput [value]="rowData.UserEmail" disabled />
+      </mat-form-field>
+
+      <div id="canWorkContainer">
+        <button *ngIf="priority >= 8" id="cannotWorkButton" mat-flat-button disabled>No puede trabajar</button>
+        <button *ngIf="priority < 8" id="canWorkButton" mat-flat-button disabled>Puede trabajar</button>
+      </div>
+
+    </div>
+
+    <mat-form-field class="inputMessage">
+      <textarea matInput [value]="rowData.Description" disabled></textarea>
+    </mat-form-field>
+
+    <div class="dropDownOptions">
+      <mat-form-field>
+        <mat-label>Asignar técnico</mat-label>
+        <mat-select formControlName="itGuyInput" name="itGuy">
+          @for (itGuy of itTeam; track $index) {
+          <mat-option [value]="itGuy.ItGuyEmail">{{itGuy.ItGuyName}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Cambiar estado</mat-label>
+        <mat-select formControlName="statusInput" name="status">
+          @for (statusInfo of status; track $index) {
+          <mat-option [value]="statusInfo.StatusValue">{{statusInfo.StatusValue}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <mat-form-field class="inputMessage">
+      <mat-label>Respuesta al usuario</mat-label>
+      <textarea matInput formControlName="feedbackInput"></textarea>
+    </mat-form-field>
+    <div class="sendButtonContainer">
+      <button class="sendButton" type="submit" mat-flat-button>ENVIAR</button>
+    </div>
+  </form>
 </section>

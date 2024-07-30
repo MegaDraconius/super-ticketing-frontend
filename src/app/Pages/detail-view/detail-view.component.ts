@@ -1,5 +1,11 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import {
+  FormBuilder,
+  FormGroup,
+  FormsModule,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
@@ -22,7 +28,6 @@ import { TicketServiceService } from '../../Shared/Services/ticket-service.servi
   selector: 'app-ticket-detailed-view-admin',
   standalone: true,
   imports: [
-    FormsModule,
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
@@ -31,11 +36,14 @@ import { TicketServiceService } from '../../Shared/Services/ticket-service.servi
     MatOption,
     TicketFormComponent,
     CommonModule,
+    ReactiveFormsModule,
   ],
   templateUrl: './detail-view.component.html',
   styleUrl: './detail-view.component.scss',
 })
 export class DetailViewComponent implements OnInit {
+  adminForm!: FormGroup;
+
   rawRowData!: Observable<AdminTicket>;
   rowData: AdminTicket = {
     Id: '',
@@ -65,6 +73,14 @@ export class DetailViewComponent implements OnInit {
   statusService = inject(StatusService);
   ticketService = inject(TicketServiceService);
 
+  constructor(private fb: FormBuilder) {
+    this.adminForm = fb.group({
+      feedbackInput: ['', Validators.required],
+      itGuyInput: [''],
+      statusInput: ['', Validators.required],
+    });
+  }
+
   ngOnInit() {
     this.rowData = this.ticketDetails.ticketSignal();
 
@@ -86,14 +102,17 @@ export class DetailViewComponent implements OnInit {
   }
 
   submit() {
+    // const descriptionValue = document.getElementById('descriptionInput')?.value;
     const updatedTicket: UpdatedTicket = {
-      Description: 'cosorro',
-      Status: 'Resuelto',
+      Feedback: this.adminForm.controls['feedbackInput'].value,
+      Status: this.adminForm.controls['statusInput'].value,
       Priority: '7',
       Photo: 'string',
-      ItGuyEmail: '',
+      ItGuyEmail: this.adminForm.controls['itGuyInput'].value,
     };
-    this.ticketService.updateTicket(updatedTicket);
+    console.log(updatedTicket);
+    const result = this.ticketService.updateTicket(updatedTicket);
+    console.log(result);
     this.router.navigate(['/adminConfirmation']);
   }
 }

@@ -1,5 +1,5 @@
 export interface UpdatedTicket {
-  Description: string;
+  Feedback: string;
   Status: string;
   Priority: string;
   Photo: string;
