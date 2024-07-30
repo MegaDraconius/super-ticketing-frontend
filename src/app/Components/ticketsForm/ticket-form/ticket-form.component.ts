@@ -126,7 +126,6 @@ export class TicketFormComponent {
       //const currentDate = Date.now().toString();
 
       const ticket: Ticket = {
-        TrackingId: 'ES-00000000003',
         Title: this.ticketsForm.controls['title'].value,
         Description: this.ticketsForm.controls['details'].value,
         ReportDate: '2024-07-29T07:33:18.165Z',

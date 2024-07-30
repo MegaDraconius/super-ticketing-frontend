@@ -18,7 +18,7 @@ export class UserConfirmationPageComponent {
   ticketService = inject(TicketServiceService)
 
   comeBack(){
-    const result = this.ticketService.getTickets().subscribe((result) => {
+    this.ticketService.getTickets().subscribe((result) => {
       if (result.length > 0) {
         if (localStorage.getItem('role') === "Admin") {
           this.router.navigate(['/admin/table']);

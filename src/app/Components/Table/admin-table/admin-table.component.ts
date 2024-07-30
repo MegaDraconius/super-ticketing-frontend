@@ -17,7 +17,8 @@ import { ReportButtonComponent } from '../../report-button/report-button.compone
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import { tick } from '@angular/core/testing';
+import { StatusService } from '../../../Shared/Services/status.service';
+import { status } from '../../../Shared/Interfaces/status';
 
 @Component({
   selector: 'app-admin-table',
@@ -51,6 +52,7 @@ export class AdminTableComponent implements AfterViewInit, OnInit {
 
   ticketRawData!: Observable<AdminTicket[]>;
   ticketData: AdminTicket[] = [];
+  statusData: status[] = [];
   dataSource!: MatTableDataSource<AdminTicket>;
 
   @ViewChild(MatPaginator, { static: false }) paginator!: MatPaginator;
@@ -60,6 +62,7 @@ export class AdminTableComponent implements AfterViewInit, OnInit {
   ticketService = inject(TicketServiceService);
   ticketDetails = inject(TicketDetailsService);
   dateHandlingService = inject(DateHandlingService);
+  statusService = inject(StatusService);
 
   ngOnInit(): void {
     this.ticketRawData = this.ticketService.getAdminTickets();
@@ -71,11 +74,16 @@ export class AdminTableComponent implements AfterViewInit, OnInit {
         );
         ticket.ReportDate = parsedDate;
         return ticket;
-
       });
 
       console.log(this.ticketData)
       this.dataSource = new MatTableDataSource<AdminTicket>(this.ticketData);
+    });
+
+    this.statusService.getStatus().subscribe((statusValue) => {
+      this.statusData = statusValue.map((statusInfo: status) => {
+        return statusInfo;
+      })
     });
   }
 

@@ -10,12 +10,9 @@
         <mat-label>{{ "Estado del ticket" | translate }}</mat-label>
         <mat-select (selectionChange)="onStatusFilterChange($event)">
             <mat-option value="">{{ "todos" | translate }}</mat-option>
-            <mat-option value="abierto">{{ "abierto" | translate }}</mat-option>
-            <mat-option value="pendiente">{{ "pendiente" | translate }}</mat-option>
-            <mat-option value="en proceso">{{
-                "en proceso" | translate
-                }}</mat-option>
-            <mat-option value="resuelto">{{ "resuelto" | translate }}</mat-option>
+            @for (statusInfo of statusData; track $index) {
+            <mat-option [value]="statusInfo.StatusValue">{{statusInfo.StatusValue}}</mat-option>
+            }
         </mat-select>
     </mat-form-field>
 </div>
