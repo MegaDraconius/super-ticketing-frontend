@@ -246,6 +246,7 @@ El diseño se realizó utilizando Figma, una potente herramienta para diseñar p
 - Version Mobile
 
 
+![Vista del programa sin tickets emitidos](/public/mobileLogin.png)
 ![Vista del programa sin tickets emitidos](/public/mobile1.png)
 ![Vista para reportar una incidencia mediante formulario](/public/mobile2.png)
 ![Vista del programa desde la vista Administrador para gestionar los tickets](/public/mobile3.png)
