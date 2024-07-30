@@ -1,0 +1,15 @@
+<section>
+    <h2>Mis Tickets</h2>
+    <form>
+        <div class="inputContainer">
+            <p>Título:</p>
+            <mat-form-field class="inputsDesign">
+                <input class="textInput" [value]="rowData.Title" matInput disabled />
+            </mat-form-field>
+            <p>Detalles:</p>
+            <mat-form-field class="inputMessage">
+                <textarea matInput [value]="rowData.Description" disabled></textarea>
+            </mat-form-field>
+        </div>
+    </form>
+</section>

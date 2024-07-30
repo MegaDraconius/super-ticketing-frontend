@@ -7,7 +7,7 @@
     </mat-form-field>
 
     <mat-form-field class="ticketInputs">
-        <mat-label>{{ "Estado del ticket" | translate }}</mat-label>
+        <mat-label>{{ "ticketStatus" | translate }}</mat-label>
         <mat-select (selectionChange)="onStatusFilterChange($event)">
             <mat-option value="">{{ "todos" | translate }}</mat-option>
             @for (statusInfo of statusData; track $index) {

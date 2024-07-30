@@ -1,4 +1,14 @@
 {
+  "helloMessage": "¡Hola de nuevo!",
+  "emailInput": "Correo electrónico",
+  "PasswordInput": "Contraseña",
+  "loginButton": "Iniciar sesión",
+  "emailIsMandatory": "El email es obligatorio",
+  "emailIsNotValid": "El correo electrónico no es válido",
+  "passwordIsMandatory": "El correo electrónico es obligatorio",
+  "passwordRequirement": "La contraseña debe tener al menos 8 carácteres",
+  "forgotPassword": "¿Has olvidado tu contraseña? Entra ",
+  "here": "aquí",
   "tableTitle": "Mis tickets",
   "adminTableTitle": "Gestión de Tickets",
   "ticketNumber": "Incidencia nº",
@@ -39,5 +49,11 @@
   "cannotWork": "No puede trabajar",
   "itGuyDropdown": "Asignar técnico",
   "statusDropdown": "Cambiar estado",
-  "feedbackInput": "Respuesta al usuario "
+  "feedbackInput": "Respuesta al usuario ",
+  "ticketStatus": "Estado del ticket",
+  "todos": "Todos",
+  "abierto": "Abierto",
+  "pendiente": "Pendiente",
+  "enProceso": "En proceso",
+  "resuelto": "Resuelto"
 }
