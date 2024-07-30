@@ -5,6 +5,7 @@ import { catchError, firstValueFrom, of, tap } from 'rxjs';
 import { Ticket } from '../ticket';
 import { environment } from '../../../environments/environment.development';
 import { AdminTicket } from '../Interfaces/admin-ticket';
+import { UpdatedTicket } from '../Interfaces/updated-ticket';
 
 @Injectable({
   providedIn: 'root',
@@ -32,11 +33,6 @@ export class TicketServiceService {
   }
 
   async createTicket(ticket: Ticket) {
-    console.log('Ticket: ', ticket);
-    console.log('URL: ', this.backUrl.concat('/api/Ticket'));
-
-    // return this.http.post<Ticket>(this.backUrl.concat('/api/Ticket'), ticket);
-
     try {
       const result = await firstValueFrom(
         this.http
@@ -47,5 +43,14 @@ export class TicketServiceService {
     } catch (e) {
       console.error(e);
     }
+  }
+
+  async updateTicket(updateTicket: UpdatedTicket, id: string) {
+    const result = await firstValueFrom(
+      this.http
+        .put(this.backUrl.concat(`/api/Ticket/${id}`), updateTicket)
+        .pipe(catchError((e) => of(e)))
+    );
+    return result;
   }
 }
