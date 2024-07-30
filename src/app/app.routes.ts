@@ -9,6 +9,7 @@ import { DetailViewComponent } from './Pages/detail-view/detail-view.component';
 import { LoginComponent } from './Pages/login/login.component';
 import { UserConfirmationPageComponent } from './Pages/user-confirmation-page/user-confirmation-page.component';
 import { authGuard } from './Guards/auth.guard';
+import { UserDetailViewComponent } from './Pages/user-detail-view/user-detail-view.component';
 
 export const routes: Routes = [
   {
@@ -38,7 +39,7 @@ export const routes: Routes = [
       { path: 'form', component: TicketFormComponent },
       { path: 'confirmation', component: UserConfirmationPageComponent },
       { path: 'table', component: TicketTableComponent },
-      { path: 'detailedView', component: DetailViewComponent },
+      { path: 'detailedView', component: UserDetailViewComponent },
     ]
 
   },
