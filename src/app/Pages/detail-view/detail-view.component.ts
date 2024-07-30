@@ -120,6 +120,6 @@ export class DetailViewComponent implements OnInit {
       this.rowData.Id
     );
     console.log(result);
-    this.router.navigate(['/adminConfirmation']);
+    this.router.navigate(['/admin/confirmation']);
   }
 }

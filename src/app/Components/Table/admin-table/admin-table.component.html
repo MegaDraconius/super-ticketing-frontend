@@ -1,27 +1,20 @@
 <div class="aboveTable">
-  <h2 class="gestionTickets">{{ "adminTableTitle" | translate }}</h2>
+    <h2 class="gestionTickets">{{ 'adminTableTitle' | translate}}</h2>
 
-  <mat-form-field id="ticketSearchbar">
-    <mat-label>{{ "searchInput" | translate }}</mat-label>
-    <input
-      matInput
-      (keyup)="applyFilter($event)"
-      placeholder=""
-      #input
-      class="searchInput"
-    />
-  </mat-form-field>
+    <mat-form-field id="ticketSearchbar">
+        <mat-label>{{ 'searchInput' | translate}}</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="" #input class="searchInput">
+    </mat-form-field>
 
-  <mat-form-field class="ticketInputs">
-    <mat-label>{{ "ticketStatus" | translate }}</mat-label>
-    <mat-select (selectionChange)="onStatusFilterChange($event)">
-      <mat-option value="">{{ "todos" | translate }}</mat-option>
-      <mat-option value="abierto">{{ "abierto" | translate }}</mat-option>
-      <mat-option value="pendiente">{{ "pendiente" | translate }}</mat-option>
-      <mat-option value="en proceso">{{ "enProceso" | translate }}</mat-option>
-      <mat-option value="resuelto">{{ "resuelto" | translate }}</mat-option>
-    </mat-select>
-  </mat-form-field>
+    <mat-form-field class="ticketInputs">
+        <mat-label>{{ "ticketStatus" | translate }}</mat-label>
+        <mat-select (selectionChange)="onStatusFilterChange($event)">
+            <mat-option value="">{{ "todos" | translate }}</mat-option>
+            @for (statusInfo of statusData; track $index) {
+            <mat-option [value]="statusInfo.StatusValue">{{statusInfo.StatusValue}}</mat-option>
+            }
+        </mat-select>
+    </mat-form-field>
 </div>
 <div class="ticketTableContainer custom-font">
   <div class="mat-elevation-z8">
@@ -108,5 +101,4 @@
         aria-label="Select page of users"
       ></mat-paginator>
     </div>
-  </div>
 </div>

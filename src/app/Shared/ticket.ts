@@ -1,6 +1,5 @@
 export interface Ticket {
   Id?: string;
-  TrackingId: string;
   Title: string;
   Description: string;
   ReportDate: string;
