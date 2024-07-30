@@ -79,6 +79,10 @@ mat-label {
   font-weight: 700;
 }
 
+app-language-button{
+  z-index: 1;
+}
+
 @media screen and (min-width: 1024px) {
   #landingImage {
     display: flex;
