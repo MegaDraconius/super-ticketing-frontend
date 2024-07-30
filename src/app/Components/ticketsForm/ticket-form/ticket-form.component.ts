@@ -11,6 +11,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { TicketServiceService } from '../../../Shared/Services/ticket-service.service';
 import { Ticket } from '../../../Shared/ticket';
+import { NgModel } from '@angular/forms';
 
 @Component({
   selector: 'app-ticket-form',
@@ -38,11 +39,12 @@ export class TicketFormComponent {
     this.ticketsForm = fb.group({
       title: ['', Validators.required],
       details: ['', Validators.minLength(3)],
-      img: [null],
+      // img: [null],
       motive: ['', Validators.required],
       canWork: [null],
       recurrent: [null],
       attemptedFix: [null],
+      Photo: File[] = [],
     });
   }
 
@@ -59,10 +61,10 @@ export class TicketFormComponent {
   onFileChange(event: any) {
     if (event.target.files.length > 0) {
       const file = event.target.files[0];
-      this.ticketsForm.patchValue({
-        img: file,
-      });
-    }
+      this.ticketsForm.get('photo')?.setValue(file);
+  } else {
+    this.ticketsForm.get('photo')?.setValue('');
+  }
   }
   onMotiveChange(event: any) {
     this.technicalProblem = event.value == '2';
@@ -74,7 +76,6 @@ export class TicketFormComponent {
       });
     }
   }
-
   calculatePriority() {
     let priority = 0;
     const motive = this.ticketsForm.controls['motive'].value;
@@ -130,7 +131,7 @@ export class TicketFormComponent {
         Priority: priority.toString(),
 
         // Photo:this.ticketsForm.controls['img'].value,
-        Photo: 'Future photo',
+        // Photo: 'Future photo',
         UserId: '66a20b4c2b51e2b2d11e22d1',
       };
 
@@ -142,4 +143,5 @@ export class TicketFormComponent {
       alert('debe llenar todos los campos');
     }
   }
+ 
 }

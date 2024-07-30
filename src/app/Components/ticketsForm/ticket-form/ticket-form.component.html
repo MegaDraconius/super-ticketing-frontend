@@ -16,7 +16,7 @@
       </div>
       <textarea id="details" class="containerForm" formControlName="details" placeholder="Detalles de la incidencia."></textarea>
     </div>
-
+<!-- 
     <p class="imgBox">Incluye capturas de pantalla o vídeo si es posible.</p>
 
     <div class="imgBox">
@@ -24,7 +24,16 @@
       <input id="img" formControlName="img" type="file" >
       <br>
     </div>
-    
+     <div class="imgBox">
+    <label for="img">Incluye capturas de pantalla o vídeo</label>
+    <input id="img" type="file" (change)="onFileChange($event)">
+  </div>
+     -->
+     <div class="imgBox">
+      <label for="img">Incluye capturas de pantalla o vídeo</label>
+      <input id="photo" type="file" (change)="onFileChange($event)">
+    </div>
+
     <div class="workContainer">
       <p>Motivo:</p>
       <mat-radio-group formControlName="motive" aria-label="Motivo">
@@ -60,4 +69,5 @@
     </div>
   </form>
 </div>
+
 </section>

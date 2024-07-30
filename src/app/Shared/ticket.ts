@@ -8,7 +8,8 @@ export interface Ticket {
   Status: string;
   Country: string;
   Priority: string;
-  Photo?: string;
+  // Photo?: string;
   UserId: string;
   ITEmployees?: string;
+  file:File;
 }
