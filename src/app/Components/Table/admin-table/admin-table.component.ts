@@ -71,7 +71,7 @@ export class AdminTableComponent implements AfterViewInit, OnInit {
         );
         ticket.ReportDate = parsedDate;
         return ticket;
-        
+
       });
 
       console.log(this.ticketData)
@@ -144,6 +144,6 @@ export class AdminTableComponent implements AfterViewInit, OnInit {
   getTicketDetails(rowData: AdminTicket) {
     console.log('ticket details: ', rowData);
     this.ticketDetails.emitTicketDetails(rowData);
-    this.router.navigate(['/detailedView']);
+    this.router.navigate(['/admin/detailedView']);
   }
 }

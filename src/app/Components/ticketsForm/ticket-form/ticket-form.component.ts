@@ -119,13 +119,14 @@ export class TicketFormComponent {
       // }
       const priority = this.calculatePriority();
 
+      //const currentDate = Date.now().toString();
+
       const ticket: Ticket = {
         TrackingId: 'ES-00000000003',
         Title: this.ticketsForm.controls['title'].value,
         Description: this.ticketsForm.controls['details'].value,
-        ReportDate: '2024-07-24T07:33:18.165Z',
-        // SolvedDate: '2024-07-24T07:33:18.165Z',
-        Status: 'Pending',
+        ReportDate: '2024-07-29T07:33:18.165Z',
+        Status: 'Pendiente',
         Country: '669a13bee4cd3cf42f7728db',
         Priority: priority.toString(),
 
@@ -137,7 +138,15 @@ export class TicketFormComponent {
       console.log(ticket);
       this.ticketService.createTicket(ticket);
 
-      this.router.navigate(['/userConfirmation']);
+      this.ticketService.getTickets().subscribe((result) => {
+        if (result.length > 0) {
+          if (localStorage.getItem('role') === "Admin") {
+            this.router.navigate(['/admin/confirmation']);
+          }else {
+            this.router.navigate(['/user/confirmation']);
+          }
+        }
+      });
     } else {
       alert('debe llenar todos los campos');
     }

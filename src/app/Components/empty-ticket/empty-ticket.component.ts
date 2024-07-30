@@ -19,10 +19,10 @@ export class EmptyTicketComponent implements OnInit {
   ngOnInit(): void {
     const result = this.ticketService.getTickets().subscribe((result) => {
       if (result.length > 0) {
-        if (localStorage.getItem('isAdmin') === "true") {
-          this.router.navigate(['/adminTable']);
+        if (localStorage.getItem('role') === "Admin") {
+          this.router.navigate(['/admin/table']);
         }else {
-          this.router.navigate(['/userTable']);
+          this.router.navigate(['/user/table']);
         }
       }
     });

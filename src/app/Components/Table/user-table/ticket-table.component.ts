@@ -18,6 +18,8 @@ import { Ticket } from '../../../Shared/ticket';
 import { LanguageButtonComponent } from '../../language-button/language-button.component';
 import { ReportButtonComponent } from '../../report-button/report-button.component';
 import { TicketServiceService } from '../../../Shared/Services/ticket-service.service';
+import { TicketDetailsService } from '../../../Shared/Services/ticket-details.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-ticket-table',
@@ -52,7 +54,10 @@ export class TicketTableComponent implements AfterViewInit, OnInit {
   @ViewChild(MatPaginator, { static: false }) paginator!: MatPaginator;
   @ViewChild(MatSort, { static: false }) sort!: MatSort;
 
+  router = inject(Router);
+
   ticketService = inject(TicketServiceService);
+  ticketDetails = inject(TicketDetailsService);
   dateHandlingService = inject(DateHandlingService);
 
   ngOnInit(): void {
@@ -85,5 +90,10 @@ export class TicketTableComponent implements AfterViewInit, OnInit {
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
+  }
+
+  getTicketDetails(rowData: Ticket) {
+    this.ticketDetails.emitTicketDetails(rowData);
+    this.router.navigate(['/user/detailedView']);
   }
 }
