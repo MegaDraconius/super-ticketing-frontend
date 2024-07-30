@@ -1,11 +1,13 @@
 import { Component, HostListener } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
+import { LanguageButtonComponent } from '../../language-button/language-button.component';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [],
+  imports: [TranslateModule, LanguageButtonComponent],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+  styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
   isDropdownVisible = false;

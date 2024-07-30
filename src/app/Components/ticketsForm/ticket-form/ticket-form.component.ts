@@ -1,4 +1,4 @@
-import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
+import { Component, EventEmitter, inject, Output } from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
@@ -11,6 +11,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { TicketServiceService } from '../../../Shared/Services/ticket-service.service';
 import { Ticket } from '../../../Shared/ticket';
+import { LanguageButtonComponent } from '../../language-button/language-button.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-ticket-form',
@@ -21,6 +23,8 @@ import { Ticket } from '../../../Shared/ticket';
     RouterOutlet,
     MatRadioModule,
     MatButtonModule,
+    TranslateModule,
+    LanguageButtonComponent,
   ],
   templateUrl: './ticket-form.component.html',
   styleUrl: './ticket-form.component.scss',
