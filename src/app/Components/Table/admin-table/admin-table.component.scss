@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 // .gestionTickets{
 //   display: flex;
 //   flex-direction: row;
@@ -8,20 +8,26 @@
 
 .aboveTable {
   width: 100%;
-  font-family: 'Poppins', sans-serif !important;
-  color: #1D154A;
+  font-family: "Poppins", sans-serif !important;
+  color: #1d154a;
   font-size: 24px;
   display: flex;
   flex-direction: row;
   align-items: baseline;
-  justify-content: space-evenly;
+  justify-content: space-around;
   margin: 1rem;
-
+  align-items: flex-start;
+}
+.inputsTable {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  gap: 3%;
 }
 
 .custom-font,
 .custom-font * {
-  font-family: 'Poppins', sans-serif !important;
+  font-family: "Poppins", sans-serif !important;
 }
 
 .ticketTableContainer {
@@ -31,7 +37,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
 }
 
 #ticketSearchbar {
@@ -47,8 +52,8 @@ table {
   width: 100%;
   height: 20%;
 }
-.mdc-text-field--filled:not(.mdc-text-field--disabled){
-  background-color:#525252;
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: #525252;
 }
 
 // td, th {
@@ -56,11 +61,11 @@ table {
 // }
 
 th {
-  color: #ED6D84;
+  color: #ed6d84;
 }
 
 #detailButton {
-  background-color: #7075F4;
+  background-color: #7075f4;
   color: white;
 
   &:hover {
@@ -69,7 +74,7 @@ th {
 }
 
 #deleteButton {
-  background-color: #FF5151;
+  background-color: #ff5151;
 }
 
 .languageButtonContainer {
@@ -78,45 +83,58 @@ th {
   top: 95%;
   left: 5%;
 }
+@media screen and (min-width: 1024px) {
+  #ticketSearchbar {
+    width: 40%;
+    height: 20%;
+  }
+  .mat-mdc-form-field {
+    font-size: 10px;
+    width: 40%;
+  }
 
+  .gestionTickets {
+    text-align: center;
+  }
+}
 @media screen and (min-width: 852px) and (max-width: 1023px) {
   .ticketTableContainer {
     overflow: scroll;
     width: 90%;
   }
-  .aboveTable{
+  .aboveTable {
     display: flex;
     flex-direction: column;
     align-items: center;
     font-size: 15px;
-    gap:1rem;
+    gap: 1rem;
   }
-#ticketSearchbar{
-  width:60%;
-  height: 20%;
-}
-.mat-mdc-form-field {
-  font-size: 10px;
-  width: 100%;
-}
+  #ticketSearchbar {
+    width: 40%;
+    height: 20%;
+  }
+  .mat-mdc-form-field {
+    font-size: 10px;
+    width: 40%;
+  }
 }
 
 @media screen and (min-width: 393px) and (max-width: 852px) {
   .ticketTableContainer {
     overflow: scroll;
   }
-  .aboveTable{
+  .aboveTable {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap:1rem;
+    gap: 1rem;
     font-size: 15px;
   }
-  .mat-elevation-z8{
+  .mat-elevation-z8 {
     width: 90%;
   }
-  #ticketSearchbar{
-    width:100%;
+  #ticketSearchbar {
+    width: 100%;
     height: 20%;
   }
   .mat-mdc-form-field {
