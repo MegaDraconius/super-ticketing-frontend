@@ -93,7 +93,7 @@ const AdminELEMENT_DATA: AdminTicket[] = [
     TranslateModule,
   ],
   templateUrl: './admin-table.component.html',
-  styleUrl: './admin-table.component.scss',
+  styleUrls: ['./admin-table.component.scss'],
 })
 export class AdminTableComponent implements AfterViewInit {
   displayedColumns: string[] = [
@@ -121,13 +121,12 @@ export class AdminTableComponent implements AfterViewInit {
 
   applyArchivedFilter() {
     this.dataSource.filterPredicate = (data: AdminTicket, filter: string) => {
-      return (
-        !data.archived &&
-        (data.Id.toLowerCase().includes(filter) ||
-          data.ticketTitle.toLowerCase().includes(filter) ||
-          data.user.toLowerCase().includes(filter) ||
-          data.priority.toLowerCase().includes(filter) ||
-          data.status.toLowerCase().includes(filter))
+      return !data.archived && (
+        data.Id.toLowerCase().includes(filter) ||
+        data.ticketTitle.toLowerCase().includes(filter) ||
+        data.user.toLowerCase().includes(filter) ||
+        data.priority.toLowerCase().includes(filter) ||
+        data.status.toLowerCase().includes(filter)
       );
     };
     this.dataSource.filter = this.dataSource.filter;
@@ -139,16 +138,12 @@ export class AdminTableComponent implements AfterViewInit {
       .toLowerCase();
 
     this.dataSource.filterPredicate = (data: AdminTicket, filter: string) => {
-      const isArchived = data.archived ? 'archived' : 'active';
-      return (
-        (data.Id.toLowerCase().includes(filter) ||
-          data.ticketTitle.toLowerCase().includes(filter) ||
-          data.user.toLowerCase().includes(filter) ||
-          data.priority.toLowerCase().includes(filter) ||
-          data.status.toLowerCase().includes(filter)) &&
-        (filter === 'archived'
-          ? isArchived === 'archived'
-          : isArchived === 'active')
+      return !data.archived && (
+        data.Id.toLowerCase().includes(filter) ||
+        data.ticketTitle.toLowerCase().includes(filter) ||
+        data.user.toLowerCase().includes(filter) ||
+        data.priority.toLowerCase().includes(filter) ||
+        data.status.toLowerCase().includes(filter)
       );
     };
 
@@ -168,9 +163,9 @@ export class AdminTableComponent implements AfterViewInit {
   }
 
   onStatusFilterChange(event: MatSelectChange) {
-    const filterValue = event.value;
+    const filterValue = event.value.toLowerCase();
     this.dataSource.filterPredicate = (data: AdminTicket, filter: string) => {
-      return data.status.toLowerCase() === filter;
+      return !data.archived && data.status.toLowerCase() === filter;
     };
 
     this.dataSource.filter = filterValue;
