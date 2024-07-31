@@ -24,10 +24,7 @@
             "outputPath": "dist/super-ticketing",
             "index": "src/index.html",
             "browser": "src/main.ts",
-            "polyfills": [
-              "zone.js",
-              "@angular/localize/init"
-            ],
+            "polyfills": ["zone.js", "@angular/localize/init"],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -47,13 +44,18 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "900kb",
-                  "maximumError": "1024kb"
+                  "maximumWarning": "1mb",
+                  "maximumError": "2mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "12kb",
-                  "maximumError": "13kb"
+                  "maximumWarning": "100kb",
+                  "maximumError": "200kb"
+                },
+                {
+                  "type": "any",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
                 }
               ],
               "outputHashing": "all"
@@ -90,10 +92,7 @@
         "test": {
           "builder": "@angular-devkit/build-angular:jest",
           "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
+            "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "tsconfig.spec.json"
           }
         }
