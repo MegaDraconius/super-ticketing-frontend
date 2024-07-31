@@ -258,7 +258,7 @@ Desplegamos nuestra página usando Netlify, lo que nos ofrece hosting gratuito, 
 
 Además de las ventajas técnicas que ofrece Netlify, también lo seleccionamos por su compromiso con la sostenibilidad. Al ser una plataforma de alojamiento web ecológica, nos permite contribuir a la conservación del medio ambiente mientras desarrollamos y desplegamos nuestra página
 
-- Enlace a la pagina de  [Ticketing]()
+- Enlace a la pagina de  [Ticketing](https://luracare-ticketing.netlify.app/)
 
 
 
